@@ -1,0 +1,234 @@
+\documentclass[runningheads]{llncs}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\begin{document}
+
+\title{Activaciones Racionales Condicionadas por Contexto: Cuándo Ayuda Adaptar la No Linealidad}
+\author{Agustín Hugo Astie Forconesi \and Juan Pablo Gerino \and Joaquin Imanol Ortega \and Miguel Méndez Garabetti}
+\institute{Laboratorio de Investigación en Ciencia y Tecnología,\\ Universidad del Aconcagua, Mendoza, Argentina.\\
+\email{agustinastie3@gmail.com, juanpigerino@gmail.com}\\
+\email{joaquinimanolortega@gmail.com, mmendez@uda.edu.ar}}
+
+\titlerunning{Activaciones Racionales Condicionadas por Contexto}
+\authorrunning{A. Astie et al.}
+\maketitle
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\begin{abstract}
+Las redes neuronales tradicionales emplean funciones de activación estáticas (e.g., ReLU, SiLU) que imponen la misma transformación no lineal a todas las entradas. Esto representa una limitación cuando los datos provienen de escenarios diferentes (por ejemplo, mezclar imágenes normales con imágenes en negativo). En este trabajo proponemos la \textit{Activación Racional Condicionada por Contexto} (CCA). A diferencia de las funciones fijas, CCA utiliza una pequeña red auxiliar para observar el contexto global de los datos y modificar la forma de su propia curva en tiempo real. A través de experimentos controlados, demostramos que CCA supera a los modelos base allí donde una activación fija constituye genuinamente un cuello de botella (con mejoras relativas de hasta $\sim$47\%). Mediante pruebas de ablación causal, comprobamos que deformar la curva matemática es mucho más efectivo que la técnica tradicional de simplemente sumar el contexto a la entrada.
+Además, presentamos \textbf{CCA-lite}, una variante eficiente que retiene el \textbf{$\sim$98\% de la calidad con aproximadamente un +6\% de FLOPs} (elevando su tasa de viabilidad); es la configuración predeterminada en las tareas que comparten la capa de activación.
+Finalmente, demostramos un límite importante del método: si los datos son simples y pertenecen a un único régimen, la ventaja de usar parámetros dinámicos desaparece por completo.
+
+\keywords{Deep Learning \and Funciones de Activación Adaptativas \and Hiperredes \and Aprendizaje Condicionado.}
+\end{abstract}
+
+\section{Introducción}
+El diseño de funciones de activación es una pieza central en el desarrollo del Aprendizaje Profundo. Las funciones clásicas, como ReLU y SiLU, son estáticas: siempre aplican la misma curva sin importar qué datos estén procesando. No obstante, investigaciones recientes han demostrado que darle cierta flexibilidad a la activación mejora el aprendizaje. Por ejemplo, MishReLU \cite{al2025mishrelu} ajusta la pendiente en valores negativos, mientras que funciones como Dynamic ReLU \cite{chen2020dynamic1}, ASH \cite{lee2022adaptive} y ACON \cite{ma2021activate} adaptan su comportamiento según el canal de entrada. Además, se ha comprobado que las funciones racionales (basadas en fracciones de polinomios) son matemáticamente más eficientes y expresivas que las funciones tradicionales \cite{boulle2020rational,molina2019pade}.
+
+Por otro lado, una línea de investigación paralela demuestra que \emph{condicionar} el procesamiento al contexto es una operación muy potente: las hiperredes \cite{ha2017hypernetworks} generan los pesos de una red a partir de otra, FiLM \cite{perez2018film} modula los mapas de características mediante una transformación afín aprendida, y CondConv \cite{yang2019condconv} combina núcleos de convolución para cada muestra. Sin embargo, estos métodos solo condicionan los componentes \emph{lineales} de la red, mientras que la no linealidad en sí suele mantenerse fija.
+
+A pesar de estos avances, surge un problema importante cuando un modelo debe procesar datos que provienen de múltiples regímenes incompatibles. Por ejemplo, si un conjunto de datos contiene imágenes normales mezcladas con imágenes invertidas fotográficamente, lo que es un valor "alto" para una imagen, debería ser "bajo" para la otra. Una función de activación estática no puede hacer ambas cosas bien al mismo tiempo.
+
+Para resolver este desafío, presentamos la Activación Racional Condicionada por Contexto (CCA). Utilizando el concepto de hiperredes \cite{ha2017hypernetworks,perez2018film}, CCA lee el contexto general de la entrada y lo utiliza para predecir cómo debe deformar su propia curva matemática. En este artículo, explicamos cómo funciona esta arquitectura y demostramos empíricamente cuándo resulta beneficioso adaptar la curva de activación en lugar de usar un enfoque estático.
+
+\section{Formulación de CCA}
+
+El diseño de CCA reemplaza la curva fija por una curva dinámica generada por el contexto. Para procesar una entrada $x$ dado un contexto $c$, la operación se divide en dos pasos:
+
+\begin{equation}
+\label{eq:ajuste_inicial}
+u = w(c) \cdot x + d(c)
+\end{equation}
+
+\begin{equation}
+\label{eq:modulacion_racional}
+A(x, c) = \underbrace{u \cdot \sigma(u)}_{\text{Base SiLU \cite{silu}}} + \alpha \underbrace{\frac{a_0 + a_1 u + a_2 u^2}{1 + (b_0 + b_1 u)^2}}_{\text{Modulación Racional}}
+\end{equation}
+
+
+\begin{enumerate}
+    \item \textbf{Ajuste Inicial (Ec.~\ref{eq:ajuste_inicial}):} Antes de aplicar la activación, los datos de entrada se escalan y desplazan usando coeficientes ($w$ y $d$) dictados por el contexto. Esto permite que la red "alinee" los datos numéricamente antes de procesarlos.
+    \item \textbf{Base SiLU:} El primer término de la Ecuación~\ref{eq:modulacion_racional} asegura que CCA herede la estabilidad de la función Sigmoid Linear Unit \cite{silu}.
+    \item \textbf{Deformación Racional Acotada:} La fracción polinomial es la encargada de deformar la curva. Es crucial notar que el denominador está elevado al cuadrado, más uno. Esto asegura que la división nunca sea por cero y que los valores no "exploten" hacia el infinito, previniendo errores durante el entrenamiento.
+\end{enumerate}
+Todos los parámetros matemáticos $(w, d, a_n, b_n)$ se generan en el momento mediante una pequeña sub-red. El multiplicador $\alpha$ en la Ecuación~\ref{eq:modulacion_racional} es un parámetro entrenable por grupo de canales (inicializado en $\alpha=1$) y \emph{no} depende del contexto. Además, diseñamos una inicialización llamada Exact-SiLU. Al principio del entrenamiento, forzamos a que la fracción valga exactamente cero  y, de forma simultánea, inicializamos el ajuste afín como la identidad ($w(c)=1$, $d(c)=0$). Por lo tanto, la red arranca operando exactamente como un SiLU estático normal, y solo deforma su curva si descubre que hacerlo reduce verdaderamente el error.
+
+\subsection{CCA-lite: la variante eficiente}
+
+El poder expresivo y el costo de la CCA dependen del generador $G$, que emite $n_\text{out}\cdot G_\text{groups}$ valores por muestra ($n_\text{out}=7$: cinco coeficientes racionales más $w$ y $d$). Su número de parámetros es aproximadamente:
+\begin{equation*}
+|G| \;\approx\; \underbrace{c_{\dim}\cdot g_h}_{\text{primera capa}} \;+\; \underbrace{g_h\cdot n_\text{out}\cdot G_\text{groups}}_{\text{proyección de salida}},
+\end{equation*}
+donde $c_{\dim}$ es el ancho del contexto, $g_h$ el ancho oculto y $G_\text{groups}$ la granularidad. Dado que la proyección de salida domina el costo, este se controla principalmente mediante $G_\text{groups}$ y $g_h$ (un factor de rango bajo $r$ opcional lo reduce aún más).
+
+\textbf{CCA-lite} fija $G_\text{groups}=16$ y $g_h=16$ (frente a $64/64$ en la versión completa). Mantiene las Ecuaciones~(\ref{eq:ajuste_inicial}) y~(\ref{eq:modulacion_racional}) y la inicialización SiLU exacta, reduciendo únicamente la capacidad del generador. Como demostramos en la subsección~\ref{subsec:costo}, esto preserva la calidad reduciendo los FLOPs y los parámetros en casi un orden de magnitud. \textbf{CCA-lite es la configuración por defecto en las tareas que comparten la capa de activación} (visión, audio, clasificación de texto y razonamiento); en adelante, ``CCA'' denota esta variante (comparada con la versión completa en la subsección~\ref{subsec:costo}). La única excepción es la \emph{generación de texto}, que emplea un generador independiente fijado en \texttt{groups=64} y ajustado mediante búsqueda; sus resultados también se reportan como ``CCA'', pero no corresponden a la variante \textit{lite}.
+
+\section{Experimentos y Resultados}
+
+Evaluamos la capacidad de la CCA mediante ocho tareas (texto, visión, audio y razonamiento) bajo regímenes sintéticos y reales. Metodológicamente, los experimentos se dividen en dos enfoques. El primero es Clasificación y Razonamiento (métrica: exactitud), donde se procesa la entrada completa para evaluar la adaptación directa de la red; esto incluye clasificación de imágenes, fuentes de Markov, enrutamiento de claves algorítmicas, y dominios reales como dígitos multi-fuente y análisis de sentimiento cruzado. El segundo enfoque es Generación (métricas: perplejidad, bits/dim), el cual emplea un entorno estricto sin fugas (\textit{no-leak}) que aísla el contexto histórico, forzando al modelo a inferir el régimen activo para su predicción autorregresiva.
+
+\subsection{Resultados}
+\label{subsec:resultados}
+La CCA ofrece mejoras consistentes allí donde una activación fija constituye genuinamente un cuello de botella, tal como se resume para \emph{las ocho tareas} en la Tabla~\ref{tab:main}. La única excepción es la tarea de análisis de sentimiento en dominios reales, la cual funciona deliberadamente como un caso \textbf{nulo} (los regímenes no requieren transformaciones distintas), tal como se discute en la subsección~\ref{subsec:ablaciones}.
+
+\begin{table}
+\centering
+\caption{Resultados principales en todas las tareas (media $\pm$ desviación estándar sobre 3 semillas). ``Mejora rel.'' indica la reducción del error en las tareas de exactitud, y la reducción de la métrica (valores más bajos son mejores) para PPL y bits/dim. La exactitud se expresa en \%.}
+\label{tab:main}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llccrrr@{}}
+\toprule
+Tarea & Tipo & Reg. & Métrica & Base (SiLU) & CCA & Mejora rel. \\
+\midrule
+Generación de texto & sintético & 32 & PPL & 21.965 $\pm$ 0.064 & \textbf{11.808 $\pm$ 0.155} & \textbf{$-$46.2\%} \\
+Generación de Imágenes & sintético & 16 & bits/dim & 1.032 $\pm$ 0.006 & \textbf{0.883 $\pm$ 0.006} & \textbf{$-$14.4\%} \\
+Clasificación de Imágenes & sintético & 8 & Acc & 85.01 $\pm$ 0.70 & \textbf{87.45 $\pm$ 1.63} & \textbf{+16.3\% err} \\
+Clasificación de Texto & sintético & 8 & Acc & 94.28 $\pm$ 2.23 & \textbf{96.60 $\pm$ 1.46} & \textbf{+40.7\% err} \\
+Dígitos Multi-Dominio & \textbf{real} & 3 & Acc & 80.64 $\pm$ 0.27 & \textbf{88.32 $\pm$ 0.58} & \textbf{+39.7\% err} \\
+Razonamiento Algorítmico & sintético & 8 & Acc & 8.50 $\pm$ 0.38 & \textbf{51.86 $\pm$ 10.41} & \textbf{+47.4\% err} \\
+Dígitos de voz a texto & \textbf{real} & 6 & Acc & 70.61 $\pm$ 2.59 & \textbf{72.78 $\pm$ 4.42} & \textbf{+7.4\% err} \\
+Percepción del Texto (sentimientos) & \textbf{real} & 4 & Acc & 83.27 $\pm$ 0.53 & 82.12 $\pm$ 0.22 & \textbf{null ($-$6.8\%)} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\textbf{Robustez.} Las mejoras no son artefactos de una configuración particular. En la generación de texto, la ventaja se mantiene a través de diferentes granularidades del tokenizador: $-$45.8\% (BPE 2k), $-$44.2\% (4k), $-$43.6\% (8k) en PPL, además de un $-$46.2\% a nivel de caracteres. De igual manera, en la generación de imágenes el beneficio se sostiene en tres fuentes distintas bajo permutaciones de 16 regímenes, logrando reducciones de bits/dim del $-$14.4\% (MNIST), $-$21.2\% (Fashion-MNIST) y $-$12.2\% (CIFAR-10 en escala de grises) en bits/dim, superando en cada caso al control B0H de la subsección~\ref{subsec:b0h}.
+
+
+\subsection{Ejemplos de inferencia (cualitativos)}
+
+Más allá de las métricas, la diferencia es visible en las propias muestras generadas por el modelo. La Figura~\ref{fig:samples} presenta ejemplos de inferencia autorregresiva de la tarea de generación de imágenes (MNIST, mezcla de permutación de 16 regímenes): la línea base SiLU estática colapsa en artefactos en bandas porque una única curva fija no puede satisfacer a todos los regímenes, mientras que la CCA recupera una estructura coherente de los dígitos al enrutar el régimen activo a través de su no linealidad.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.49\textwidth]{figs/samples_mnist.png}
+\includegraphics[width=0.49\textwidth]{figs/samples_fashion.png}
+
+\caption{Muestras autorregresivas en MNIST (izquierda) y Fashion-MNIST (derecha). Arriba: datos reales. Centro: línea base SiLU fija (artefactos en bandas, con confusión entre regímenes). Abajo: CCA (nuestra propuesta).}
+\label{fig:samples}
+\end{figure}
+
+\subsection{Banco de pruebas B0H: deformar la curva frente a inyectar el contexto}
+\label{subsec:b0h}
+Queríamos comprobar si la mejora de la CCA se debe simplemente a tener \emph{acceso a más información de contexto}. Con este fin, construimos el control \textbf{B0H (Línea base + Historial)}: una activación estática común (SiLU) que recibe el mismo contexto, pero \emph{añadido directamente a la entrada} una técnica muy habitual. 
+Para garantizar una comparación justa del \emph{acceso} al contexto, B0H comparte con CCA el mismo codificador de contexto (\texttt{hist\_enc}, $d \to d$ con SiLU); ambos reciben exactamente la misma información, difiriendo en su \emph{uso} (suma aditiva vs. enrutamiento a través de la no linealidad). La única diferencia restante en parámetros es el generador por muestra propio de la CCA: este añade apenas un $+6.2\%$ de parámetros en la tarea algorítmica (de $81{,}108$ a $86{,}164$; B0H permanece en el conteo de la línea base). Dicho incremento es demasiado pequeño para explicar la diferencia de rendimiento observada en esa misma tarea: la CCA alcanza un $51.9\%$ frente al $12.9\%$ de B0H, por lo que la ventaja proviene del \emph{mecanismo} de enrutamiento y no de una mayor capacidad, tal como confirma además el análisis de costo de la subsección~\ref{subsec:costo}.
+
+La Tabla~\ref{tab:b0h} muestra que la CCA es superior a B0H. Esto demuestra que alterar físicamente la forma de la curva de activación (el enfoque de la CCA) es mucho más eficaz que limitarse a inyectar el contexto sumándolo a los datos.
+
+\begin{table}[H]
+\centering
+\caption{Enrutamiento (CCA) frente a inyección (B0H), donde el contexto se mantiene separado de la arquitectura base (valores más bajos son mejores para PPL/bits por dim; más altos para exactitud).}
+\label{tab:b0h}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Tarea & Métrica & SiLU & SiLU+Ctx (B0H) & CCA \\
+\midrule
+Generación de texto & PPL & 21.97 & 12.79 & \textbf{11.81} \\
+Generación de Imágenes (MNIST) & bits/dim & 1.032 & 0.905 & \textbf{0.883} \\
+Generación de Imágenes (Fashion) & bits/dim & 1.512 & 1.215 & \textbf{1.191} \\
+Generación de Imágenes (CIFAR) & bits/dim & 1.555 & 1.383 & \textbf{1.366} \\
+Razonamiento Algorítmico & Acc \% & 8.50 & 12.92 & \textbf{51.86} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Ablaciones y el límite del método}
+\label{subsec:ablaciones}
+
+Para asegurarnos de que el modelo estaba razonando y no simplemente memorizando, ejecutamos dos experimentos de control fundamentales.
+
+\textbf{Ablación por barajado de contexto (\textit{context-shuffle}).} Engañamos al modelo: le pedimos que predijera una imagen negativa, pero alimentamos la activación con el contexto de una imagen \emph{normal}. Bajo esta trampa, el rendimiento de la CCA colapsó \emph{por debajo} de la línea base estática en tres de las cuatro tareas principales (Fig.~\ref{fig:shuffle}; por ejemplo, la PPL en generación de texto salta de 11.8 a 38.9, la exactitud en clasificación de imágenes cae del 87\% al 56\%, y los bits/dim en generación de imágenes suben de 0.88 a 3.46). Esto es metodológicamente positivo: demuestra que la red aprendió a depender estrictamente del contexto \emph{correcto} para funcionar, confirmando una sólida relación causal. La excepción es la clasificación de texto, donde la arquitectura base de \textit{bag-of-embeddings} ya es lo suficientemente robusta como para clasificar sin la ayuda de la activación, por lo que barajar su contexto deja la exactitud cerca del nivel de la CCA un recordatorio útil de que la dependencia causal es más fuerte exactamente allí donde la activación constituye el cuello de botella.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_shuffle.png}
+\caption{Ablación por barajado de contexto: asignar un contexto incorrecto degrada la CCA por debajo de la línea base estática (el modelo utiliza el contexto real de forma causal).}
+\label{fig:shuffle}
+\end{figure}
+
+\textbf{Límite de régimen único (control nulo).} Queríamos saber qué sucede cuando los datos son normales y sencillos. Limpiamos el conjunto de datos de cifrados e imágenes invertidas, dejando un único régimen simple. En este escenario, la gran mejora de la CCA se redujo a casi un 0\%: el modelo comprendió que deformar la curva no ofrecía ninguna ventaja y optó por seguir operando exactamente como una SiLU tradicional. La tarea de análisis de \emph{sentimiento} en la subsección~\ref{subsec:resultados} enseña la misma lección con datos reales un cambio de dominio genuino cuyos regímenes comparten su vocabulario de sentimientos, por lo que una activación fija no es el cuello de botella y la CCA resulta en una operación nula ($-6.8\%$,  un efecto despreciable). Esta es una advertencia valiosa: \textbf{no se deben añadir activaciones dinámicas ni parámetros extra en problemas simples y de un solo régimen.}
+
+
+\textbf{La curva realmente se deforma.} Finalmente, la Fig.~\ref{fig:curves} grafica la curva de activación aprendida para varios contextos inferidos: se observa claramente cómo diverge de la SiLU estática, y la varianza de los coeficientes generados (Fig.~\ref{fig:curves}, derecha) confirma que la curva se adapta a cada contexto (la variación se concentra en el numerador, mientras que el denominador permanece inerte una parametrización estable que la red descubre por sí misma).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.48\textwidth]{figs/fig_curves.png}
+\includegraphics[width=0.48\textwidth]{figs/fig_coeff_var.png}
+\caption{Izquierda: La curva de activación generada se transforma con el contexto inferido. Derecha: La varianza entre muestras de los coeficientes racionales generados confirma que la adaptación es real.}
+\label{fig:curves}
+\end{figure}
+
+\subsection{Costo, CCA-lite y viabilidad}
+\label{subsec:costo}
+La calidad de la CCA no es gratuita: el generador auxiliar añade un costo computacional. Para medir la sobrecarga arquitectónica real de forma independiente a las ineficiencias de ejecución a nivel de \textit{framework}, instrumentamos cada modelo contabilizando parámetros y FLOPs, y definimos un ratio de viabilidad $R = \tfrac{\text{mejora de calidad }\%}{\text{costo en FLOPs }\%}$ ($R>1$ significa que la mejora compensa el costo). Nuestra implementación en modo \textit{eager} introduce una notable latencia en el lanzamiento de \textit{kernels} sobre estas redes extremadamente pequeñas. En la práctica, esto representa un problema real de caudal de procesamiento (\textit{throughput}); sin embargo, se debe a detalles técnicos del \textit{framework} (la sobrecarga de lanzamiento) y no a la arquitectura matemática en sí. La sobrecarga algorítmica real en FLOPs es mínima. Dos hechos hacen que la configuración optimizada sea claramente ventajosa.
+
+\textbf{Las arquitecturas base convolucionales tienen un costo casi nulo.} Dado que los FLOPs de las convoluciones dominan, la sobrecarga de \emph{FLOPs} de la CCA es de apenas un \textbf{+0.3--0.4\%} en las tareas con CNN (clasificación de imágenes, dígitos, audio) (Tabla~\ref{tab:cost}).
+
+\begin{table}
+\centering
+\caption{Costo computacional algorítmico por tarea de la configuración de CCA desplegada (CCA-lite para las tareas de capa compartida; el generador ajustado mediante búsqueda para la generación de texto). La tarea Percepción del Texto se omite por no aportar mejora.} 
+\label{tab:cost}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Tarea & Params (+\%) & FLOPs (+\%) & Mejora calidad (\%) \\
+\midrule
+Generación de texto (caracteres) & +17.3 & +14.3 & +46.2 \\
+Clasificación de imágenes & +23.4 & +0.4 & +16.3 \\
+Generación de imágenes (MNIST/Fash/CIFAR) & +4.1--5.1 & +5.8 & +12.2--21.2 \\
+Clasificación de texto & +6.6 & +6.2 & +40.7 \\
+Dígitos multi-dominio & +23.4 & +0.4 & +39.7 \\
+Algorítmica & +6.2 & +5.8 & +47.4 \\
+Audio (FSDD) & +19.0 & +0.3 & +7.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{CCA-lite mantiene la calidad y elimina el costo.} La Tabla~\ref{tab:lite} (la búsqueda de eficiencia en clasificación de texto sobre 3 semillas) proporciona una comparación directa entre CCA-lite y CCA-full. Como se muestra, CCA-lite retiene casi toda la reducción de error de la configuración completa, mientras reduce drásticamente la sobrecarga de FLOPs en aproximadamente un orden de magnitud. La búsqueda de eficiencia (Fig.~\ref{fig:pareto}) confirma que CCA-lite se sitúa en el ``punto óptimo'' para su despliegue.
+
+\begin{table}
+\centering
+\caption{CCA-lite vs CCA-full en clasificación de texto (3 semillas, 1500 pasos, 8 regímenes).}
+\label{tab:lite}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Variante & Exactitud & Red. error (\%) & Params (+\%) & FLOPs (+\%) & Viabilidad R (FLOPs) \\
+\midrule
+SiLU & 94.27\% & 0.0 & +0.0 & +0.0 & $\infty$ \\
+CCA-full & 96.65\% & 41.4 & +83.1 & +82.2 & 0.50 \\
+\textbf{CCA-lite} & \textbf{96.60\%} & \textbf{40.7} & \textbf{+6.6} & \textbf{+6.2} & \textbf{6.60} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Una segunda comparación directa e independiente en \textbf{clasificación de imágenes} (la capa convolucional \texttt{CCA2D}, 1 semilla) corrobora esto en una modalidad diferente: frente a una línea base SiLU del 85.44\%, CCA-full alcanza el 88.93\% con un \textbf{+2.4\% de FLOPs}, mientras que CCA-lite alcanza el \textbf{88.04\% con un +0.4\% de FLOPs} es decir, la versión \textit{lite} retiene el \textbf{99\% de la exactitud de la versión completa con $\sim$6$\times$ menos sobrecarga de FLOPs}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{figs/fig_pareto.png}
+\caption{Búsqueda de eficiencia (costo computacional vs. calidad). CCA-lite (en negrita) logra casi la reducción de error completa con una pequeña fracción de la sobrecarga de FLOPs, situándose en el punto óptimo.}
+\label{fig:pareto}
+\end{figure}
+
+
+\section{Conclusiones}
+
+En este artículo demostramos que las \textbf{Activaciones Racionales Condicionadas por el Contexto} son altamente eficaces en problemas donde los datos abarcan diferentes regímenes. Proporcionamos una definición matemática precisa y acotada de la activación, y demostramos empíricamente que permitir que la red deforme su matemática interna en tiempo real es una estrategia claramente superior a la inyección tradicional de contexto (el control B0H). Al mismo tiempo, identificamos que este mecanismo es innecesario en conjuntos de datos simples de un solo régimen, y confirmamos mediante una ablación por barajado de contexto que el modelo utiliza el contexto \emph{correcto} de forma estrictamente causal. De manera crucial, la eficiente variante \textbf{CCA-lite} hace que el mecanismo sea lo suficientemente económico como para su despliegue en la práctica. Comprender claramente \emph{cuándo} y \emph{por qué} funcionan las activaciones dinámicas abre un camino prometedor para mejorar la eficiencia de los futuros modelos fundacionales a gran escala.
+
+\paragraph{Limitaciones.} El estudio utiliza arquitecturas base deliberadamente pequeñas y controladas; el generador por muestra, en modo \textit{eager} ,se encuentra limitado por la sobrecarga de lanzamiento a estas escalas (lo cual puede mitigarse mediante la fusión de \textit{kernels}), y el beneficio es, por diseño, específico para datos genuinamente multi-régimen.
+
+\bibliographystyle{splncs04}
+\bibliography{referencias}
+
+\end{document}

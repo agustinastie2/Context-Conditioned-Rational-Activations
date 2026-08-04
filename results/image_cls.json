@@ -1,0 +1,60 @@
+{
+  "task": "image_cls",
+  "tag": "multi-regime",
+  "n_regimes": 8,
+  "dataset": "MNIST",
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.8504666666666667,
+      "acc_std": 0.007074131277643439,
+      "params": 20490,
+      "cost": {
+        "params": 20490,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.528252928,
+        "fwd_latency_ms": 0.40083199739456177,
+        "peak_mem_mb": 58.565632,
+        "step_latency_ms": 2.049984097480774,
+        "throughput": 638671.5673000641
+      }
+    },
+    "cca": {
+      "acc": 0.8816333333333334,
+      "acc_std": 0.012116655204029414,
+      "params": 45818,
+      "cost": {
+        "params": 45818,
+        "params_overhead_pct": 123.61151781356759,
+        "gflops": 0.54083584,
+        "fwd_latency_ms": 2.67468798160553,
+        "peak_mem_mb": 110.192128,
+        "step_latency_ms": 11.5000638961792,
+        "throughput": 95712.0986674234
+      }
+    },
+    "shuffle": {
+      "acc": 0.5200666666666667,
+      "acc_std": 0.028126559216038738,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.0016708738403394818,
+    0.01047350000590086,
+    0.007548068184405565,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": 20.84262148907714,
+  "acc_gain_pp": 3.1166666666666676,
+  "viability": {
+    "throughput_cost_pct": 85.01387824855911,
+    "viability_ratio": 0.24516728231287813,
+    "rentable": false
+  }
+}

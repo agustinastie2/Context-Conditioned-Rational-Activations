@@ -1,0 +1,67 @@
+{
+  "task": "algo_modular",
+  "tag": "multi-regime",
+  "n_regimes": 8,
+  "alphabet": 20,
+  "n_keys": 8,
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.08503333333333334,
+      "acc_std": 0.0037581023580170567,
+      "params": 81332,
+      "cost": {
+        "params": 81332,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.040894464,
+        "fwd_latency_ms": 0.4131840020418167,
+        "peak_mem_mb": 57.253376,
+        "step_latency_ms": 1.7520639896392822,
+        "throughput": 2478314.7337257382
+      }
+    },
+    "silu_hist": {
+      "acc": 0.12913333333333332,
+      "acc_std": 0.015213261758522837,
+      "params": 81332
+    },
+    "cca": {
+      "acc": 0.42646666666666666,
+      "acc_std": 0.05876651540914549,
+      "params": 144564,
+      "cost": {
+        "params": 144564,
+        "params_overhead_pct": 77.74553681207888,
+        "gflops": 0.072351744,
+        "fwd_latency_ms": 2.855423927307129,
+        "peak_mem_mb": 60.596736,
+        "step_latency_ms": 11.18720006942749,
+        "throughput": 358615.75236070325
+      }
+    },
+    "shuffle": {
+      "acc": 0.07446666666666667,
+      "acc_std": 0.002212088003071601,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.013711202889680862,
+    0.017287055030465126,
+    0.00910203903913498,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": 37.316477831614996,
+  "acc_gain_pp": 34.14333333333333,
+  "improvement_vs_hist_pct": 34.14223379009416,
+  "viability": {
+    "throughput_cost_pct": 85.52985432073902,
+    "viability_ratio": 0.43629768959593107,
+    "rentable": false
+  }
+}

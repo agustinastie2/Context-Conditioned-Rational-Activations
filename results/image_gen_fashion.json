@@ -1,0 +1,67 @@
+{
+  "task": "image_gen",
+  "tag": "multi",
+  "n_regimes": 16,
+  "dataset": "fashion 16x16 q8 (myopic autoregressive)",
+  "dataset_name": "fashion",
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "metric": "bits/dim",
+  "models": {
+    "silu": {
+      "bpd": 1.5122937853775513,
+      "bpd_std": 0.004366051217922622,
+      "params": 84488,
+      "cost": {
+        "params": 84488,
+        "params_overhead_pct": 0.0,
+        "gflops": 4.336877568,
+        "fwd_latency_ms": 3.0361599922180176,
+        "peak_mem_mb": 3784.077312,
+        "step_latency_ms": 7.24945592880249,
+        "throughput": 10792580.128842903
+      }
+    },
+    "silu_hist": {
+      "bpd": 1.2151149381976405,
+      "bpd_std": 0.011086914650674427,
+      "params": 85064
+    },
+    "cca": {
+      "bpd": 1.1512112703200414,
+      "bpd_std": 0.004425861079810363,
+      "params": 144648,
+      "cost": {
+        "params": 144648,
+        "params_overhead_pct": 71.2053782785721,
+        "gflops": 8.147140608,
+        "fwd_latency_ms": 21.193215370178223,
+        "peak_mem_mb": 4211.831808,
+        "step_latency_ms": 67.3177604675293,
+        "throughput": 1546155.1929543025
+      }
+    },
+    "shuffle": {
+      "bpd": 2.8292258308545475,
+      "bpd_std": 0.04454561380360461,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.012888298369944096,
+    0.06482820957899094,
+    0.11933322995901108,
+    0.0,
+    0.0
+  ],
+  "improvement_pct": 23.87647946112295,
+  "improvement_vs_hist_pct": 5.259063638242015,
+  "viability": {
+    "throughput_cost_pct": 85.673905827002,
+    "viability_ratio": 0.27869021764148116,
+    "rentable": false
+  }
+}

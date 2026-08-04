@@ -1,0 +1,65 @@
+{
+  "task": "text_sentiment",
+  "tag": "multi-domain",
+  "n_regimes": 4,
+  "domains": [
+    "books",
+    "dvd",
+    "electronics",
+    "kitchen"
+  ],
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.8327083333333334,
+      "acc_std": 0.005315562842572111,
+      "params": 202754,
+      "cost": {
+        "params": 202754,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.10354688,
+        "fwd_latency_ms": 0.4618399888277054,
+        "peak_mem_mb": 32.495616,
+        "step_latency_ms": 1.5375360250473022,
+        "throughput": 554304.5344553386
+      }
+    },
+    "cca": {
+      "acc": 0.8260416666666667,
+      "acc_std": 0.004732423621500191,
+      "params": 265986,
+      "cost": {
+        "params": 265986,
+        "params_overhead_pct": 31.186561054282528,
+        "gflops": 0.13500416,
+        "fwd_latency_ms": 2.3521440029144287,
+        "peak_mem_mb": 35.838976,
+        "step_latency_ms": 8.260064125061035,
+        "throughput": 108836.87379803392
+      }
+    },
+    "shuffle": {
+      "acc": 0.620625,
+      "acc_std": 0.06441139747746513,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.005918148905038834,
+    0.0033741965889930725,
+    0.0032433532178401947,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": -3.9850560398505874,
+  "acc_gain_pp": -0.666666666666671,
+  "viability": {
+    "throughput_cost_pct": 80.3651482113569,
+    "viability_ratio": -0.04958686854368838,
+    "rentable": false
+  }
+}

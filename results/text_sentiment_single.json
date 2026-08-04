@@ -1,0 +1,62 @@
+{
+  "task": "text_sentiment",
+  "tag": "single-domain",
+  "n_regimes": 1,
+  "domains": [
+    "books"
+  ],
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.8166666666666667,
+      "acc_std": 0.005773502691896199,
+      "params": 202754,
+      "cost": {
+        "params": 202754,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.10354688,
+        "fwd_latency_ms": 0.5744640231132507,
+        "peak_mem_mb": 28.194816,
+        "step_latency_ms": 1.80377596616745,
+        "throughput": 445632.7806441793
+      }
+    },
+    "cca": {
+      "acc": 0.81,
+      "acc_std": 0.004999999999999949,
+      "params": 265986,
+      "cost": {
+        "params": 265986,
+        "params_overhead_pct": 31.186561054282528,
+        "gflops": 0.13500416,
+        "fwd_latency_ms": 2.7033599615097046,
+        "peak_mem_mb": 31.538176,
+        "step_latency_ms": 8.796671867370605,
+        "throughput": 94696.97104526011
+      }
+    },
+    "shuffle": {
+      "acc": 0.5858333333333333,
+      "acc_std": 0.014433756729740658,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.0012960346648469567,
+    0.00047433850704692304,
+    0.0006122852209955454,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": -3.636363636363599,
+  "acc_gain_pp": -0.6666666666666599,
+  "viability": {
+    "throughput_cost_pct": 78.74999884246128,
+    "viability_ratio": -0.046176046854783,
+    "rentable": false
+  }
+}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Resultados experimentales comparando la Racionalidad Condicionada por Contexto (CCA) contra un baseline de SiLU estático. Reportamos la media y desviación estándar de 3 semillas. $\Delta$ indica el porcentaje de reducción de error para clasificación y reducción de entropía (PPL/BPD) para generación.}
+\label{tab:main}
+\begin{tabular}{llccccc}
+\toprule
+Tarea & Dominio & Reg. & Métrica & SiLU Baseline & Modelo CCA & $\Delta$ \\
+\midrule
+Generación de Texto & Texto gen. & 32 & PPL & 21.920 $\pm$ 0.363 & 11.610 $\pm$ 0.134 & +47.0\% \\
+Clasificación de Img. & Img. cls. & 8 & Acc & 85.047 $\pm$ 0.707 & 88.163 $\pm$ 1.212 & +20.8\% \\
+Generación de Img. & Img. gen. & 16 & bits/dim & 1.032 $\pm$ 0.006 & 0.872 $\pm$ 0.004 & +15.5\% \\
+Clasificación de Texto & Texto cls. & 8 & Acc & 94.271 $\pm$ 2.223 & 96.562 $\pm$ 1.555 & +40.0\% \\
+Algorítmica & Algorit. & 8 & Acc & 8.503 $\pm$ 0.376 & 42.647 $\pm$ 5.877 & +37.3\% \\
+Audio Dígitos & Audio & 6 & Acc & 70.611 $\pm$ 3.276 & 74.222 $\pm$ 2.964 & +12.3\% \\
+Dígitos Multi-Dominio & Dígitos & 3 & Acc & 80.639 $\pm$ 0.264 & 88.472 $\pm$ 0.750 & +40.5\% \\
+Análisis de Sentimiento & Sentimiento & 4 & Acc & 83.271 $\pm$ 0.532 & 82.604 $\pm$ 0.473 & -4.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}

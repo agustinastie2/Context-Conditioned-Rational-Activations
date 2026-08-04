@@ -1,0 +1,64 @@
+{
+  "task": "digits_multidomain",
+  "tag": "multi-domain",
+  "n_regimes": 3,
+  "domains": [
+    "mnist",
+    "svhn",
+    "usps"
+  ],
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.8063888888888889,
+      "acc_std": 0.0026369876191790717,
+      "params": 20490,
+      "cost": {
+        "params": 20490,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.528252928,
+        "fwd_latency_ms": 0.40959998965263367,
+        "peak_mem_mb": 53.189632,
+        "step_latency_ms": 2.1662720441818237,
+        "throughput": 625000.0157888284
+      }
+    },
+    "cca": {
+      "acc": 0.8847222222222222,
+      "acc_std": 0.007498765330471471,
+      "params": 45818,
+      "cost": {
+        "params": 45818,
+        "params_overhead_pct": 123.61151781356759,
+        "gflops": 0.54083584,
+        "fwd_latency_ms": 2.825727939605713,
+        "peak_mem_mb": 104.816128,
+        "step_latency_ms": 13.187583923339844,
+        "throughput": 90596.12442226865
+      }
+    },
+    "shuffle": {
+      "acc": 0.8146111111111111,
+      "acc_std": 0.014152280276938997,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.004236791282892227,
+    0.009400371462106705,
+    0.012054085731506348,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": 40.45911047345764,
+  "acc_gain_pp": 7.833333333333325,
+  "viability": {
+    "throughput_cost_pct": 85.5046204586211,
+    "viability_ratio": 0.4731803995672646,
+    "rentable": false
+  }
+}

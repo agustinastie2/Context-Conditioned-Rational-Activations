@@ -1,0 +1,65 @@
+{
+  "task": "text_gen",
+  "tag": "multi-regime",
+  "n_regimes": 32,
+  "dataset": "Tiny Shakespeare (32-regime cipher mixture)",
+  "note": "leak-free: window 16, strictly-past history 512; mean over 3 seeds",
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "val_loss": 3.0873124901453655,
+      "val_loss_std": 0.016533292235754362,
+      "ppl": 21.920094212467166,
+      "ppl_std": 0.3633250302447029,
+      "cost": {
+        "params": 605440,
+        "gflops": 1.250164736,
+        "fwd_latency_ms": 1.8948639631271362,
+        "peak_mem_mb": 239.132672,
+        "step_latency_ms": 8.220736026763916,
+        "throughput": 540408.187567233,
+        "params_overhead_pct": 0.0
+      }
+    },
+    "silu_hist": {
+      "val_loss": 2.57655247370402,
+      "ppl": 13.19449756752532
+    },
+    "cca": {
+      "val_loss": 2.451844557126363,
+      "val_loss_std": 0.011574499303199811,
+      "ppl": 11.610259370364222,
+      "ppl_std": 0.13403151430012386,
+      "cost": {
+        "params": 710272,
+        "gflops": 1.428422656,
+        "fwd_latency_ms": 4.487679958343506,
+        "peak_mem_mb": 258.304,
+        "step_latency_ms": 18.657280921936035,
+        "throughput": 228180.26452536497,
+        "params_overhead_pct": 17.315010570824523
+      }
+    },
+    "shuffle": {
+      "val_loss": 3.6847365268071495,
+      "ppl": 39.83684062561543
+    }
+  },
+  "coeff_var": [
+    1.5838512182235718,
+    1.8330918550491333,
+    1.498224139213562,
+    0.0,
+    0.0
+  ],
+  "improvement_pct": 47.033715923717025,
+  "viability": {
+    "throughput_cost_pct": 57.77631246621764,
+    "viability_ratio": 0.8140657289476217,
+    "rentable": false
+  }
+}

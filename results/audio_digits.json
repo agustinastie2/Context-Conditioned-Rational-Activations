@@ -1,0 +1,60 @@
+{
+  "task": "audio_digits",
+  "tag": "multi-regime",
+  "n_regimes": 6,
+  "dataset": "Free Spoken Digit Dataset (log-STFT 32x32)",
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "models": {
+    "silu": {
+      "acc": 0.7061111111111111,
+      "acc_std": 0.03275893997290128,
+      "params": 25290,
+      "cost": {
+        "params": 25290,
+        "params_overhead_pct": 0.0,
+        "gflops": 0.344981504,
+        "fwd_latency_ms": 0.5278399884700775,
+        "peak_mem_mb": 36.81536,
+        "step_latency_ms": 1.9261280298233032,
+        "throughput": 242497.7318808352
+      }
+    },
+    "cca": {
+      "acc": 0.7422222222222222,
+      "acc_std": 0.029642936826564638,
+      "params": 50618,
+      "cost": {
+        "params": 50618,
+        "params_overhead_pct": 100.15025701858443,
+        "gflops": 0.35127296,
+        "fwd_latency_ms": 2.8778879642486572,
+        "peak_mem_mb": 70.493184,
+        "step_latency_ms": 10.33519983291626,
+        "throughput": 44477.06150834038
+      }
+    },
+    "shuffle": {
+      "acc": 0.6472222222222223,
+      "acc_std": 0.016694421334796383,
+      "params": null
+    }
+  },
+  "coeff_var": [
+    0.0022532229777425528,
+    0.01565658487379551,
+    0.0038753298576921225,
+    0.0,
+    0.0
+  ],
+  "err_reduction_pct": 12.287334593572774,
+  "acc_gain_pp": 3.6111111111111094,
+  "viability": {
+    "throughput_cost_pct": 81.65877216113647,
+    "viability_ratio": 0.15047170399925064,
+    "rentable": false
+  }
+}

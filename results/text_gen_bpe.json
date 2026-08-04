@@ -1,0 +1,205 @@
+{
+  "task": "text_gen_bpe",
+  "dataset": "Tiny Shakespeare (32-regime cipher mixture, BPE)",
+  "note": "leak-free; small BPE vocabularies",
+  "by_vocab": {
+    "2000": {
+      "vocab_size": 2000,
+      "seeds": [
+        1337,
+        1338,
+        1339
+      ],
+      "block": 16,
+      "hist": 128,
+      "iters": 3000,
+      "models": {
+        "silu": {
+          "val_loss": 3.827887716293335,
+          "val_loss_std": 0.0702286319490786,
+          "ppl": 46.04033405847076,
+          "ppl_std": 3.192154348259879,
+          "cost": {
+            "params": 853120,
+            "gflops": 1.757413376,
+            "fwd_latency_ms": 1.7975680232048035,
+            "peak_mem_mb": 34.235392,
+            "step_latency_ms": 7.95904016494751,
+            "throughput": 569658.5535463388,
+            "params_overhead_pct": 0.0
+          }
+        },
+        "silu_hist": {
+          "val_loss": 3.286058673858643,
+          "ppl": 26.737742061815457,
+          "cost": {
+            "params": 869632,
+            "gflops": 1.759510528,
+            "fwd_latency_ms": 2.357248067855835,
+            "peak_mem_mb": 34.400256,
+            "step_latency_ms": 9.396224021911621,
+            "throughput": 434404.8528296964,
+            "params_overhead_pct": 1.935483870967742
+          }
+        },
+        "cca": {
+          "val_loss": 3.1758693281809487,
+          "val_loss_std": 0.015940799325884585,
+          "ppl": 23.949651496870835,
+          "ppl_std": 0.3800234300818568,
+          "cost": {
+            "params": 957952,
+            "gflops": 1.935671296,
+            "fwd_latency_ms": 4.808192014694214,
+            "peak_mem_mb": 248.958976,
+            "step_latency_ms": 18.890239715576172,
+            "throughput": 212969.86411328317,
+            "params_overhead_pct": 12.2880720180045
+          }
+        },
+        "shuffle": {
+          "val_loss": 4.924554850260417,
+          "ppl": 137.78159187829968
+        }
+      },
+      "improvement_pct": 47.98115177345365,
+      "viability": {
+        "throughput_cost_pct": 62.614470933954095,
+        "viability_ratio": 0.7662949324296661,
+        "rentable": false
+      }
+    },
+    "4000": {
+      "vocab_size": 4000,
+      "seeds": [
+        1337,
+        1338,
+        1339
+      ],
+      "block": 16,
+      "hist": 128,
+      "iters": 3000,
+      "models": {
+        "silu": {
+          "val_loss": 3.858815145492554,
+          "val_loss_std": 0.009283820423262567,
+          "ppl": 47.41050482925606,
+          "ppl_std": 0.43899437086922644,
+          "cost": {
+            "params": 1109120,
+            "gflops": 2.281701376,
+            "fwd_latency_ms": 1.7070080041885376,
+            "peak_mem_mb": 44.966912,
+            "step_latency_ms": 7.788096189498901,
+            "throughput": 599880.0225232571,
+            "params_overhead_pct": 0.0
+          }
+        },
+        "silu_hist": {
+          "val_loss": 3.368601679801941,
+          "ppl": 29.049926141150372,
+          "cost": {
+            "params": 1125632,
+            "gflops": 2.283798528,
+            "fwd_latency_ms": 2.3167999982833862,
+            "peak_mem_mb": 44.804096,
+            "step_latency_ms": 7.710720062255859,
+            "throughput": 441988.95060373115,
+            "params_overhead_pct": 1.4887478361223312
+          }
+        },
+        "cca": {
+          "val_loss": 3.2555468861262002,
+          "val_loss_std": 0.017639536895829814,
+          "ppl": 25.936476422644738,
+          "ppl_std": 0.45571834946918266,
+          "cost": {
+            "params": 1213952,
+            "gflops": 2.459959296,
+            "fwd_latency_ms": 5.857280015945435,
+            "peak_mem_mb": 251.67872,
+            "step_latency_ms": 15.923711776733398,
+            "throughput": 174825.17434924343,
+            "params_overhead_pct": 9.451817657241778
+          }
+        },
+        "shuffle": {
+          "val_loss": 5.0517959276835125,
+          "ppl": 156.36814004553494
+        }
+      },
+      "improvement_pct": 45.293819342248675,
+      "viability": {
+        "throughput_cost_pct": 70.85664336447117,
+        "viability_ratio": 0.6392317952357285,
+        "rentable": false
+      }
+    },
+    "8000": {
+      "vocab_size": 8000,
+      "seeds": [
+        1337,
+        1338,
+        1339
+      ],
+      "block": 16,
+      "hist": 128,
+      "iters": 3000,
+      "models": {
+        "silu": {
+          "val_loss": 3.9265306599934897,
+          "val_loss_std": 0.006841948300698563,
+          "ppl": 50.73146183669051,
+          "ppl_std": 0.3472056027898399,
+          "cost": {
+            "params": 1621120,
+            "gflops": 3.330277376,
+            "fwd_latency_ms": 1.77047997713089,
+            "peak_mem_mb": 65.119232,
+            "step_latency_ms": 7.452192068099976,
+            "throughput": 578374.2336693462,
+            "params_overhead_pct": 0.0
+          }
+        },
+        "silu_hist": {
+          "val_loss": 3.4411318731307983,
+          "ppl": 31.22613946514752,
+          "cost": {
+            "params": 1637632,
+            "gflops": 3.332374528,
+            "fwd_latency_ms": 2.0049920082092285,
+            "peak_mem_mb": 65.21856,
+            "step_latency_ms": 8.729695796966553,
+            "throughput": 510725.22773524275,
+            "params_overhead_pct": 1.0185550730359259
+          }
+        },
+        "cca": {
+          "val_loss": 3.3410354185104367,
+          "val_loss_std": 0.02818850022950803,
+          "ppl": 28.255876545703543,
+          "ppl_std": 0.8017626562119762,
+          "cost": {
+            "params": 1725952,
+            "gflops": 3.508535296,
+            "fwd_latency_ms": 6.550016164779663,
+            "peak_mem_mb": 263.325696,
+            "step_latency_ms": 16.5795841217041,
+            "throughput": 156335.49204140727,
+            "params_overhead_pct": 6.466640347414134
+          }
+        },
+        "shuffle": {
+          "val_loss": 5.229599930445353,
+          "ppl": 186.8645735698257
+        }
+      },
+      "improvement_pct": 44.303050764312786,
+      "viability": {
+        "throughput_cost_pct": 72.96983804939285,
+        "viability_ratio": 0.6071419637018286,
+        "rentable": false
+      }
+    }
+  }
+}

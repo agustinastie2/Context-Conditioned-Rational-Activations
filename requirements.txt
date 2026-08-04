@@ -1,0 +1,17 @@
+# Core (experiments)
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+tokenizers>=0.15         # small BPE tokenizers for the text-gen experiment
+# audio_digits.py uses the tiny Free Spoken Digit Dataset + core torch.stft
+# (no torchaudio needed); the dataset is fetched automatically on first run.
+
+# Figures
+matplotlib>=3.7
+seaborn>=0.12
+
+# Paper build (LaTeX + PDF)
+pypandoc-binary>=1.13   # bundles the pandoc binary, no system install needed
+markdown>=3.5
+# PDF rendering uses Microsoft Edge in headless mode (already on Windows);
+# no extra Python dependency is required for the PDF step.

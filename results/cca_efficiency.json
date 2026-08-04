@@ -1,0 +1,182 @@
+{
+  "task": "cca_efficiency_text_cls",
+  "seeds": [
+    1337,
+    1338,
+    1339
+  ],
+  "steps": 1500,
+  "regimes": 8,
+  "variants": [
+    {
+      "name": "SiLU",
+      "acc": 0.9427499999999999,
+      "err_reduction_pct": 0.0,
+      "cost": {
+        "params": 76132,
+        "gflops": 0.038273024,
+        "fwd_latency_ms": 0.29952000081539154,
+        "peak_mem_mb": 26.906624,
+        "step_latency_ms": 2.1386239528656006,
+        "throughput": 139534883.70430848,
+        "throughput_compiled": 71428571.99560116,
+        "params_overhead_pct": 0.0,
+        "flops_overhead_pct": 0.0
+      },
+      "flops_cost_pct": 0.0,
+      "viability_ratio_flops": Infinity,
+      "rentable_flops": false,
+      "throughput_cost_pct": 0.0,
+      "viability_ratio_tput": Infinity
+    },
+    {
+      "name": "CCA-full",
+      "acc": 0.9670833333333334,
+      "err_reduction_pct": 42.50363901018949,
+      "cost": {
+        "params": 139364,
+        "params_overhead_pct": 83.05574528450586,
+        "gflops": 0.069730304,
+        "fwd_latency_ms": 3.1508480310440063,
+        "peak_mem_mb": 30.249984,
+        "step_latency_ms": 11.262975692749023,
+        "throughput": 6532389.701965372,
+        "throughput_compiled": 26726057.08745338,
+        "flops_overhead_pct": 82.19178082191782
+      },
+      "flops_cost_pct": 82.19178082191782,
+      "viability_ratio_flops": 0.5171276079573054,
+      "rentable_flops": false,
+      "throughput_cost_pct": 95.31845404636714,
+      "viability_ratio_tput": 0.44591196359011265
+    },
+    {
+      "name": "CCA-g16",
+      "acc": 0.9622083333333333,
+      "err_reduction_pct": 33.98835516739462,
+      "cost": {
+        "params": 95108,
+        "params_overhead_pct": 24.92513003730363,
+        "gflops": 0.047710208,
+        "fwd_latency_ms": 2.407423973083496,
+        "peak_mem_mb": 29.90592,
+        "step_latency_ms": 10.69926404953003,
+        "throughput": 6389776.422698459,
+        "throughput_compiled": 41237112.845650494,
+        "flops_overhead_pct": 24.657534246575324
+      },
+      "flops_cost_pct": 24.657534246575324,
+      "viability_ratio_flops": 1.3784166262332274,
+      "rentable_flops": true,
+      "throughput_cost_pct": 95.42066022985394,
+      "viability_ratio_tput": 0.3561949276553088
+    },
+    {
+      "name": "CCA-g8",
+      "acc": 0.9677083333333334,
+      "err_reduction_pct": 43.595342066958025,
+      "cost": {
+        "params": 87732,
+        "params_overhead_pct": 15.236694162769925,
+        "gflops": 0.044040192,
+        "fwd_latency_ms": 2.235904097557068,
+        "peak_mem_mb": 29.848576,
+        "step_latency_ms": 10.07052755355835,
+        "throughput": 7159904.721697219,
+        "throughput_compiled": 36036035.64721019,
+        "flops_overhead_pct": 15.068493150684919
+      },
+      "flops_cost_pct": 15.068493150684919,
+      "viability_ratio_flops": 2.893145428079944,
+      "rentable_flops": true,
+      "throughput_cost_pct": 94.86873494883908,
+      "viability_ratio_tput": 0.45953329187395797
+    },
+    {
+      "name": "CCA-ghid16",
+      "acc": 0.96625,
+      "err_reduction_pct": 41.04803493449805,
+      "cost": {
+        "params": 93188,
+        "params_overhead_pct": 22.40319445174171,
+        "gflops": 0.046137344,
+        "fwd_latency_ms": 2.3787519931793213,
+        "peak_mem_mb": 30.249984,
+        "step_latency_ms": 9.240063667297363,
+        "throughput": 6389776.422698459,
+        "throughput_compiled": 25751073.089211732,
+        "flops_overhead_pct": 20.547945205479433
+      },
+      "flops_cost_pct": 20.547945205479433,
+      "viability_ratio_flops": 1.997671033478907,
+      "rentable_flops": true,
+      "throughput_cost_pct": 95.42066022985394,
+      "viability_ratio_tput": 0.4301797413224719
+    },
+    {
+      "name": "CCA-lowrank8",
+      "acc": 0.966625,
+      "err_reduction_pct": 41.703056768559016,
+      "cost": {
+        "params": 90212,
+        "params_overhead_pct": 18.49419429412074,
+        "gflops": 0.04456448,
+        "fwd_latency_ms": 2.1724159717559814,
+        "peak_mem_mb": 30.249984,
+        "step_latency_ms": 10.256383895874023,
+        "throughput": 6880733.912090145,
+        "throughput_compiled": 36923076.82256021,
+        "flops_overhead_pct": 16.438356164383546
+      },
+      "flops_cost_pct": 16.438356164383546,
+      "viability_ratio_flops": 2.536935953420676,
+      "rentable_flops": true,
+      "throughput_cost_pct": 95.06880736241465,
+      "viability_ratio_tput": 0.4386618274233897
+    },
+    {
+      "name": "CCA-lite",
+      "acc": 0.9665416666666666,
+      "err_reduction_pct": 41.55749636098989,
+      "cost": {
+        "params": 81188,
+        "params_overhead_pct": 6.6410970419797195,
+        "gflops": 0.04063232,
+        "fwd_latency_ms": 2.4391679763793945,
+        "peak_mem_mb": 29.90592,
+        "step_latency_ms": 10.220544338226318,
+        "throughput": 6386375.770693908,
+        "throughput_compiled": 40816326.85462923,
+        "flops_overhead_pct": 6.1643835616438265
+      },
+      "flops_cost_pct": 6.1643835616438265,
+      "viability_ratio_flops": 6.741549409671703,
+      "rentable_flops": true,
+      "throughput_cost_pct": 95.42309736379082,
+      "viability_ratio_tput": 0.4355077283077091
+    },
+    {
+      "name": "CCA-noaffine",
+      "acc": 0.9672499999999999,
+      "err_reduction_pct": 42.794759825327546,
+      "cost": {
+        "params": 122724,
+        "params_overhead_pct": 61.198970209635895,
+        "gflops": 0.061341696,
+        "fwd_latency_ms": 2.2502399682998657,
+        "peak_mem_mb": 30.249984,
+        "step_latency_ms": 8.565248012542725,
+        "throughput": 6644518.218095273,
+        "throughput_compiled": 24539877.391096916,
+        "flops_overhead_pct": 60.27397260273971
+      },
+      "flops_cost_pct": 60.27397260273971,
+      "viability_ratio_flops": 0.7100039698292981,
+      "rentable_flops": false,
+      "throughput_cost_pct": 95.23809527646448,
+      "viability_ratio_tput": 0.44934497798490847
+    }
+  ],
+  "recommended_lite": "CCA-lite",
+  "fusion_speedup_cca_full": 4.091313945861562
+}

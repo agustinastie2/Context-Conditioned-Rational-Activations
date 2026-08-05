@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 1.0325030108137037,
+      "shuffle_value": null,
+      "params": 84488,
+      "train_seconds": 15.861658999998326,
+      "eval_throughput": 7494481.255801942,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 1.0320828585735071,
+      "shuffle_value": null,
+      "params": 84744,
+      "train_seconds": 68.76050860000032,
+      "eval_throughput": 2018377.1447476444,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 0.9141816547149464,
+      "shuffle_value": null,
+      "params": 86952,
+      "train_seconds": 39.75889029999962,
+      "eval_throughput": 4066722.4959166767,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "meta_acon",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 0.9103370912479437,
+      "shuffle_value": null,
+      "params": 85384,
+      "train_seconds": 36.824608299997635,
+      "eval_throughput": 3611981.3537926935,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "cca_lite",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 0.895406812973386,
+      "shuffle_value": 3.209212172807283,
+      "params": 88776,
+      "train_seconds": 96.71909230000165,
+      "eval_throughput": 1849056.1544763644,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "cca_hinge",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 0.8938031662488605,
+      "shuffle_value": 3.4321377606546055,
+      "params": 89864,
+      "train_seconds": 138.00511820000247,
+      "eval_throughput": 601519.5235536952,
+      "n_regimes": 16
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "b0h",
+      "seed": 4999,
+      "metric": "bits_per_dim",
+      "higher_is_better": false,
+      "context_origin": "strictly-causal running grey-level histogram",
+      "value": 0.9171310773772936,
+      "shuffle_value": null,
+      "params": 85064,
+      "train_seconds": 41.55378660000133,
+      "eval_throughput": 2843763.5003651567,
+      "n_regimes": 16
+    }
+  ]
+}

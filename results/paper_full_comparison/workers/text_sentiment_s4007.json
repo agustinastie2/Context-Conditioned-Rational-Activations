@@ -1,0 +1,124 @@
+{
+  "runs": [
+    {
+      "task": "text_sentiment",
+      "method": "silu",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.8275,
+      "shuffle_value": null,
+      "params": 202754,
+      "train_seconds": 6.434143399997993,
+      "eval_throughput": 32488.01297412437,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    },
+    {
+      "task": "text_sentiment",
+      "method": "rational",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.81875,
+      "shuffle_value": null,
+      "params": 203010,
+      "train_seconds": 11.94852869999886,
+      "eval_throughput": 97280.37109516561,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    },
+    {
+      "task": "text_sentiment",
+      "method": "dyrelu",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.825,
+      "shuffle_value": null,
+      "params": 205986,
+      "train_seconds": 11.533208299999387,
+      "eval_throughput": 97041.23201503868,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    },
+    {
+      "task": "text_sentiment",
+      "method": "meta_acon",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.8225,
+      "shuffle_value": null,
+      "params": 204418,
+      "train_seconds": 11.224637699997402,
+      "eval_throughput": 81270.19557977596,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    },
+    {
+      "task": "text_sentiment",
+      "method": "cca_lite",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.815,
+      "shuffle_value": 0.69375,
+      "params": 207810,
+      "train_seconds": 15.60166549999849,
+      "eval_throughput": 63353.879558563916,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    },
+    {
+      "task": "text_sentiment",
+      "method": "cca_hinge",
+      "seed": 4007,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "normalized bag-of-words embedding; no domain identity",
+      "value": 0.824375,
+      "shuffle_value": 0.678125,
+      "params": 208898,
+      "train_seconds": 17.466037099999085,
+      "eval_throughput": 56762.7225591447,
+      "n_regimes": 4,
+      "domains": [
+        "books",
+        "dvd",
+        "electronics",
+        "kitchen"
+      ]
+    }
+  ]
+}

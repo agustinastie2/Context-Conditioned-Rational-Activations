@@ -1,0 +1,118 @@
+{
+  "runs": [
+    {
+      "task": "digits_multidomain",
+      "method": "silu",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.8203333333333334,
+      "shuffle_value": null,
+      "params": 20490,
+      "train_seconds": 1.3986662999996042,
+      "eval_throughput": 109936.67435521074,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    },
+    {
+      "task": "digits_multidomain",
+      "method": "rational",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.8466666666666667,
+      "shuffle_value": null,
+      "params": 20746,
+      "train_seconds": 2.9508997999982967,
+      "eval_throughput": 97558.21319057052,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    },
+    {
+      "task": "digits_multidomain",
+      "method": "dyrelu",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.8765,
+      "shuffle_value": null,
+      "params": 23466,
+      "train_seconds": 2.438801799999055,
+      "eval_throughput": 126305.92486637055,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    },
+    {
+      "task": "digits_multidomain",
+      "method": "meta_acon",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.8436666666666667,
+      "shuffle_value": null,
+      "params": 21898,
+      "train_seconds": 2.1713887000005343,
+      "eval_throughput": 127483.21471087358,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    },
+    {
+      "task": "digits_multidomain",
+      "method": "cca_lite",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.8873333333333333,
+      "shuffle_value": 0.8408333333333333,
+      "params": 25290,
+      "train_seconds": 3.5128598000010243,
+      "eval_throughput": 86216.8077015314,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    },
+    {
+      "task": "digits_multidomain",
+      "method": "cca_hinge",
+      "seed": 4003,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; no domain identity",
+      "value": 0.892,
+      "shuffle_value": 0.8448333333333333,
+      "params": 26378,
+      "train_seconds": 4.090601899999456,
+      "eval_throughput": 68588.36066512042,
+      "n_regimes": 3,
+      "domains": [
+        "mnist",
+        "svhn",
+        "usps"
+      ]
+    }
+  ]
+}

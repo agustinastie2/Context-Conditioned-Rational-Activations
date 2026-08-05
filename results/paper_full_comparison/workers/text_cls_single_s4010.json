@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "task": "text_cls_single",
+      "method": "silu",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.986125,
+      "shuffle_value": null,
+      "params": 76132,
+      "train_seconds": 5.415596400001959,
+      "eval_throughput": 6094941.745441886,
+      "n_regimes": 1
+    },
+    {
+      "task": "text_cls_single",
+      "method": "rational",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.99175,
+      "shuffle_value": null,
+      "params": 76388,
+      "train_seconds": 11.0014857999995,
+      "eval_throughput": 7602429.661796983,
+      "n_regimes": 1
+    },
+    {
+      "task": "text_cls_single",
+      "method": "dyrelu",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.993,
+      "shuffle_value": null,
+      "params": 79364,
+      "train_seconds": 10.807433099998889,
+      "eval_throughput": 6982445.3365472155,
+      "n_regimes": 1
+    },
+    {
+      "task": "text_cls_single",
+      "method": "meta_acon",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.991625,
+      "shuffle_value": null,
+      "params": 77796,
+      "train_seconds": 10.498485700001766,
+      "eval_throughput": 6858399.13472266,
+      "n_regimes": 1
+    },
+    {
+      "task": "text_cls_single",
+      "method": "cca_lite",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.9925,
+      "shuffle_value": 0.991375,
+      "params": 81188,
+      "train_seconds": 15.462903899999219,
+      "eval_throughput": 4005443.18164862,
+      "n_regimes": 1
+    },
+    {
+      "task": "text_cls_single",
+      "method": "cca_hinge",
+      "seed": 4010,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding; one cipher only",
+      "value": 0.99225,
+      "shuffle_value": 0.9915,
+      "params": 82276,
+      "train_seconds": 17.507559099998616,
+      "eval_throughput": 3867639.538653277,
+      "n_regimes": 1
+    }
+  ]
+}

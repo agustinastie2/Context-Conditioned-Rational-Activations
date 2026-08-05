@@ -1,0 +1,138 @@
+{
+  "text": {
+    "silu_budget": {
+      "params": 82876,
+      "analytical_flops_per_sample": 166624,
+      "eager_forward_backward_ms": 2.503232002258301,
+      "compiled_forward_backward_ms": 2.091007947921753,
+      "compiled_speedup": 1.197141313951607,
+      "eager_samples_per_second": 102267.78811114933,
+      "compiled_samples_per_second": 122428.99423430585,
+      "peak_memory_mb": 20.938752,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 82940,
+      "analytical_flops_per_sample": 175200,
+      "eager_forward_backward_ms": 6.0441601276397705,
+      "compiled_forward_backward_ms": 2.876415967941284,
+      "compiled_speedup": 2.1012816626677653,
+      "eager_samples_per_second": 42354.93345540589,
+      "compiled_samples_per_second": 88999.64499335783,
+      "peak_memory_mb": 24.721408,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 82764,
+      "analytical_flops_per_sample": 168908,
+      "eager_forward_backward_ms": 6.359071969985962,
+      "compiled_forward_backward_ms": 3.655679941177368,
+      "compiled_speedup": 1.7395045716004134,
+      "eager_samples_per_second": 40257.446559543365,
+      "compiled_samples_per_second": 70028.01233128502,
+      "peak_memory_mb": 22.52032,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 82414,
+      "analytical_flops_per_sample": 168768,
+      "eager_forward_backward_ms": 5.9658238887786865,
+      "compiled_forward_backward_ms": 3.6812798976898193,
+      "compiled_speedup": 1.620584159471962,
+      "eager_samples_per_second": 42911.08902519211,
+      "compiled_samples_per_second": 69541.0311399175,
+      "peak_memory_mb": 22.322688,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 81188,
+      "analytical_flops_per_sample": 172032,
+      "eager_forward_backward_ms": 9.052095890045166,
+      "compiled_forward_backward_ms": 3.7467520236968994,
+      "compiled_speedup": 2.415984787035229,
+      "eager_samples_per_second": 28280.743278640046,
+      "compiled_samples_per_second": 68325.84552724315,
+      "peak_memory_mb": 25.896448,
+      "compile_error": null
+    },
+    "cca_hinge": {
+      "params": 82276,
+      "analytical_flops_per_sample": 177152,
+      "eager_forward_backward_ms": 10.519023895263672,
+      "compiled_forward_backward_ms": 3.82259202003479,
+      "compiled_speedup": 2.751803969696964,
+      "eager_samples_per_second": 24336.858871027696,
+      "compiled_samples_per_second": 66970.2648512488,
+      "peak_memory_mb": 26.079744,
+      "compile_error": null
+    }
+  },
+  "digits": {
+    "silu_budget": {
+      "params": 26205,
+      "analytical_flops_per_sample": 2662660,
+      "eager_forward_backward_ms": 3.1641600131988525,
+      "compiled_forward_backward_ms": 3.0197761058807373,
+      "compiled_speedup": 1.0478127855362989,
+      "eager_samples_per_second": 80906.1485298252,
+      "compiled_samples_per_second": 84774.49685804965,
+      "peak_memory_mb": 86.748672,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 26288,
+      "analytical_flops_per_sample": 2697352,
+      "eager_forward_backward_ms": 10.063807964324951,
+      "compiled_forward_backward_ms": 4.267007827758789,
+      "compiled_speedup": 2.358516405537246,
+      "eager_samples_per_second": 25437.687295652973,
+      "compiled_samples_per_second": 59995.20280572391,
+      "peak_memory_mb": 219.431424,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 26624,
+      "analytical_flops_per_sample": 2623952,
+      "eager_forward_backward_ms": 7.804287910461426,
+      "compiled_forward_backward_ms": 4.709375858306885,
+      "compiled_speedup": 1.6571809397407546,
+      "eager_samples_per_second": 32802.48024382074,
+      "compiled_samples_per_second": 54359.645036282396,
+      "peak_memory_mb": 141.904896,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 26356,
+      "analytical_flops_per_sample": 2620532,
+      "eager_forward_backward_ms": 6.47270393371582,
+      "compiled_forward_backward_ms": 4.797440052032471,
+      "compiled_speedup": 1.3491995446558236,
+      "eager_samples_per_second": 39550.70440755301,
+      "compiled_samples_per_second": 53361.7923774876,
+      "peak_memory_mb": 136.22784,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 25290,
+      "analytical_flops_per_sample": 2504960,
+      "eager_forward_backward_ms": 12.341248035430908,
+      "compiled_forward_backward_ms": 5.664735794067383,
+      "compiled_speedup": 2.1786096446644105,
+      "eager_samples_per_second": 20743.44501180439,
+      "compiled_samples_per_second": 45191.8693662829,
+      "peak_memory_mb": 216.436736,
+      "compile_error": null
+    },
+    "cca_hinge": {
+      "params": 26378,
+      "analytical_flops_per_sample": 2619904,
+      "eager_forward_backward_ms": 13.553135871887207,
+      "compiled_forward_backward_ms": null,
+      "compiled_speedup": null,
+      "eager_samples_per_second": 18888.6175435614,
+      "compiled_samples_per_second": null,
+      "peak_memory_mb": 248.62208,
+      "compile_error": "InductorError: CalledProcessError: Command '['C:\\\\ProgramData\\\\mingw64\\\\mingw64\\\\bin\\\\gcc.EXE', '\\\\\\\\?\\\\C:\\\\Users\\\\Agustin\\\\AppData\\\\Local\\\\Temp\\\\tmpztvuh9xw\\\\__triton_launcher.c', '-O3', '-shared', '-Wno-psabi', '-o', '\\\\\\\\?\\\\C:\\\\Users\\\\Agustin\\\\AppData\\\\Local\\\\Temp\\\\tmpztvuh9xw\\\\__triton_launcher.cp314-win_amd64.pyd', '-fPIC', '-lcuda', '-lpython314', '-LC:\\\\Users\\\\Agustin\\\\AppData\\\\Roaming\\\\Python\\\\Python314\\\\site-packages\\\\triton\\\\backends\\\\nvidia\\\\lib', '-LC:\\\\Program Files\\\\NVIDIA GPU Computing Toolkit\\\\CUDA\\\\v13.2\\\\lib\\\\x64', '-LC:\\\\Python314\\\\libs', '-IC:\\\\Users\\\\Agustin\\\\AppData\\\\Roaming\\\\Python\\\\Python314\\\\site-packages\\\\triton\\\\backends\\\\nvidia\\\\include', '-IC:\\\\Program Files\\\\NVIDIA GPU Computing Toolkit\\\\CUDA\\\\v13.2\\\\include', '-I\\\\\\\\?\\\\C:\\\\Users\\\\Agustin\\\\AppData\\\\Local\\\\Temp\\\\tmpztvuh9xw', '-IC:\\\\Python314\\\\Include']' returned non-zero exit status 1."
+    }
+  }
+}

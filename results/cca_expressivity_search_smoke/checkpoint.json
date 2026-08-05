@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "task": "text",
+      "variant": "lite_g16_h16",
+      "seed": 2001,
+      "validation_accuracy": 0.6572265625,
+      "train_seconds": 0.7387087999995856
+    },
+    {
+      "task": "text",
+      "variant": "g32_lr8",
+      "seed": 2001,
+      "validation_accuracy": 0.6513671875,
+      "train_seconds": 0.4097941999989416
+    },
+    {
+      "task": "text",
+      "variant": "g32_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.6494140625,
+      "train_seconds": 0.4341839999997319
+    },
+    {
+      "task": "text",
+      "variant": "g64_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.658203125,
+      "train_seconds": 0.44103849999919476
+    },
+    {
+      "task": "text",
+      "variant": "g8_h32",
+      "seed": 2001,
+      "validation_accuracy": 0.6689453125,
+      "train_seconds": 0.40996369999993476
+    },
+    {
+      "task": "text",
+      "variant": "g16_h24_lr8",
+      "seed": 2001,
+      "validation_accuracy": 0.646484375,
+      "train_seconds": 0.42090490000009595
+    },
+    {
+      "task": "text",
+      "variant": "g32_h24_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.6474609375,
+      "train_seconds": 0.4390299999995477
+    },
+    {
+      "task": "digits",
+      "variant": "lite_g16_h16",
+      "seed": 2001,
+      "validation_accuracy": 0.2526041666666667,
+      "train_seconds": 0.5242882000002282
+    },
+    {
+      "task": "digits",
+      "variant": "g32_lr8",
+      "seed": 2001,
+      "validation_accuracy": 0.25,
+      "train_seconds": 0.08570660000077623
+    },
+    {
+      "task": "digits",
+      "variant": "g32_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.2526041666666667,
+      "train_seconds": 0.08983569999872998
+    },
+    {
+      "task": "digits",
+      "variant": "g64_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.2526041666666667,
+      "train_seconds": 0.0947412000004988
+    },
+    {
+      "task": "digits",
+      "variant": "g8_h32",
+      "seed": 2001,
+      "validation_accuracy": 0.2734375,
+      "train_seconds": 0.07940059999964433
+    },
+    {
+      "task": "digits",
+      "variant": "g16_h24_lr8",
+      "seed": 2001,
+      "validation_accuracy": 0.2552083333333333,
+      "train_seconds": 0.08596790000046894
+    },
+    {
+      "task": "digits",
+      "variant": "g32_h24_lr4",
+      "seed": 2001,
+      "validation_accuracy": 0.2552083333333333,
+      "train_seconds": 0.08712659999946482
+    }
+  ]
+}

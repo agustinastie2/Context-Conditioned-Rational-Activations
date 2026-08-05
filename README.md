@@ -134,7 +134,8 @@ Per-task cost and rentability are in `results/cost_table.md` (LaTeX in
 ├── PAPER.md               ← full research report (source)
 ├── requirements.txt
 ├── src/                   ← all code
-│   ├── cca_core.py        ← the CCA layer (CCA1D / CCA2D) + cost knobs + instrumentation
+│   ├── cca_core.py        ← CCA layers, CCA-lite presets, configuration + instrumentation
+│   ├── cca_kernels.py     ← group-native, torch.compile-fusible activation kernels
 │   ├── metrics.py         ← params/FLOPs/latency/throughput/memory + viability ratio
 │   ├── cca_efficiency.py  ← CCA-lite Pareto sweep (cost vs quality) + fusion speedup
 │   ├── cca_leakfree.py    ← text generation (leak-free cipher char-LM)
@@ -186,6 +187,9 @@ python src/algo_modular.py                  # algorithmic reasoning
 python src/audio_digits.py                  # audio spoken digits
 python src/text_sentiment_multidomain.py    # real multi-domain sentiment
 python src/cca_efficiency.py                # CCA-lite Pareto sweep + fusion speedup
+python src/extended_comparison.py           # 10-seed confirmatory activation comparison
+python src/cca_expressivity_search.py       # validation-only expressivity search
+python src/cca_fresh_confirmation.py        # fresh-seed CCA-Hinge confirmation
 python src/make_figures.py                  # rebuild figures + tables from results/
 
 # build the paper (LaTeX + PDF)
@@ -195,6 +199,41 @@ python src/build_paper.py
 Seeds and budgets are configurable via environment variables, e.g.
 `SEEDS=1337,1338,1339 python src/image_cls.py`. Set `CCA_AFFINE=0` to recover
 the v1 activation; `CCA_GROUPS=16 CCA_GHID=16` to run the rentable **CCA-lite**.
+
+For new code, `CCALite1D` and `CCALite2D` provide the same preset without
+environment variables. The kernels keep coefficients grouped instead of
+expanding them per feature, reducing training memory and eager launch overhead;
+wrapping the complete model in `torch.compile(model)` fuses the pointwise curve.
+Run `python benchmarks/benchmark_cca.py` (or add `--compile`) to reproduce the
+forward+backward microbenchmarks.
+
+The higher-powered confirmatory extension is isolated in
+`src/extended_comparison.py`. It compares budget-controlled SiLU, static
+rational, Dynamic ReLU-B, Meta-ACON, and CCA-Lite models on synthetic text and
+real MNIST+SVHN+USPS regimes with ten paired seeds, bootstrap confidence
+intervals, exact paired permutation tests, and resumable per-seed checkpoints.
+See `REPRODUCIBILITY.md` for the one-command protocol; its generated evidence
+does not modify the paper sources.
+
+The validation-selected expressive preset adds a smooth dynamic hinge to the
+rational curve. It is opt-in across the complete original task suite, while the
+original model remains the default:
+
+```powershell
+$env:CCA_VARIANT='hinge'
+python src/run_all.py
+```
+
+Use `CCA_VARIANT=full` (default) for the original model or `CCA_VARIANT=lite`
+for the earlier optimized preset.
+
+```python
+import torch
+from cca_core import CCALite1D
+
+model.activation = CCALite1D(ctx_dim=128, feat_dim=512)
+model = torch.compile(model)  # fused CUDA training path; compile once, then train
+```
 
 ## The benchmarks
 

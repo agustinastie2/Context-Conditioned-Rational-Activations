@@ -33,6 +33,11 @@ import math
 import os
 import statistics
 import time
+import hashlib
+import io
+import urllib.request
+from contextlib import nullcontext
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -40,7 +45,8 @@ import torch.nn.functional as F
 from torchvision import datasets
 
 import metrics
-from cca_core import CCA1D, set_cca, mean_coeff_variance
+from cca_core import set_cca, mean_coeff_variance
+from cca_factory import make_cca1d
 
 SEED = 1337
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -59,6 +65,7 @@ STEPS = int(os.environ.get("STEPS", 1500))
 LR = 3e-3
 N_PER_CLASS = int(os.environ.get("NTRAIN", 2500))
 SEEDS = [int(s) for s in os.environ.get("SEEDS", "1337,1338,1339").split(",")]
+USE_AMP = os.environ.get("PAPER_AMP", "0") == "1" and DEVICE == "cuda"
 os.makedirs("results", exist_ok=True)
 
 
@@ -84,12 +91,58 @@ def _load_raw(train):
         ds = datasets.FashionMNIST("./data", train=train, download=True)
         return ds.data.float().unsqueeze(1) / 255.0, ds.targets
     if DATASET == "cifar":
-        ds = datasets.CIFAR10("./data", train=train, download=True)
-        X = torch.tensor(ds.data, dtype=torch.float32) / 255.0   # [N,H,W,3]
+        extracted = Path("./data/cifar-10-batches-py")
+        if extracted.exists():
+            ds = datasets.CIFAR10("./data", train=train, download=False)
+            X = torch.tensor(ds.data, dtype=torch.float32) / 255.0
+            labels = torch.tensor(ds.targets)
+        else:
+            X, labels = _cifar_hf(train)
         grey = (0.299 * X[..., 0] + 0.587 * X[..., 1] + 0.114 * X[..., 2])
-        return grey.unsqueeze(1), torch.tensor(ds.targets)
+        return grey.unsqueeze(1), labels
     ds = datasets.MNIST("./data", train=train, download=False)
     return ds.data.float().unsqueeze(1) / 255.0, ds.targets
+
+
+_CIFAR_HF = {
+    True: ("https://huggingface.co/datasets/tanganke/cifar10/resolve/main/"
+           "data/train-00000-of-00001.parquet",
+           "train.parquet", "aaff2390f485cd20d189d14cbeb766e0f2662740ac67398390df141c0da3ea29"),
+    False: ("https://huggingface.co/datasets/tanganke/cifar10/resolve/main/"
+            "data/test-00000-of-00001.parquet",
+            "test.parquet", "9ded1d84204c8c3159f3486105e100e1045674eafb34ef62daaba3b9503a61a5"),
+}
+
+
+def _cifar_hf(train):
+    """Checksum-pinned CIFAR-10 mirror used when the official host is unavailable."""
+    import numpy as np
+    import pyarrow.parquet as pq
+    from PIL import Image
+
+    url, filename, expected = _CIFAR_HF[bool(train)]
+    directory = Path("./data/cifar10_hf")
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / filename
+    if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        temporary = path.with_suffix(".tmp")
+        with urllib.request.urlopen(url, timeout=120) as source, temporary.open("wb") as target:
+            while chunk := source.read(1024 * 1024):
+                target.write(chunk)
+        digest = hashlib.sha256(temporary.read_bytes()).hexdigest()
+        if digest != expected:
+            temporary.unlink(missing_ok=True)
+            raise RuntimeError(f"CIFAR-10 mirror checksum mismatch: {digest}")
+        temporary.replace(path)
+    table = pq.read_table(path)
+    image_column = "img" if "img" in table.column_names else "image"
+    rows = table.select([image_column, "label"]).to_pylist()
+    images = np.stack([
+        np.asarray(Image.open(io.BytesIO(row[image_column]["bytes"])).convert("RGB"),
+                   dtype=np.float32)
+        for row in rows
+    ]) / 255.0
+    return torch.from_numpy(images), torch.tensor([row["label"] for row in rows])
 
 
 def build_data(multi):
@@ -149,7 +202,7 @@ class LocalBlock(nn.Module):
         self.fc2 = nn.Linear(4 * DMODEL, DMODEL)
         self.mode = mode
         if mode == "cca":
-            self.act = CCA1D(Q, 4 * DMODEL)            # context = histogram (Q)
+            self.act = make_cca1d(Q, 4 * DMODEL)       # context = histogram (Q)
         else:
             self.act = nn.SiLU()
 
@@ -188,10 +241,26 @@ class LocalAR(nn.Module):
         return F.cross_entropy(logits.reshape(-1, Q), idx[:, 1:].reshape(-1))
 
 
+def model_loss(model, idx):
+    """Loss routed through ``forward`` so a compiled wrapper is not bypassed."""
+    logits = model(idx[:, :-1])
+    return F.cross_entropy(logits.reshape(-1, Q), idx[:, 1:].reshape(-1))
+
+
 def batches(X, gen, train):
     order = torch.randperm(len(X), generator=gen) if train else torch.arange(len(X))
     for i in range(0, len(X), BATCH):
-        yield X[order[i:i + BATCH]].to(DEVICE)
+        index = order[i:i + BATCH]
+        if X.device.type != "cpu":
+            index = index.to(X.device)
+            yield X[index]
+        else:
+            yield X[index].to(DEVICE, non_blocking=True)
+
+
+def amp_context():
+    return (torch.amp.autocast("cuda", dtype=torch.bfloat16)
+            if USE_AMP else nullcontext())
 
 
 @torch.no_grad()
@@ -201,7 +270,9 @@ def evaluate(model, Xte, *, shuffle_ctx=False, collect=False):
     gen = torch.Generator().manual_seed(SEED)
     nll, n, t0 = 0.0, 0, time.time()
     for xb in batches(Xte, gen, False):
-        nll += model.loss(xb).item() * len(xb)
+        with amp_context():
+            loss = model_loss(model, xb)
+        nll += loss.item() * len(xb)
         n += len(xb)
     dt = time.time() - t0
     set_cca(model, collect=False, shuffle_ctx=False)
@@ -216,13 +287,17 @@ def train(mode, Xtr):
     torch.manual_seed(SEED)
     model = LocalAR(mode).to(DEVICE)
     n_par = sum(p.numel() for p in model.parameters())
+    if os.environ.get("PAPER_COMPILE", "0") == "1" and hasattr(torch, "compile"):
+        torch.set_float32_matmul_precision("high")
+        model = torch.compile(model, dynamic=False)
     opt = torch.optim.AdamW(model.parameters(), lr=LR)
     gen = torch.Generator().manual_seed(SEED)
     t0, step = time.time(), 0
     while step < STEPS:
         model.train()
         for xb in batches(Xtr, gen, True):
-            loss = model.loss(xb)
+            with amp_context():
+                loss = model_loss(model, xb)
             opt.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -286,7 +361,7 @@ def measure_cost(out, models, Xte):
             return model(xb[:, :-1])
 
         def step(model=model):
-            loss = model.loss(xb)
+            loss = model_loss(model, xb)
             model.zero_grad(set_to_none=True)
             loss.backward()
 

@@ -7,6 +7,9 @@ import math
 import os
 import sys
 import time
+import hashlib
+import urllib.request
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -27,8 +30,22 @@ HIST_LEN = int(os.environ.get("HIST_LEN", 192))
 
 
 def load_text():
-    with open("tinyshakespeare.txt", "r", encoding="utf-8") as f:
-        return f.read()
+    """Load the checksum-pinned Tiny Shakespeare corpus over verified HTTPS."""
+    path = Path(__file__).resolve().parent.parent / "data" / "tinyshakespeare.txt"
+    expected = "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+    if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = path.with_suffix(".tmp")
+        url = ("https://raw.githubusercontent.com/karpathy/char-rnn/"
+               "6f9487a6fe5b420b7ca9afb0d7c078e37c1d1b4e/"
+               "data/tinyshakespeare/input.txt")
+        urllib.request.urlretrieve(url, temporary)
+        digest = hashlib.sha256(temporary.read_bytes()).hexdigest()
+        if digest != expected:
+            temporary.unlink(missing_ok=True)
+            raise RuntimeError(f"Tiny Shakespeare checksum mismatch: {digest}")
+        temporary.replace(path)
+    return path.read_text(encoding="utf-8")
 
 
 def rot13(t):
@@ -118,22 +135,43 @@ class CCA(nn.Module):
                  alpha=0.1, gamma=0.5, learn_alpha=False, deep_g=False,
                  ctx_mode=None):
         super().__init__()
-        assert feat_dim % groups == 0
-        self.groups, self.feat_dim = groups, feat_dim
+        self.variant = os.environ.get("CCA_VARIANT", "full").lower()
+        self.hinge = self.variant in ("hinge", "cca_hinge")
+        self.external = self.variant in ("lite", "cca_lite", "rational",
+                                         "dyrelu", "meta_acon")
+        if self.hinge:
+            groups = 16
         # ctx_mode: "mean" (full-seq, leaky), "cummean" (causal),
         #           "token" (c_t = H_t), "tokcum" (concat token + cummean)
         self.ctx_mode = ctx_mode or ("cummean" if causal else "mean")
         if self.ctx_mode == "tokcum":
             ctx_dim *= 2
+        if self.external:
+            from adaptive_activations import ActivationConfig, build_activation
+            method = {"lite": "cca_lite"}.get(self.variant, self.variant)
+            groups = int(os.environ.get("ACT_GROUPS", "16"))
+            hidden = int(os.environ.get("ACT_HIDDEN", "16"))
+            self.activation = build_activation(
+                ActivationConfig(method, groups, hidden), ctx_dim, feat_dim)
+            self.groups, self.feat_dim = groups, feat_dim
+            self.shuffle_ctx = False
+            self.collect = False
+            self._buf = []
+            return
+        assert feat_dim % groups == 0
+        self.groups, self.feat_dim = groups, feat_dim
         self.gamma = gamma
+        n_out = 9 if self.hinge else 5
         if deep_g:
             # two-layer generator; last layer zero-init keeps exact-SiLU start
+            generator_hidden = 16 if self.hinge else 64
             self.G = nn.Sequential(
-                nn.Linear(ctx_dim, 64), nn.SiLU(), nn.Linear(64, 5 * groups))
+                nn.Linear(ctx_dim, generator_hidden), nn.SiLU(),
+                nn.Linear(generator_hidden, n_out * groups))
             nn.init.zeros_(self.G[-1].weight)
             nn.init.zeros_(self.G[-1].bias)
         else:
-            self.G = nn.Linear(ctx_dim, 5 * groups)
+            self.G = nn.Linear(ctx_dim, n_out * groups)
             nn.init.zeros_(self.G.weight)
             nn.init.zeros_(self.G.bias)
         self.theta_0 = nn.Parameter(torch.zeros(5 * groups))
@@ -147,8 +185,13 @@ class CCA(nn.Module):
 
     def reset_stats(self):
         self._buf = []
+        if self.external and hasattr(self.activation, "reset_stats"):
+            self.activation.reset_stats()
 
     def coeff_variance(self):
+        if self.external:
+            return (self.activation.coeff_variance()
+                    if hasattr(self.activation, "coeff_variance") else None)
         if not self._buf:
             return None
         c = torch.cat(self._buf, 0)             # [N, 5, G]
@@ -172,8 +215,18 @@ class CCA(nn.Module):
         if self.shuffle_ctx:
             perm = torch.randperm(B, device=c.device)
             c = c[perm]
-        theta = self.theta_0 + self.gamma * torch.tanh(self.G(c))  # [B,S,5G]
-        theta = theta.view(B, S, 5, self.groups)
+        if self.external:
+            if hasattr(self.activation, "collect"):
+                self.activation.collect = self.collect
+            return self.activation(x, c)
+        generated = torch.tanh(self.G(c))
+        if self.hinge:
+            generated = generated.view(B, S, 9, self.groups)
+            theta = (self.theta_0.view(1, 1, 5, self.groups)
+                     + self.gamma * generated[:, :, :5])
+        else:
+            theta = self.theta_0 + self.gamma * generated  # [B,S,5G]
+            theta = theta.view(B, S, 5, self.groups)
         if self.collect:
             self._buf.append(theta.detach().reshape(-1, 5, self.groups))
         rep = Fdim // self.groups
@@ -181,8 +234,18 @@ class CCA(nn.Module):
             theta[:, :, i, :].repeat_interleave(rep, dim=-1) for i in range(5)
         )
         alpha = self.alpha.repeat_interleave(rep).view(1, 1, Fdim)
-        silu = x * torch.sigmoid(x)
-        return silu + alpha * (a0 + a1 * x + a2 * x * x) / (1 + (b0 + b1 * x) ** 2)
+        if self.hinge:
+            w = 1.0 + generated[:, :, 5].repeat_interleave(rep, dim=-1)
+            d = generated[:, :, 6].repeat_interleave(rep, dim=-1)
+            amplitude = generated[:, :, 7].repeat_interleave(rep, dim=-1)
+            threshold = generated[:, :, 8].repeat_interleave(rep, dim=-1)
+            u = w * x + d
+            hinge = amplitude * torch.sqrt((u - threshold).square() + 1e-4)
+        else:
+            u, hinge = x, 0.0
+        silu = u * torch.sigmoid(u)
+        return silu + alpha * (a0 + a1 * u + a2 * u * u) / (
+            1 + (b0 + b1 * u) ** 2) + hinge
 
 
 class Attn(nn.Module):
@@ -261,9 +324,18 @@ class Model(nn.Module):
         self.apply(self._init)
         # re-zero CCA generators after global init (exact SiLU at start)
         for a in self.cca_layers():
-            last = a.G[-1] if isinstance(a.G, nn.Sequential) else a.G
-            nn.init.zeros_(last.weight)
-            nn.init.zeros_(last.bias)
+            if hasattr(a, "G"):
+                last = a.G[-1] if isinstance(a.G, nn.Sequential) else a.G
+                nn.init.zeros_(last.weight)
+                nn.init.zeros_(last.bias)
+            elif getattr(a, "external", False):
+                activation = a.activation
+                if hasattr(activation, "G"):
+                    nn.init.zeros_(activation.G[-1].weight)
+                    nn.init.zeros_(activation.G[-1].bias)
+                elif hasattr(activation, "generator"):
+                    nn.init.zeros_(activation.generator.net[-1].weight)
+                    nn.init.zeros_(activation.generator.net[-1].bias)
 
     @staticmethod
     def _init(m):
@@ -331,6 +403,9 @@ def run(name, cfg, ds):
     gen = torch.Generator().manual_seed(SEED)
     model = Model(ds.vocab_size, cfg).to(DEVICE)
     n_params = sum(p.numel() for p in model.parameters())
+    if os.environ.get("PAPER_COMPILE", "0") == "1" and hasattr(torch, "compile"):
+        torch.set_float32_matmul_precision("high")
+        model = torch.compile(model, dynamic=False)
     opt = torch.optim.AdamW(model.parameters(), lr=LR)
     t0 = time.time()
     model.train()

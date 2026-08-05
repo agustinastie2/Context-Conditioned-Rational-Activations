@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    1337
+  ],
+  "runs": [
+    {
+      "task": "text",
+      "method": "silu",
+      "seed": 1337,
+      "accuracy": 0.7177734375,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.5355810000000929,
+      "params": 76132
+    },
+    {
+      "task": "text",
+      "method": "silu_budget",
+      "seed": 1337,
+      "accuracy": 0.720703125,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.29090959999848565,
+      "params": 81732
+    },
+    {
+      "task": "text",
+      "method": "rational",
+      "seed": 1337,
+      "accuracy": 0.7548828125,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.4239966999994067,
+      "params": 80788
+    },
+    {
+      "task": "text",
+      "method": "dyrelu",
+      "seed": 1337,
+      "accuracy": 0.7763671875,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.545272000001205,
+      "params": 81452
+    },
+    {
+      "task": "text",
+      "method": "meta_acon",
+      "seed": 1337,
+      "accuracy": 0.7412109375,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.40375700000004144,
+      "params": 81300
+    },
+    {
+      "task": "text",
+      "method": "cca_lite",
+      "seed": 1337,
+      "accuracy": 0.751953125,
+      "per_domain_accuracy": {},
+      "train_seconds": 0.48862240000016754,
+      "params": 81188
+    },
+    {
+      "task": "digits",
+      "method": "silu",
+      "seed": 1337,
+      "accuracy": 0.203125,
+      "per_domain_accuracy": {
+        "mnist": 0.1953125,
+        "svhn": 0.16015625,
+        "usps": 0.25390625
+      },
+      "train_seconds": 5.3212383999998565,
+      "params": 20490
+    },
+    {
+      "task": "digits",
+      "method": "silu_budget",
+      "seed": 1337,
+      "accuracy": 0.21484375,
+      "per_domain_accuracy": {
+        "mnist": 0.22265625,
+        "svhn": 0.15625,
+        "usps": 0.265625
+      },
+      "train_seconds": 0.04070359999968787,
+      "params": 25826
+    },
+    {
+      "task": "digits",
+      "method": "rational",
+      "seed": 1337,
+      "accuracy": 0.2096354216337204,
+      "per_domain_accuracy": {
+        "mnist": 0.2109375,
+        "svhn": 0.15625,
+        "usps": 0.26171875
+      },
+      "train_seconds": 0.16686599999957252,
+      "params": 25180
+    },
+    {
+      "task": "digits",
+      "method": "dyrelu",
+      "seed": 1337,
+      "accuracy": 0.2825520932674408,
+      "per_domain_accuracy": {
+        "mnist": 0.33984375,
+        "svhn": 0.18359375,
+        "usps": 0.32421875
+      },
+      "train_seconds": 0.18584010000085982,
+      "params": 25318
+    },
+    {
+      "task": "digits",
+      "method": "meta_acon",
+      "seed": 1337,
+      "accuracy": 0.2109375,
+      "per_domain_accuracy": {
+        "mnist": 0.20703125,
+        "svhn": 0.15234375,
+        "usps": 0.2734375
+      },
+      "train_seconds": 0.06188960000145016,
+      "params": 25330
+    },
+    {
+      "task": "digits",
+      "method": "cca_lite",
+      "seed": 1337,
+      "accuracy": 0.2096354216337204,
+      "per_domain_accuracy": {
+        "mnist": 0.20703125,
+        "svhn": 0.15625,
+        "usps": 0.265625
+      },
+      "train_seconds": 0.09071029999904567,
+      "params": 25290
+    }
+  ],
+  "elapsed_seconds": 14.144663299999593
+}

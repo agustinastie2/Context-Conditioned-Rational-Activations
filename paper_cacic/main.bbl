@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{blitzer2007biographies}
+Blitzer, J., Dredze, M., Pereira, F.: Biographies, bollywood, boom-boxes and
+  blenders: Domain adaptation for sentiment classification. In: Proceedings of
+  the 45th Annual Meeting of the Association of Computational Linguistics. pp.
+  440--447. Association for Computational Linguistics (2007),
+  \url{https://aclanthology.org/P07-1056/}
+
+\bibitem{boulle2020rational}
+Boull{\'e}, N., Nakatsukasa, Y., Townsend, A.: Rational neural networks. In:
+  Advances in Neural Information Processing Systems. vol.~33 (2020),
+  \url{https://proceedings.neurips.cc/paper/2020/hash/a3f390d88e4c41f2747bfa2f1b5f87db-Abstract.html}
+
+\bibitem{chen2020dynamic}
+Chen, Y., Dai, X., Liu, M., Chen, D., Yuan, L., Liu, Z.: Dynamic relu. In:
+  Computer Vision -- ECCV 2020. pp. 351--367 (2020),
+  \url{https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3223_ECCV_2020_paper.php}
+
+\bibitem{silu}
+Elfwing, S., Uchibe, E., Doya, K.: Sigmoid-weighted linear units for neural
+  network function approximation in reinforcement learning. Neural Networks
+  \textbf{107},  3--11 (2018). \doi{10.1016/j.neunet.2017.12.012}
+
+\bibitem{ha2017hypernetworks}
+Ha, D., Dai, A., Le, Q.V.: Hypernetworks. In: International Conference on
+  Learning Representations (2017),
+  \url{https://openreview.net/forum?id=rkpACe1lx}
+
+\bibitem{hull1994database}
+Hull, J.J.: A database for handwritten text recognition research. IEEE
+  Transactions on Pattern Analysis and Machine Intelligence  \textbf{16}(5),
+  550--554 (1994). \doi{10.1109/34.291440}
+
+\bibitem{jackson2018fsdd}
+Jackson, Z., Souza, C., Flaks, J., Pan, Y., Nicolas, H., Thite, A.: Free spoken
+  digit dataset (2018). \doi{10.5281/zenodo.1342401},
+  \url{https://github.com/Jakobovski/free-spoken-digit-dataset}
+
+\bibitem{krizhevsky2009learning}
+Krizhevsky, A.: Learning multiple layers of features from tiny images. Tech.
+  rep., University of Toronto (2009),
+  \url{https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf}
+
+\bibitem{lecun1998gradient}
+LeCun, Y., Bottou, L., Bengio, Y., Haffner, P.: Gradient-based learning applied
+  to document recognition. Proceedings of the IEEE  \textbf{86}(11),
+  2278--2324 (1998). \doi{10.1109/5.726791}
+
+\bibitem{ma2021activate}
+Ma, N., Zhang, X., Liu, M., Sun, J.: Activate or not: Learning customized
+  activation. In: Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition. pp. 8032--8042 (2021),
+  \url{https://openaccess.thecvf.com/content/CVPR2021/html/Ma_Activate_or_Not_Learning_Customized_Activation_CVPR_2021_paper.html}
+
+\bibitem{netzer2011reading}
+Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., Ng, A.Y.: Reading
+  digits in natural images with unsupervised feature learning. In: NIPS
+  Workshop on Deep Learning and Unsupervised Feature Learning (2011),
+  \url{https://ufldl.stanford.edu/housenumbers/nips2011_housenumbers.pdf}
+
+\bibitem{perez2018film}
+Perez, E., Strub, F., de~Vries, H., Dumoulin, V., Courville, A.: {FiLM}: Visual
+  reasoning with a general conditioning layer. Proceedings of the AAAI
+  Conference on Artificial Intelligence  \textbf{32}(1) (2018).
+  \doi{10.1609/aaai.v32i1.11671}
+
+\bibitem{xiao2017fashion}
+Xiao, H., Rasul, K., Vollgraf, R.: {Fashion-MNIST}: A novel image dataset for
+  benchmarking machine learning algorithms. arXiv preprint arXiv:1708.07747
+  (2017), \url{https://arxiv.org/abs/1708.07747}
+
+\bibitem{yang2019condconv}
+Yang, B., Bender, G., Le, Q.V., Ngiam, J.: {CondConv}: Conditionally
+  parameterized convolutions for efficient inference. In: Advances in Neural
+  Information Processing Systems. vol.~32 (2019),
+  \url{https://proceedings.neurips.cc/paper/2019/hash/f2201f5191c4e92cc5af043eebfd0946-Abstract.html}
+
+\end{thebibliography}

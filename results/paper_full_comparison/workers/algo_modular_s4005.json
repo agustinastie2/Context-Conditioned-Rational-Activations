@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "task": "algo_modular",
+      "method": "silu",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.0801,
+      "shuffle_value": null,
+      "params": 81332,
+      "train_seconds": 10.193768200002523,
+      "eval_throughput": 409415.0835194065,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "rational",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.1589,
+      "shuffle_value": null,
+      "params": 81588,
+      "train_seconds": 22.95627610000156,
+      "eval_throughput": 461113.94812569226,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "dyrelu",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.4607,
+      "shuffle_value": null,
+      "params": 84564,
+      "train_seconds": 23.137938300002133,
+      "eval_throughput": 345040.52533836244,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "meta_acon",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.241,
+      "shuffle_value": null,
+      "params": 82996,
+      "train_seconds": 22.736393200000748,
+      "eval_throughput": 424467.77127561334,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "cca_lite",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.4037,
+      "shuffle_value": 0.076,
+      "params": 86388,
+      "train_seconds": 31.364359300001524,
+      "eval_throughput": 322814.4547898183,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "cca_hinge",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.3843,
+      "shuffle_value": 0.0797,
+      "params": 87476,
+      "train_seconds": 34.12932130000263,
+      "eval_throughput": 334091.6893347724,
+      "n_regimes": 8
+    },
+    {
+      "task": "algo_modular",
+      "method": "b0h",
+      "seed": 4005,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "encoded substitution key",
+      "value": 0.1468,
+      "shuffle_value": null,
+      "params": 81332,
+      "train_seconds": 10.669817599999078,
+      "eval_throughput": 894713.2762712316,
+      "n_regimes": 8
+    }
+  ]
+}

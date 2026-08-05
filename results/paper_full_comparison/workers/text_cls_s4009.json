@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "task": "text_cls",
+      "method": "silu",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.91675,
+      "shuffle_value": null,
+      "params": 76132,
+      "train_seconds": 5.310432400001446,
+      "eval_throughput": 6749329.455691376,
+      "n_regimes": 8
+    },
+    {
+      "task": "text_cls",
+      "method": "rational",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.955,
+      "shuffle_value": null,
+      "params": 76388,
+      "train_seconds": 10.841798099998414,
+      "eval_throughput": 6529158.164423545,
+      "n_regimes": 8
+    },
+    {
+      "task": "text_cls",
+      "method": "dyrelu",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.958625,
+      "shuffle_value": null,
+      "params": 79364,
+      "train_seconds": 10.394314100001793,
+      "eval_throughput": 7118824.718117809,
+      "n_regimes": 8
+    },
+    {
+      "task": "text_cls",
+      "method": "meta_acon",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.956,
+      "shuffle_value": null,
+      "params": 77796,
+      "train_seconds": 10.228357399999368,
+      "eval_throughput": 6696516.791052533,
+      "n_regimes": 8
+    },
+    {
+      "task": "text_cls",
+      "method": "cca_lite",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.9575,
+      "shuffle_value": 0.95,
+      "params": 81188,
+      "train_seconds": 14.86595319999833,
+      "eval_throughput": 4064494.2159772273,
+      "n_regimes": 8
+    },
+    {
+      "task": "text_cls",
+      "method": "cca_hinge",
+      "seed": 4009,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "mean embedding of the complete input window",
+      "value": 0.9565,
+      "shuffle_value": 0.949125,
+      "params": 82276,
+      "train_seconds": 16.2293322000005,
+      "eval_throughput": 4238097.67598518,
+      "n_regimes": 8
+    }
+  ]
+}

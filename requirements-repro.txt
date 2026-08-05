@@ -1,0 +1,12 @@
+# Exact environment used for the 2026-08-05 confirmatory run.
+torch==2.11.0
+torchvision==0.26.0
+numpy==2.3.5
+tokenizers==0.22.1
+matplotlib==3.10.9
+seaborn==0.13.2
+certifi==2025.11.12
+pyarrow==22.0.0
+pillow==12.1.1
+pypandoc-binary==1.17
+markdown==3.10.2

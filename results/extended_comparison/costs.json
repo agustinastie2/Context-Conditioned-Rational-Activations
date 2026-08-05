@@ -1,0 +1,138 @@
+{
+  "text": {
+    "silu": {
+      "params": 76132,
+      "analytical_flops_per_sample": 153088,
+      "eager_forward_backward_ms": 2.5687038898468018,
+      "compiled_forward_backward_ms": 2.076672077178955,
+      "compiled_speedup": 1.2369328398426027,
+      "eager_samples_per_second": 99661.15635666669,
+      "compiled_samples_per_second": 123274.15715424939,
+      "peak_memory_mb": 20.881408,
+      "compile_error": null
+    },
+    "silu_budget": {
+      "params": 81732,
+      "analytical_flops_per_sample": 164328,
+      "eager_forward_backward_ms": 2.429983973503113,
+      "compiled_forward_backward_ms": 2.1237759590148926,
+      "compiled_speedup": 1.1441809401733005,
+      "eager_samples_per_second": 105350.48905320365,
+      "compiled_samples_per_second": 120540.02161261156,
+      "peak_memory_mb": 21.53984,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 80788,
+      "analytical_flops_per_sample": 170496,
+      "eager_forward_backward_ms": 5.436352014541626,
+      "compiled_forward_backward_ms": 3.323904037475586,
+      "compiled_speedup": 1.6355321794038273,
+      "eager_samples_per_second": 47090.40167289186,
+      "compiled_samples_per_second": 77017.86727706646,
+      "peak_memory_mb": 25.23136,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 81452,
+      "analytical_flops_per_sample": 166244,
+      "eager_forward_backward_ms": 6.514096021652222,
+      "compiled_forward_backward_ms": 4.958208084106445,
+      "compiled_speedup": 1.3138004519280224,
+      "eager_samples_per_second": 39299.38999196218,
+      "compiled_samples_per_second": 51631.55633193551,
+      "peak_memory_mb": 22.433792,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 81300,
+      "analytical_flops_per_sample": 166496,
+      "eager_forward_backward_ms": 6.453664064407349,
+      "compiled_forward_backward_ms": 3.8983678817749023,
+      "compiled_speedup": 1.6554784617887413,
+      "eager_samples_per_second": 39667.38854782782,
+      "compiled_samples_per_second": 65668.50737633432,
+      "peak_memory_mb": 22.294528,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 81188,
+      "analytical_flops_per_sample": 172032,
+      "eager_forward_backward_ms": 9.958911895751953,
+      "compiled_forward_backward_ms": 4.0867838859558105,
+      "compiled_speedup": 2.4368579728366964,
+      "eager_samples_per_second": 25705.61951744936,
+      "compiled_samples_per_second": 62640.943867803064,
+      "peak_memory_mb": 25.878016,
+      "compile_error": null
+    }
+  },
+  "digits": {
+    "silu": {
+      "params": 20490,
+      "analytical_flops_per_sample": 2138752,
+      "eager_forward_backward_ms": 2.9566240310668945,
+      "compiled_forward_backward_ms": 3.3372159004211426,
+      "compiled_speedup": 0.8859552750823766,
+      "eager_samples_per_second": 86585.23955364818,
+      "compiled_samples_per_second": 76710.64972682584,
+      "peak_memory_mb": 79.924224,
+      "compile_error": null
+    },
+    "silu_budget": {
+      "params": 25826,
+      "analytical_flops_per_sample": 2500764,
+      "eager_forward_backward_ms": 2.8825600147247314,
+      "compiled_forward_backward_ms": 3.4333760738372803,
+      "compiled_speedup": 0.8395701352642868,
+      "eager_samples_per_second": 88809.94626037181,
+      "compiled_samples_per_second": 74562.17859463442,
+      "peak_memory_mb": 84.694016,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 25180,
+      "analytical_flops_per_sample": 2468620,
+      "eager_forward_backward_ms": 9.205248355865479,
+      "compiled_forward_backward_ms": 3.7898240089416504,
+      "compiled_speedup": 2.4289382130005936,
+      "eager_samples_per_second": 27810.22196287401,
+      "compiled_samples_per_second": 67549.31083765306,
+      "peak_memory_mb": 209.653248,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 25318,
+      "analytical_flops_per_sample": 2508960,
+      "eager_forward_backward_ms": 8.146431922912598,
+      "compiled_forward_backward_ms": 5.291007995605469,
+      "compiled_speedup": 1.539674846395762,
+      "eager_samples_per_second": 31424.800749881208,
+      "compiled_samples_per_second": 48383.975267590766,
+      "peak_memory_mb": 137.685504,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 25330,
+      "analytical_flops_per_sample": 2509132,
+      "eager_forward_backward_ms": 7.379456043243408,
+      "compiled_forward_backward_ms": 4.6090240478515625,
+      "compiled_speedup": 1.601088639726939,
+      "eager_samples_per_second": 34690.90384167167,
+      "compiled_samples_per_second": 55543.21204276014,
+      "peak_memory_mb": 132.946944,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 25290,
+      "analytical_flops_per_sample": 2504960,
+      "eager_forward_backward_ms": 12.355072021484375,
+      "compiled_forward_backward_ms": 5.438464164733887,
+      "compiled_speedup": 2.2717943241405782,
+      "eager_samples_per_second": 20720.235345843284,
+      "compiled_samples_per_second": 47072.11305354377,
+      "peak_memory_mb": 216.42752,
+      "compile_error": null
+    }
+  }
+}

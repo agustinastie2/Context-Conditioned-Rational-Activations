@@ -1,0 +1,519 @@
+context_origin,eval_throughput,higher_is_better,method,metric,n_regimes,params,seed,shuffle_value,task,train_seconds,value
+encoded substitution key,1164914.561070955,True,b0h,accuracy,8,81332,4001,,algo_modular,11.03510919999826,0.1195
+encoded substitution key,370430.7468796298,True,cca_hinge,accuracy,8,87476,4001,0.0807,algo_modular,33.949097300002904,0.6847
+encoded substitution key,328140.8071099845,True,cca_lite,accuracy,8,86388,4001,0.0732,algo_modular,30.868362099998194,0.452
+encoded substitution key,559033.6908677123,True,dyrelu,accuracy,8,84564,4001,,algo_modular,21.528949499999726,0.3288
+encoded substitution key,506503.3993889553,True,meta_acon,accuracy,8,82996,4001,,algo_modular,21.410677200001373,0.2256
+encoded substitution key,572667.6815739711,True,rational,accuracy,8,81588,4001,,algo_modular,22.51248670000132,0.1575
+encoded substitution key,407308.8875077688,True,silu,accuracy,8,81332,4001,,algo_modular,9.87764099999913,0.0775
+encoded substitution key,853181.4506491459,True,b0h,accuracy,8,81332,4002,,algo_modular,10.814462399997865,0.1397
+encoded substitution key,315824.84813231457,True,cca_hinge,accuracy,8,87476,4002,0.082,algo_modular,33.45916710000165,0.4748
+encoded substitution key,363390.18293818744,True,cca_lite,accuracy,8,86388,4002,0.0812,algo_modular,30.66773699999976,0.4525
+encoded substitution key,510994.1673646539,True,dyrelu,accuracy,8,84564,4002,,algo_modular,21.509734999999637,0.207
+encoded substitution key,458733.5431426001,True,meta_acon,accuracy,8,82996,4002,,algo_modular,22.140690500000346,0.1999
+encoded substitution key,469894.7462763484,True,rational,accuracy,8,81588,4002,,algo_modular,21.6776729000012,0.1583
+encoded substitution key,362946.0185050979,True,silu,accuracy,8,81332,4002,,algo_modular,9.75675869999759,0.0831
+encoded substitution key,903866.9080251702,True,b0h,accuracy,8,81332,4003,,algo_modular,10.975914799997554,0.0967
+encoded substitution key,350021.92694218253,True,cca_hinge,accuracy,8,87476,4003,0.0764,algo_modular,34.928451500003575,0.4466
+encoded substitution key,336244.38080082735,True,cca_lite,accuracy,8,86388,4003,0.0781,algo_modular,31.263307299999724,0.7029
+encoded substitution key,568339.6511482163,True,dyrelu,accuracy,8,84564,4003,,algo_modular,22.08630450000055,0.2525
+encoded substitution key,487229.6196480794,True,meta_acon,accuracy,8,82996,4003,,algo_modular,22.01726509999935,0.2025
+encoded substitution key,489205.8271224792,True,rational,accuracy,8,81588,4003,,algo_modular,22.467039999999542,0.1661
+encoded substitution key,357617.16676720546,True,silu,accuracy,8,81332,4003,,algo_modular,9.883745999999519,0.0717
+encoded substitution key,929526.8488354054,True,b0h,accuracy,8,81332,4004,,algo_modular,11.327014899998176,0.1118
+encoded substitution key,334021.84841492475,True,cca_hinge,accuracy,8,87476,4004,0.0921,algo_modular,34.5853618000001,0.4554
+encoded substitution key,301449.7503373455,True,cca_lite,accuracy,8,86388,4004,0.0897,algo_modular,30.915524700001697,0.4597
+encoded substitution key,447474.76202287886,True,dyrelu,accuracy,8,84564,4004,,algo_modular,22.28079179999986,0.2188
+encoded substitution key,466735.1770299255,True,meta_acon,accuracy,8,82996,4004,,algo_modular,22.16055730000153,0.2458
+encoded substitution key,479706.7527499078,True,rational,accuracy,8,81588,4004,,algo_modular,22.447379099998216,0.1674
+encoded substitution key,371096.06524234737,True,silu,accuracy,8,81332,4004,,algo_modular,9.98755489999894,0.0884
+encoded substitution key,894713.2762712316,True,b0h,accuracy,8,81332,4005,,algo_modular,10.669817599999078,0.1468
+encoded substitution key,334091.6893347724,True,cca_hinge,accuracy,8,87476,4005,0.0797,algo_modular,34.12932130000263,0.3843
+encoded substitution key,322814.4547898183,True,cca_lite,accuracy,8,86388,4005,0.076,algo_modular,31.364359300001524,0.4037
+encoded substitution key,345040.52533836244,True,dyrelu,accuracy,8,84564,4005,,algo_modular,23.137938300002133,0.4607
+encoded substitution key,424467.77127561334,True,meta_acon,accuracy,8,82996,4005,,algo_modular,22.736393200000748,0.241
+encoded substitution key,461113.94812569226,True,rational,accuracy,8,81588,4005,,algo_modular,22.95627610000156,0.1589
+encoded substitution key,409415.0835194065,True,silu,accuracy,8,81332,4005,,algo_modular,10.193768200002523,0.0801
+encoded substitution key,1069832.2291019699,True,b0h,accuracy,8,81332,4006,,algo_modular,10.696938200002478,0.114
+encoded substitution key,345192.4489480994,True,cca_hinge,accuracy,8,87476,4006,0.0883,algo_modular,33.82065499999953,0.4357
+encoded substitution key,332520.3796673055,True,cca_lite,accuracy,8,86388,4006,0.0837,algo_modular,30.919314499999018,0.4557
+encoded substitution key,545256.521089134,True,dyrelu,accuracy,8,84564,4006,,algo_modular,22.05905630000052,0.2261
+encoded substitution key,447111.04478248354,True,meta_acon,accuracy,8,82996,4006,,algo_modular,21.687506700000085,0.2142
+encoded substitution key,495136.8197379294,True,rational,accuracy,8,81588,4006,,algo_modular,22.277848100002302,0.1563
+encoded substitution key,374834.46904533164,True,silu,accuracy,8,81332,4006,,algo_modular,9.948075800002698,0.086
+encoded substitution key,762126.1305459782,True,b0h,accuracy,8,81332,4007,,algo_modular,10.487086199998885,0.1213
+encoded substitution key,275847.5911122218,True,cca_hinge,accuracy,8,87476,4007,0.0855,algo_modular,33.69088319999719,0.4223
+encoded substitution key,328934.06110797415,True,cca_lite,accuracy,8,86388,4007,0.0857,algo_modular,30.716087699998752,0.3004
+encoded substitution key,604397.0517245106,True,dyrelu,accuracy,8,84564,4007,,algo_modular,21.945381599998655,0.2494
+encoded substitution key,384892.9897933667,True,meta_acon,accuracy,8,82996,4007,,algo_modular,21.732489399997576,0.2222
+encoded substitution key,526722.4453018797,True,rational,accuracy,8,81588,4007,,algo_modular,22.376334500000667,0.1665
+encoded substitution key,351919.11649029335,True,silu,accuracy,8,81332,4007,,algo_modular,9.733026900001278,0.0884
+encoded substitution key,897047.8059317638,True,b0h,accuracy,8,81332,4008,,algo_modular,10.951364600001398,0.1233
+encoded substitution key,329306.594487223,True,cca_hinge,accuracy,8,87476,4008,0.0868,algo_modular,34.108877399998164,0.6169
+encoded substitution key,348385.09793986764,True,cca_lite,accuracy,8,86388,4008,0.0808,algo_modular,30.892557099999976,0.4718
+encoded substitution key,591601.1142847068,True,dyrelu,accuracy,8,84564,4008,,algo_modular,21.885338299998693,0.3398
+encoded substitution key,457290.63488905184,True,meta_acon,accuracy,8,82996,4008,,algo_modular,21.68686379999781,0.2426
+encoded substitution key,556725.9876225714,True,rational,accuracy,8,81588,4008,,algo_modular,21.824401099998795,0.167
+encoded substitution key,403130.81338770175,True,silu,accuracy,8,81332,4008,,algo_modular,9.883684899999935,0.0832
+encoded substitution key,782994.1662388575,True,b0h,accuracy,8,81332,4009,,algo_modular,11.478581999999733,0.1278
+encoded substitution key,266530.50914503855,True,cca_hinge,accuracy,8,87476,4009,0.0788,algo_modular,35.509724900002766,0.5598
+encoded substitution key,332549.38028118765,True,cca_lite,accuracy,8,86388,4009,0.079,algo_modular,32.06050369999866,0.5235
+encoded substitution key,506075.604194066,True,dyrelu,accuracy,8,84564,4009,,algo_modular,23.11971099999937,0.383
+encoded substitution key,463904.96941811463,True,meta_acon,accuracy,8,82996,4009,,algo_modular,22.455605099999957,0.2081
+encoded substitution key,524353.5441930242,True,rational,accuracy,8,81588,4009,,algo_modular,22.893436600003042,0.1575
+encoded substitution key,392903.51892010885,True,silu,accuracy,8,81332,4009,,algo_modular,9.779916300001787,0.0797
+encoded substitution key,772933.4420595322,True,b0h,accuracy,8,81332,4010,,algo_modular,11.182127400003083,0.1271
+encoded substitution key,276592.04476325033,True,cca_hinge,accuracy,8,87476,4010,0.0758,algo_modular,34.969864299997425,0.5072
+encoded substitution key,260261.17307602812,True,cca_lite,accuracy,8,86388,4010,0.0829,algo_modular,31.474575500000356,0.4876
+encoded substitution key,497865.3522581258,True,dyrelu,accuracy,8,84564,4010,,algo_modular,22.488723099999333,0.3107
+encoded substitution key,417568.046512554,True,meta_acon,accuracy,8,82996,4010,,algo_modular,21.977257700000337,0.322
+encoded substitution key,495834.8282761413,True,rational,accuracy,8,81588,4010,,algo_modular,22.74209389999669,0.1536
+encoded substitution key,343760.8928611676,True,silu,accuracy,8,81332,4010,,algo_modular,10.02901760000168,0.0828
+global-average pooling of log-STFT preactivation,29860.135976933754,True,cca_hinge,accuracy,6,31178,4001,0.6933333333333334,audio_digits,2.885576399999991,0.765
+global-average pooling of log-STFT preactivation,30949.324216299978,True,cca_lite,accuracy,6,30090,4001,0.6816666666666666,audio_digits,2.6210709999977553,0.745
+global-average pooling of log-STFT preactivation,36665.63319540766,True,dyrelu,accuracy,6,28266,4001,,audio_digits,1.9889599999987695,0.7233333333333334
+global-average pooling of log-STFT preactivation,34197.806737419996,True,meta_acon,accuracy,6,26698,4001,,audio_digits,1.8507962000003317,0.7266666666666667
+global-average pooling of log-STFT preactivation,44642.418221812244,True,rational,accuracy,6,25546,4001,,audio_digits,2.0137576000015542,0.7533333333333333
+global-average pooling of log-STFT preactivation,18104.51860751207,True,silu,accuracy,6,25290,4001,,audio_digits,1.5126649999983783,0.7083333333333334
+global-average pooling of log-STFT preactivation,30587.44940747493,True,cca_hinge,accuracy,6,31178,4002,0.6866666666666666,audio_digits,2.9031137000019953,0.7466666666666667
+global-average pooling of log-STFT preactivation,25573.98479736596,True,cca_lite,accuracy,6,30090,4002,0.6633333333333333,audio_digits,2.600465899999108,0.7216666666666667
+global-average pooling of log-STFT preactivation,39180.18402329093,True,dyrelu,accuracy,6,28266,4002,,audio_digits,1.9955029000011564,0.7566666666666667
+global-average pooling of log-STFT preactivation,41762.071025555924,True,meta_acon,accuracy,6,26698,4002,,audio_digits,1.828739199998381,0.755
+global-average pooling of log-STFT preactivation,38205.28920601184,True,rational,accuracy,6,25546,4002,,audio_digits,1.9869498000007297,0.7483333333333333
+global-average pooling of log-STFT preactivation,18631.414356787493,True,silu,accuracy,6,25290,4002,,audio_digits,1.6290558000000601,0.7366666666666667
+global-average pooling of log-STFT preactivation,26199.389932850972,True,cca_hinge,accuracy,6,31178,4003,0.7266666666666667,audio_digits,2.9629002999972727,0.795
+global-average pooling of log-STFT preactivation,27922.314929877506,True,cca_lite,accuracy,6,30090,4003,0.6916666666666667,audio_digits,2.5354860999977973,0.7783333333333333
+global-average pooling of log-STFT preactivation,38701.171838956725,True,dyrelu,accuracy,6,28266,4003,,audio_digits,1.9876854000031017,0.7683333333333333
+global-average pooling of log-STFT preactivation,37895.200951678235,True,meta_acon,accuracy,6,26698,4003,,audio_digits,1.8346985999996832,0.7516666666666667
+global-average pooling of log-STFT preactivation,48560.17289286817,True,rational,accuracy,6,25546,4003,,audio_digits,2.042057399998157,0.7733333333333333
+global-average pooling of log-STFT preactivation,17520.43275757639,True,silu,accuracy,6,25290,4003,,audio_digits,1.4598561999991944,0.7633333333333333
+global-average pooling of log-STFT preactivation,30241.205522909982,True,cca_hinge,accuracy,6,31178,4004,0.6533333333333333,audio_digits,2.874528800002736,0.7533333333333333
+global-average pooling of log-STFT preactivation,24378.637785893497,True,cca_lite,accuracy,6,30090,4004,0.62,audio_digits,2.595101099999738,0.725
+global-average pooling of log-STFT preactivation,37297.62127073052,True,dyrelu,accuracy,6,28266,4004,,audio_digits,1.998713000000862,0.715
+global-average pooling of log-STFT preactivation,24320.210288276623,True,meta_acon,accuracy,6,26698,4004,,audio_digits,1.941219500000443,0.715
+global-average pooling of log-STFT preactivation,37864.41177798173,True,rational,accuracy,6,25546,4004,,audio_digits,1.997277500002383,0.7233333333333334
+global-average pooling of log-STFT preactivation,15640.466868031472,True,silu,accuracy,6,25290,4004,,audio_digits,1.4846918000002916,0.6916666666666667
+global-average pooling of log-STFT preactivation,29619.7450654991,True,cca_hinge,accuracy,6,31178,4005,0.6883333333333334,audio_digits,2.8623316000011982,0.7383333333333333
+global-average pooling of log-STFT preactivation,36405.728669386335,True,cca_lite,accuracy,6,30090,4005,0.71,audio_digits,2.518868499999371,0.755
+global-average pooling of log-STFT preactivation,37778.01396081963,True,dyrelu,accuracy,6,28266,4005,,audio_digits,1.9473069999985455,0.7433333333333333
+global-average pooling of log-STFT preactivation,43255.11172224132,True,meta_acon,accuracy,6,26698,4005,,audio_digits,1.8346810999973968,0.7433333333333333
+global-average pooling of log-STFT preactivation,35971.21825016795,True,rational,accuracy,6,25546,4005,,audio_digits,1.9802839000003587,0.74
+global-average pooling of log-STFT preactivation,16645.714852663954,True,silu,accuracy,6,25290,4005,,audio_digits,1.438089500003116,0.7233333333333334
+global-average pooling of log-STFT preactivation,26317.476784070943,True,cca_hinge,accuracy,6,31178,4006,0.6616666666666666,audio_digits,2.899478100000124,0.75
+global-average pooling of log-STFT preactivation,38839.7444207797,True,cca_lite,accuracy,6,30090,4006,0.6516666666666666,audio_digits,2.5883340000000317,0.7033333333333334
+global-average pooling of log-STFT preactivation,37568.22069953872,True,dyrelu,accuracy,6,28266,4006,,audio_digits,2.0123199000008754,0.7133333333333334
+global-average pooling of log-STFT preactivation,41915.096602265156,True,meta_acon,accuracy,6,26698,4006,,audio_digits,1.915544100000261,0.7183333333333334
+global-average pooling of log-STFT preactivation,44311.48909196556,True,rational,accuracy,6,25546,4006,,audio_digits,2.009140900001512,0.7533333333333333
+global-average pooling of log-STFT preactivation,18193.126382603416,True,silu,accuracy,6,25290,4006,,audio_digits,1.4979658999982348,0.7183333333333334
+global-average pooling of log-STFT preactivation,27609.847720191337,True,cca_hinge,accuracy,6,31178,4007,0.64,audio_digits,2.8781321000024036,0.745
+global-average pooling of log-STFT preactivation,30107.70224678774,True,cca_lite,accuracy,6,30090,4007,0.6433333333333333,audio_digits,2.5023249000005308,0.735
+global-average pooling of log-STFT preactivation,38668.46545074599,True,dyrelu,accuracy,6,28266,4007,,audio_digits,1.9987521000002744,0.7366666666666667
+global-average pooling of log-STFT preactivation,36718.06005427646,True,meta_acon,accuracy,6,26698,4007,,audio_digits,1.8589265999980853,0.735
+global-average pooling of log-STFT preactivation,46039.81632242366,True,rational,accuracy,6,25546,4007,,audio_digits,2.0342313000001013,0.73
+global-average pooling of log-STFT preactivation,16435.467838739805,True,silu,accuracy,6,25290,4007,,audio_digits,1.4810159000007843,0.725
+global-average pooling of log-STFT preactivation,30285.24116684317,True,cca_hinge,accuracy,6,31178,4008,0.74,audio_digits,2.887107200000173,0.7833333333333333
+global-average pooling of log-STFT preactivation,28102.225547453407,True,cca_lite,accuracy,6,30090,4008,0.6866666666666666,audio_digits,2.5314375999987533,0.745
+global-average pooling of log-STFT preactivation,45564.672013905234,True,dyrelu,accuracy,6,28266,4008,,audio_digits,2.0250926000007894,0.7583333333333333
+global-average pooling of log-STFT preactivation,34055.2715265843,True,meta_acon,accuracy,6,26698,4008,,audio_digits,1.9041370000013558,0.7833333333333333
+global-average pooling of log-STFT preactivation,40471.88691079269,True,rational,accuracy,6,25546,4008,,audio_digits,1.9886355999988155,0.77
+global-average pooling of log-STFT preactivation,16288.453796415557,True,silu,accuracy,6,25290,4008,,audio_digits,1.4747568000020692,0.765
+global-average pooling of log-STFT preactivation,28486.494685487247,True,cca_hinge,accuracy,6,31178,4009,0.7033333333333334,audio_digits,2.907615399999486,0.765
+global-average pooling of log-STFT preactivation,31888.16888201827,True,cca_lite,accuracy,6,30090,4009,0.7283333333333334,audio_digits,2.5829852999995637,0.7616666666666667
+global-average pooling of log-STFT preactivation,43858.94491015877,True,dyrelu,accuracy,6,28266,4009,,audio_digits,2.0815436000011687,0.7616666666666667
+global-average pooling of log-STFT preactivation,39978.75071487577,True,meta_acon,accuracy,6,26698,4009,,audio_digits,1.8726218000010704,0.77
+global-average pooling of log-STFT preactivation,37407.949579332286,True,rational,accuracy,6,25546,4009,,audio_digits,2.053403599999001,0.7666666666666667
+global-average pooling of log-STFT preactivation,17666.426114426115,True,silu,accuracy,6,25290,4009,,audio_digits,1.5023062999971444,0.745
+global-average pooling of log-STFT preactivation,27093.820248912623,True,cca_hinge,accuracy,6,31178,4010,0.655,audio_digits,2.8472259000009217,0.7283333333333334
+global-average pooling of log-STFT preactivation,27548.7947454844,True,cca_lite,accuracy,6,30090,4010,0.655,audio_digits,2.5840884999997797,0.72
+global-average pooling of log-STFT preactivation,40672.03878787879,True,dyrelu,accuracy,6,28266,4010,,audio_digits,1.9725871000009647,0.6933333333333334
+global-average pooling of log-STFT preactivation,37150.61116031887,True,meta_acon,accuracy,6,26698,4010,,audio_digits,1.8378339000009873,0.6966666666666667
+global-average pooling of log-STFT preactivation,44276.40662936767,True,rational,accuracy,6,25546,4010,,audio_digits,2.013903200000641,0.715
+global-average pooling of log-STFT preactivation,17510.801859222356,True,silu,accuracy,6,25290,4010,,audio_digits,1.5045380999981717,0.7
+global-average pooling; no domain identity,66609.55874762779,True,cca_hinge,accuracy,3,26378,4001,0.801,digits_multidomain,4.068414999997913,0.893
+global-average pooling; no domain identity,83067.58737242372,True,cca_lite,accuracy,3,25290,4001,0.8165,digits_multidomain,3.53587189999962,0.8868333333333334
+global-average pooling; no domain identity,120546.1835077719,True,dyrelu,accuracy,3,23466,4001,,digits_multidomain,2.525132200000371,0.8846666666666667
+global-average pooling; no domain identity,104066.26279334229,True,meta_acon,accuracy,3,21898,4001,,digits_multidomain,2.179913600000873,0.8436666666666667
+global-average pooling; no domain identity,95705.37476564075,True,rational,accuracy,3,20746,4001,,digits_multidomain,2.939394099998026,0.8363333333333334
+global-average pooling; no domain identity,96654.45579158809,True,silu,accuracy,3,20490,4001,,digits_multidomain,1.4299943000005442,0.8043333333333333
+global-average pooling; no domain identity,64247.69977023232,True,cca_hinge,accuracy,3,26378,4002,0.8133333333333334,digits_multidomain,4.145539799999824,0.8918333333333334
+global-average pooling; no domain identity,80370.66702435473,True,cca_lite,accuracy,3,25290,4002,0.8196666666666667,digits_multidomain,3.5891417999991972,0.8858333333333334
+global-average pooling; no domain identity,124343.83291582053,True,dyrelu,accuracy,3,23466,4002,,digits_multidomain,2.442129200000636,0.8671666666666666
+global-average pooling; no domain identity,91023.20988726006,True,meta_acon,accuracy,3,21898,4002,,digits_multidomain,2.2036234000006516,0.834
+global-average pooling; no domain identity,89298.45963870171,True,rational,accuracy,3,20746,4002,,digits_multidomain,2.964669299999514,0.8223333333333334
+global-average pooling; no domain identity,99187.77860546511,True,silu,accuracy,3,20490,4002,,digits_multidomain,1.4681915000001027,0.813
+global-average pooling; no domain identity,68588.36066512042,True,cca_hinge,accuracy,3,26378,4003,0.8448333333333333,digits_multidomain,4.090601899999456,0.892
+global-average pooling; no domain identity,86216.8077015314,True,cca_lite,accuracy,3,25290,4003,0.8408333333333333,digits_multidomain,3.5128598000010243,0.8873333333333333
+global-average pooling; no domain identity,126305.92486637055,True,dyrelu,accuracy,3,23466,4003,,digits_multidomain,2.438801799999055,0.8765
+global-average pooling; no domain identity,127483.21471087358,True,meta_acon,accuracy,3,21898,4003,,digits_multidomain,2.1713887000005343,0.8436666666666667
+global-average pooling; no domain identity,97558.21319057052,True,rational,accuracy,3,20746,4003,,digits_multidomain,2.9508997999982967,0.8466666666666667
+global-average pooling; no domain identity,109936.67435521074,True,silu,accuracy,3,20490,4003,,digits_multidomain,1.3986662999996042,0.8203333333333334
+global-average pooling; no domain identity,69459.75247579407,True,cca_hinge,accuracy,3,26378,4004,0.835,digits_multidomain,4.139242599998397,0.9018333333333334
+global-average pooling; no domain identity,73801.36893904292,True,cca_lite,accuracy,3,25290,4004,0.843,digits_multidomain,3.5870090999997046,0.8961666666666667
+global-average pooling; no domain identity,110226.06882716996,True,dyrelu,accuracy,3,23466,4004,,digits_multidomain,2.4376770999988366,0.8928333333333334
+global-average pooling; no domain identity,124587.60452094875,True,meta_acon,accuracy,3,21898,4004,,digits_multidomain,2.158147399997688,0.8515
+global-average pooling; no domain identity,95360.85122830152,True,rational,accuracy,3,20746,4004,,digits_multidomain,2.933931300001859,0.8528333333333333
+global-average pooling; no domain identity,95789.88957783792,True,silu,accuracy,3,20490,4004,,digits_multidomain,1.412000700001954,0.8295
+global-average pooling; no domain identity,68144.1093086165,True,cca_hinge,accuracy,3,26378,4005,0.831,digits_multidomain,4.091600300002028,0.8893333333333333
+global-average pooling; no domain identity,70142.18622398497,True,cca_lite,accuracy,3,25290,4005,0.8393333333333334,digits_multidomain,3.6048749000001408,0.8828333333333334
+global-average pooling; no domain identity,133524.82318422268,True,dyrelu,accuracy,3,23466,4005,,digits_multidomain,2.4389698000013595,0.8731666666666666
+global-average pooling; no domain identity,119233.14255391729,True,meta_acon,accuracy,3,21898,4005,,digits_multidomain,2.1846508999988146,0.8181666666666667
+global-average pooling; no domain identity,102997.2128430229,True,rational,accuracy,3,20746,4005,,digits_multidomain,2.9160874000008334,0.8338333333333333
+global-average pooling; no domain identity,92235.21132955095,True,silu,accuracy,3,20490,4005,,digits_multidomain,1.3970601999972132,0.807
+global-average pooling; no domain identity,69075.96323022828,True,cca_hinge,accuracy,3,26378,4006,0.7765,digits_multidomain,4.0899859000019205,0.8806666666666667
+global-average pooling; no domain identity,79777.28395218274,True,cca_lite,accuracy,3,25290,4006,0.7841666666666667,digits_multidomain,3.552888800000801,0.8771666666666667
+global-average pooling; no domain identity,106526.5154080596,True,dyrelu,accuracy,3,23466,4006,,digits_multidomain,2.4586882000003243,0.8626666666666667
+global-average pooling; no domain identity,109434.70660369974,True,meta_acon,accuracy,3,21898,4006,,digits_multidomain,2.182969500001491,0.8111666666666667
+global-average pooling; no domain identity,90598.19853550008,True,rational,accuracy,3,20746,4006,,digits_multidomain,2.8983599999992293,0.8275
+global-average pooling; no domain identity,102844.42046931319,True,silu,accuracy,3,20490,4006,,digits_multidomain,1.3673524000005273,0.8186666666666667
+global-average pooling; no domain identity,67755.15786582953,True,cca_hinge,accuracy,3,26378,4007,0.8175,digits_multidomain,4.16559050000069,0.8866666666666667
+global-average pooling; no domain identity,78712.8116427966,True,cca_lite,accuracy,3,25290,4007,0.8295,digits_multidomain,3.59888409999985,0.8803333333333333
+global-average pooling; no domain identity,115558.29843508927,True,dyrelu,accuracy,3,23466,4007,,digits_multidomain,2.460882600000332,0.8743333333333333
+global-average pooling; no domain identity,126069.91353485157,True,meta_acon,accuracy,3,21898,4007,,digits_multidomain,2.16697810000187,0.7983333333333333
+global-average pooling; no domain identity,97784.89969264723,True,rational,accuracy,3,20746,4007,,digits_multidomain,2.960003600001073,0.828
+global-average pooling; no domain identity,107567.402138882,True,silu,accuracy,3,20490,4007,,digits_multidomain,1.4091421000011906,0.79
+global-average pooling; no domain identity,69347.20691327543,True,cca_hinge,accuracy,3,26378,4008,0.8121666666666667,digits_multidomain,4.1097188999992795,0.876
+global-average pooling; no domain identity,76125.81447265731,True,cca_lite,accuracy,3,25290,4008,0.8128333333333333,digits_multidomain,3.5871426000012434,0.8808333333333334
+global-average pooling; no domain identity,102361.68101134016,True,dyrelu,accuracy,3,23466,4008,,digits_multidomain,2.463936799998919,0.8668333333333333
+global-average pooling; no domain identity,108636.33381106141,True,meta_acon,accuracy,3,21898,4008,,digits_multidomain,2.179914899999858,0.833
+global-average pooling; no domain identity,91268.48339341539,True,rational,accuracy,3,20746,4008,,digits_multidomain,2.9485667000008107,0.8271666666666667
+global-average pooling; no domain identity,104263.29919459083,True,silu,accuracy,3,20490,4008,,digits_multidomain,1.4347864000010304,0.8201666666666667
+global-average pooling; no domain identity,71014.27011346673,True,cca_hinge,accuracy,3,26378,4009,0.7931666666666667,digits_multidomain,4.097422099999676,0.8943333333333333
+global-average pooling; no domain identity,77189.38615513439,True,cca_lite,accuracy,3,25290,4009,0.8036666666666666,digits_multidomain,3.5195863999979338,0.8906666666666667
+global-average pooling; no domain identity,120279.42722771331,True,dyrelu,accuracy,3,23466,4009,,digits_multidomain,2.41455749999659,0.8783333333333333
+global-average pooling; no domain identity,126181.16545161,True,meta_acon,accuracy,3,21898,4009,,digits_multidomain,2.1668172999998205,0.8435
+global-average pooling; no domain identity,92650.50934942438,True,rational,accuracy,3,20746,4009,,digits_multidomain,2.9018595999987156,0.8401666666666666
+global-average pooling; no domain identity,95857.75502508256,True,silu,accuracy,3,20490,4009,,digits_multidomain,1.3907960999968054,0.817
+global-average pooling; no domain identity,69920.21604681014,True,cca_hinge,accuracy,3,26378,4010,0.8258333333333333,digits_multidomain,4.028082799999538,0.8901666666666667
+global-average pooling; no domain identity,82636.88574383897,True,cca_lite,accuracy,3,25290,4010,0.8118333333333333,digits_multidomain,3.525075300000026,0.8856666666666667
+global-average pooling; no domain identity,130684.71041548744,True,dyrelu,accuracy,3,23466,4010,,digits_multidomain,2.420167100000981,0.8758333333333334
+global-average pooling; no domain identity,129702.02238852125,True,meta_acon,accuracy,3,21898,4010,,digits_multidomain,2.1343436000024667,0.8453333333333334
+global-average pooling; no domain identity,96592.87235880016,True,rational,accuracy,3,20746,4010,,digits_multidomain,2.893815399998857,0.8268333333333333
+global-average pooling; no domain identity,86821.21590571935,True,silu,accuracy,3,20490,4010,,digits_multidomain,1.4414612000000488,0.8048333333333333
+global-average pooling of each convolution preactivation,71299.68857519754,True,cca_hinge,accuracy,8,26378,4001,0.6043,image_cls,8.907062999998743,0.8761
+global-average pooling of each convolution preactivation,76753.10677497451,True,cca_lite,accuracy,8,25290,4001,0.5857,image_cls,7.810577000000194,0.8771
+global-average pooling of each convolution preactivation,116713.34119899379,True,dyrelu,accuracy,8,23466,4001,,image_cls,5.300337500000751,0.8773
+global-average pooling of each convolution preactivation,103759.05104703947,True,meta_acon,accuracy,8,21898,4001,,image_cls,4.769303500001115,0.8586
+global-average pooling of each convolution preactivation,93728.51093308305,True,rational,accuracy,8,20746,4001,,image_cls,6.395525100000668,0.8643
+global-average pooling of each convolution preactivation,132421.0393382585,True,silu,accuracy,8,20490,4001,,image_cls,2.5370088999989093,0.8482
+global-average pooling of each convolution preactivation,61059.65914467353,True,cca_hinge,accuracy,8,26378,4002,0.498,image_cls,9.040384100000665,0.8728
+global-average pooling of each convolution preactivation,82215.94528743112,True,cca_lite,accuracy,8,25290,4002,0.5072,image_cls,7.726511100001517,0.8727
+global-average pooling of each convolution preactivation,121107.85151648149,True,dyrelu,accuracy,8,23466,4002,,image_cls,5.2549667000021145,0.8785
+global-average pooling of each convolution preactivation,117014.53229662735,True,meta_acon,accuracy,8,21898,4002,,image_cls,4.784935800002131,0.8581
+global-average pooling of each convolution preactivation,94900.62628968613,True,rational,accuracy,8,20746,4002,,image_cls,6.4092978999979096,0.8652
+global-average pooling of each convolution preactivation,102298.85001402422,True,silu,accuracy,8,20490,4002,,image_cls,2.702381000002788,0.8429
+global-average pooling of each convolution preactivation,67169.80044296186,True,cca_hinge,accuracy,8,26378,4003,0.6692,image_cls,8.938868500001263,0.8808
+global-average pooling of each convolution preactivation,81196.21189242766,True,cca_lite,accuracy,8,25290,4003,0.6354,image_cls,7.721548699999403,0.883
+global-average pooling of each convolution preactivation,125258.81660798386,True,dyrelu,accuracy,8,23466,4003,,image_cls,5.190130700000736,0.8808
+global-average pooling of each convolution preactivation,126275.5039063088,True,meta_acon,accuracy,8,21898,4003,,image_cls,4.7413493000021845,0.8632
+global-average pooling of each convolution preactivation,93513.6882612486,True,rational,accuracy,8,20746,4003,,image_cls,6.428673400001571,0.8649
+global-average pooling of each convolution preactivation,133287.9115291725,True,silu,accuracy,8,20490,4003,,image_cls,2.515535099999397,0.8506
+global-average pooling of each convolution preactivation,66746.19189173706,True,cca_hinge,accuracy,8,26378,4004,0.5691,image_cls,8.956017699998483,0.8814
+global-average pooling of each convolution preactivation,76503.35339105628,True,cca_lite,accuracy,8,25290,4004,0.5882,image_cls,7.640781400001288,0.8801
+global-average pooling of each convolution preactivation,118407.23603790789,True,dyrelu,accuracy,8,23466,4004,,image_cls,5.3084806999977445,0.8823
+global-average pooling of each convolution preactivation,118205.01475341921,True,meta_acon,accuracy,8,21898,4004,,image_cls,4.772059800001443,0.8714
+global-average pooling of each convolution preactivation,94270.33441741604,True,rational,accuracy,8,20746,4004,,image_cls,6.380947699999524,0.8695
+global-average pooling of each convolution preactivation,133675.75302692762,True,silu,accuracy,8,20490,4004,,image_cls,2.540382799998042,0.8535
+global-average pooling of each convolution preactivation,66407.70488870311,True,cca_hinge,accuracy,8,26378,4005,0.6324,image_cls,9.000464500000817,0.8745
+global-average pooling of each convolution preactivation,74975.53729467683,True,cca_lite,accuracy,8,25290,4005,0.641,image_cls,7.676520199998777,0.8661
+global-average pooling of each convolution preactivation,130781.01224774876,True,dyrelu,accuracy,8,23466,4005,,image_cls,5.328443200000038,0.8832
+global-average pooling of each convolution preactivation,105174.96545827034,True,meta_acon,accuracy,8,21898,4005,,image_cls,4.813055200000235,0.8602
+global-average pooling of each convolution preactivation,94653.0542240998,True,rational,accuracy,8,20746,4005,,image_cls,6.403748299999279,0.863
+global-average pooling of each convolution preactivation,133746.9387755102,True,silu,accuracy,8,20490,4005,,image_cls,2.5004429000000528,0.8451
+global-average pooling of each convolution preactivation,70458.2816077569,True,cca_hinge,accuracy,8,26378,4006,0.4791,image_cls,9.03556860000026,0.8755
+global-average pooling of each convolution preactivation,73243.88936329234,True,cca_lite,accuracy,8,25290,4006,0.4512,image_cls,7.704923700002837,0.8738
+global-average pooling of each convolution preactivation,120184.76279986705,True,dyrelu,accuracy,8,23466,4006,,image_cls,5.260139999998501,0.873
+global-average pooling of each convolution preactivation,110461.88366789042,True,meta_acon,accuracy,8,21898,4006,,image_cls,4.723426700002165,0.867
+global-average pooling of each convolution preactivation,97324.67050306292,True,rational,accuracy,8,20746,4006,,image_cls,6.399896099999751,0.8677
+global-average pooling of each convolution preactivation,130807.52353834591,True,silu,accuracy,8,20490,4006,,image_cls,2.5178877000034845,0.8526
+global-average pooling of each convolution preactivation,66714.0237220037,True,cca_hinge,accuracy,8,26378,4007,0.566,image_cls,9.032228599997325,0.8774
+global-average pooling of each convolution preactivation,79325.49844348704,True,cca_lite,accuracy,8,25290,4007,0.5626,image_cls,7.764057299998967,0.8778
+global-average pooling of each convolution preactivation,115388.85205492265,True,dyrelu,accuracy,8,23466,4007,,image_cls,5.2592045000019425,0.8822
+global-average pooling of each convolution preactivation,116516.85955096757,True,meta_acon,accuracy,8,21898,4007,,image_cls,4.7449586000002455,0.87
+global-average pooling of each convolution preactivation,97280.20187541893,True,rational,accuracy,8,20746,4007,,image_cls,6.389660200002254,0.8646
+global-average pooling of each convolution preactivation,118312.37958765737,True,silu,accuracy,8,20490,4007,,image_cls,2.5514418999991904,0.8533
+global-average pooling of each convolution preactivation,66794.76828163245,True,cca_hinge,accuracy,8,26378,4008,0.55,image_cls,8.966204000000289,0.8816
+global-average pooling of each convolution preactivation,76347.38637459931,True,cca_lite,accuracy,8,25290,4008,0.5519,image_cls,7.745186099997227,0.878
+global-average pooling of each convolution preactivation,117941.43285361587,True,dyrelu,accuracy,8,23466,4008,,image_cls,5.345462700002827,0.8789
+global-average pooling of each convolution preactivation,117823.81643964144,True,meta_acon,accuracy,8,21898,4008,,image_cls,4.713835400001699,0.8619
+global-average pooling of each convolution preactivation,97557.38116725435,True,rational,accuracy,8,20746,4008,,image_cls,6.41999659999783,0.8592
+global-average pooling of each convolution preactivation,121372.09396540248,True,silu,accuracy,8,20490,4008,,image_cls,2.528697800000373,0.8543
+global-average pooling of each convolution preactivation,67478.538424907,True,cca_hinge,accuracy,8,26378,4009,0.572,image_cls,8.940366599999834,0.8856
+global-average pooling of each convolution preactivation,73798.81515211765,True,cca_lite,accuracy,8,25290,4009,0.5904,image_cls,7.717420299999503,0.8857
+global-average pooling of each convolution preactivation,124875.44621723895,True,dyrelu,accuracy,8,23466,4009,,image_cls,5.25139499999932,0.8832
+global-average pooling of each convolution preactivation,108136.84997550726,True,meta_acon,accuracy,8,21898,4009,,image_cls,4.739766700000473,0.8667
+global-average pooling of each convolution preactivation,94404.43313053832,True,rational,accuracy,8,20746,4009,,image_cls,6.37505610000153,0.8702
+global-average pooling of each convolution preactivation,132804.68613947596,True,silu,accuracy,8,20490,4009,,image_cls,2.5286924000029103,0.857
+global-average pooling of each convolution preactivation,66629.98100055283,True,cca_hinge,accuracy,8,26378,4010,0.6157,image_cls,8.938738100001501,0.8968
+global-average pooling of each convolution preactivation,77846.1527040019,True,cca_lite,accuracy,8,25290,4010,0.6637,image_cls,7.845716600000742,0.8923
+global-average pooling of each convolution preactivation,117065.80776251375,True,dyrelu,accuracy,8,23466,4010,,image_cls,5.289700299999822,0.8742
+global-average pooling of each convolution preactivation,126921.66166360027,True,meta_acon,accuracy,8,21898,4010,,image_cls,4.74216229999729,0.8714
+global-average pooling of each convolution preactivation,96446.27890131874,True,rational,accuracy,8,20746,4010,,image_cls,6.410747199999605,0.8728
+global-average pooling of each convolution preactivation,125375.2615531775,True,silu,accuracy,8,20490,4010,,image_cls,2.516259699998045,0.8556
+global-average pooling; identity regime only,68480.78056553776,True,cca_hinge,accuracy,1,26378,4001,0.9863,image_cls_single,8.979915799998707,0.986
+global-average pooling; identity regime only,82118.23856027442,True,cca_lite,accuracy,1,25290,4001,0.9862,image_cls_single,7.706580199999735,0.9859
+global-average pooling; identity regime only,113504.36232166439,True,dyrelu,accuracy,1,23466,4001,,image_cls_single,5.223697199999151,0.9847
+global-average pooling; identity regime only,120286.44108140972,True,meta_acon,accuracy,1,21898,4001,,image_cls_single,4.745967499999097,0.9842
+global-average pooling; identity regime only,97865.59272757817,True,rational,accuracy,1,20746,4001,,image_cls_single,6.353796899998997,0.9847
+global-average pooling; identity regime only,132613.21419876628,True,silu,accuracy,1,20490,4001,,image_cls_single,2.486191299998609,0.9834
+global-average pooling; identity regime only,65000.860106405235,True,cca_hinge,accuracy,1,26378,4002,0.9848,image_cls_single,8.931359800000791,0.985
+global-average pooling; identity regime only,68518.92873829104,True,cca_lite,accuracy,1,25290,4002,0.9851,image_cls_single,7.595282400001452,0.9846
+global-average pooling; identity regime only,141069.4129596868,True,dyrelu,accuracy,1,23466,4002,,image_cls_single,5.227280400002201,0.9839
+global-average pooling; identity regime only,115765.93460278382,True,meta_acon,accuracy,1,21898,4002,,image_cls_single,4.699671499998658,0.9833
+global-average pooling; identity regime only,98684.62970065008,True,rational,accuracy,1,20746,4002,,image_cls_single,6.193685999998706,0.9843
+global-average pooling; identity regime only,109117.54911754912,True,silu,accuracy,1,20490,4002,,image_cls_single,2.5162232000002405,0.9822
+global-average pooling; identity regime only,67345.92164418755,True,cca_hinge,accuracy,1,26378,4003,0.9838,image_cls_single,9.003147800001898,0.9834
+global-average pooling; identity regime only,73405.91720118659,True,cca_lite,accuracy,1,25290,4003,0.984,image_cls_single,7.795111300001736,0.9835
+global-average pooling; identity regime only,107661.92396446438,True,dyrelu,accuracy,1,23466,4003,,image_cls_single,5.2839389000000665,0.9806
+global-average pooling; identity regime only,108025.44621011152,True,meta_acon,accuracy,1,21898,4003,,image_cls_single,4.8484194000011485,0.9816
+global-average pooling; identity regime only,95865.20418448486,True,rational,accuracy,1,20746,4003,,image_cls_single,6.328188899999077,0.9777
+global-average pooling; identity regime only,109613.74018670096,True,silu,accuracy,1,20490,4003,,image_cls_single,2.6045024000013655,0.9811
+global-average pooling; identity regime only,67185.93971003535,True,cca_hinge,accuracy,1,26378,4004,0.9851,image_cls_single,8.876333099997282,0.9849
+global-average pooling; identity regime only,83478.3716329447,True,cca_lite,accuracy,1,25290,4004,0.9847,image_cls_single,7.716310100000555,0.9848
+global-average pooling; identity regime only,106157.22988689026,True,dyrelu,accuracy,1,23466,4004,,image_cls_single,5.315827399997943,0.9821
+global-average pooling; identity regime only,119354.7230482478,True,meta_acon,accuracy,1,21898,4004,,image_cls_single,4.755878200001462,0.9817
+global-average pooling; identity regime only,95103.75852561311,True,rational,accuracy,1,20746,4004,,image_cls_single,6.372690699998202,0.9816
+global-average pooling; identity regime only,127297.23905805657,True,silu,accuracy,1,20490,4004,,image_cls_single,2.5349180000011984,0.9819
+global-average pooling; identity regime only,67854.61334247918,True,cca_hinge,accuracy,1,26378,4005,0.9807,image_cls_single,9.087061500002164,0.9807
+global-average pooling; identity regime only,78268.87908577229,True,cca_lite,accuracy,1,25290,4005,0.9797,image_cls_single,7.722927899998467,0.9801
+global-average pooling; identity regime only,110870.96390478582,True,dyrelu,accuracy,1,23466,4005,,image_cls_single,5.2841107999993255,0.9841
+global-average pooling; identity regime only,108719.87350631172,True,meta_acon,accuracy,1,21898,4005,,image_cls_single,4.800984200002858,0.9805
+global-average pooling; identity regime only,89193.44686208128,True,rational,accuracy,1,20746,4005,,image_cls_single,6.384844199998042,0.9804
+global-average pooling; identity regime only,125679.56132202678,True,silu,accuracy,1,20490,4005,,image_cls_single,2.570982699999149,0.9815
+global-average pooling; identity regime only,71393.01611077541,True,cca_hinge,accuracy,1,26378,4006,0.9831,image_cls_single,8.966368699999293,0.9826
+global-average pooling; identity regime only,78628.94850308381,True,cca_lite,accuracy,1,25290,4006,0.9826,image_cls_single,7.621207700001833,0.9833
+global-average pooling; identity regime only,116932.32411937718,True,dyrelu,accuracy,1,23466,4006,,image_cls_single,5.3513105000020005,0.9828
+global-average pooling; identity regime only,107682.37798037006,True,meta_acon,accuracy,1,21898,4006,,image_cls_single,4.771243400002277,0.9848
+global-average pooling; identity regime only,95788.57700098888,True,rational,accuracy,1,20746,4006,,image_cls_single,6.48401030000241,0.9816
+global-average pooling; identity regime only,123545.3835844416,True,silu,accuracy,1,20490,4006,,image_cls_single,2.5962484999981825,0.9819
+global-average pooling; identity regime only,61431.06130065059,True,cca_hinge,accuracy,1,26378,4007,0.9864,image_cls_single,9.09894820000045,0.9869
+global-average pooling; identity regime only,78323.98082564746,True,cca_lite,accuracy,1,25290,4007,0.9858,image_cls_single,7.990709000001516,0.9855
+global-average pooling; identity regime only,121183.78208147097,True,dyrelu,accuracy,1,23466,4007,,image_cls_single,5.252994100002979,0.9862
+global-average pooling; identity regime only,113112.24916331588,True,meta_acon,accuracy,1,21898,4007,,image_cls_single,4.663763500000641,0.9839
+global-average pooling; identity regime only,98276.28301705535,True,rational,accuracy,1,20746,4007,,image_cls_single,6.3556974999992235,0.9843
+global-average pooling; identity regime only,130498.21565802861,True,silu,accuracy,1,20490,4007,,image_cls_single,2.4844962999995914,0.983
+global-average pooling; identity regime only,65968.40226169974,True,cca_hinge,accuracy,1,26378,4008,0.9863,image_cls_single,9.005740299999161,0.9875
+global-average pooling; identity regime only,80989.09989669522,True,cca_lite,accuracy,1,25290,4008,0.9853,image_cls_single,7.668964899999992,0.9861
+global-average pooling; identity regime only,131699.21752345545,True,dyrelu,accuracy,1,23466,4008,,image_cls_single,5.25527140000122,0.9857
+global-average pooling; identity regime only,122523.67626180891,True,meta_acon,accuracy,1,21898,4008,,image_cls_single,4.691765100000339,0.9842
+global-average pooling; identity regime only,96507.971569717,True,rational,accuracy,1,20746,4008,,image_cls_single,6.358813200000441,0.9841
+global-average pooling; identity regime only,134800.06427767957,True,silu,accuracy,1,20490,4008,,image_cls_single,2.5471610999993572,0.9834
+global-average pooling; identity regime only,75112.35592868246,True,cca_hinge,accuracy,1,26378,4009,0.988,image_cls_single,8.728783900001872,0.9881
+global-average pooling; identity regime only,77373.4056957752,True,cca_lite,accuracy,1,25290,4009,0.9881,image_cls_single,8.274799900002108,0.9888
+global-average pooling; identity regime only,64963.509076265414,True,dyrelu,accuracy,1,23466,4009,,image_cls_single,7.019846099999995,0.9873
+global-average pooling; identity regime only,110266.73466919748,True,meta_acon,accuracy,1,21898,4009,,image_cls_single,5.375978700001724,0.9855
+global-average pooling; identity regime only,89718.88409263006,True,rational,accuracy,1,20746,4009,,image_cls_single,6.803447599999345,0.9868
+global-average pooling; identity regime only,101095.82437500602,True,silu,accuracy,1,20490,4009,,image_cls_single,2.979554699999426,0.9843
+global-average pooling; identity regime only,57967.12393893577,True,cca_hinge,accuracy,1,26378,4010,0.982,image_cls_single,9.727989799997886,0.9837
+global-average pooling; identity regime only,47882.97035558006,True,cca_lite,accuracy,1,25290,4010,0.9818,image_cls_single,9.599549400001706,0.982
+global-average pooling; identity regime only,103907.6245426191,True,dyrelu,accuracy,1,23466,4010,,image_cls_single,5.532563900000241,0.9836
+global-average pooling; identity regime only,85862.98946954685,True,meta_acon,accuracy,1,21898,4010,,image_cls_single,5.247996000001876,0.9834
+global-average pooling; identity regime only,92585.81336723927,True,rational,accuracy,1,20746,4010,,image_cls_single,6.294362800003,0.9837
+global-average pooling; identity regime only,133924.59384898335,True,silu,accuracy,1,20490,4010,,image_cls_single,2.543537000001379,0.9821
+strictly-causal running grey-level histogram,7105238.2233295115,False,b0h,bits_per_dim,16,85064,4001,,image_gen_mnist,14.110453000001144,0.9244720371294476
+strictly-causal running grey-level histogram,1442005.0354729225,False,cca_hinge,bits_per_dim,16,89864,4001,3.46819668888902,image_gen_mnist,96.06130029999986,0.9031898080382323
+strictly-causal running grey-level histogram,1821104.405834193,False,cca_lite,bits_per_dim,16,88776,4001,2.985403683816602,image_gen_mnist,75.06764930000281,0.9068112721708829
+strictly-causal running grey-level histogram,3933336.351814202,False,dyrelu,bits_per_dim,16,86952,4001,,image_gen_mnist,40.16334849999839,0.9198147400647767
+strictly-causal running grey-level histogram,3582623.5147013804,False,meta_acon,bits_per_dim,16,85384,4001,,image_gen_mnist,36.972716299998865,0.9207647859867549
+strictly-causal running grey-level histogram,1973117.299156262,False,rational,bits_per_dim,16,84744,4001,,image_gen_mnist,69.46231600000101,1.0243234326990653
+strictly-causal running grey-level histogram,7764519.57415037,False,silu,bits_per_dim,16,84488,4001,,image_gen_mnist,14.280392399999982,1.024462657470453
+mean embedding of strictly-past 512-char history,198011.62980256777,False,b0h,ppl,32,621952,4001,,text_char,52.28939879999962,13.935903337657152
+mean embedding of strictly-past 512-char history,96041.99529155844,False,cca_hinge,ppl,32,635776,4001,39.750757164556184,text_char,108.9571892999993,11.464843641515959
+mean embedding of strictly-past 512-char history,109451.74061447363,False,cca_lite,ppl,32,634144,4001,38.86713817146967,text_char,90.4890974000009,11.877071937996384
+mean embedding of strictly-past 512-char history,145789.9907535516,False,dyrelu,ppl,32,631408,4001,,text_char,74.86952769999698,11.839377366258555
+mean embedding of strictly-past 512-char history,139063.0316813577,False,meta_acon,ppl,32,629056,4001,,text_char,74.16154929999902,13.008372644530972
+mean embedding of strictly-past 512-char history,143351.93404759522,False,rational,ppl,32,622336,4001,,text_char,71.25203630000033,20.642421041759523
+mean embedding of strictly-past 512-char history,214218.815887127,False,silu,ppl,32,605440,4001,,text_char,47.55388540000058,21.5403740532287
+mean embedding of strictly-past 512-char history,182037.50026489943,False,b0h,ppl,32,621952,4002,,text_char,51.82205049999902,14.373036002758171
+mean embedding of strictly-past 512-char history,99008.59931387324,False,cca_hinge,ppl,32,635776,4002,39.19108871752288,text_char,107.76747030000115,11.389441030807545
+mean embedding of strictly-past 512-char history,110744.2403789725,False,cca_lite,ppl,32,634144,4002,39.12136470996144,text_char,90.31103959999746,11.629078459446296
+mean embedding of strictly-past 512-char history,125121.40206954414,False,dyrelu,ppl,32,631408,4002,,text_char,73.35597920000146,11.65952283313721
+mean embedding of strictly-past 512-char history,139364.18608424216,False,meta_acon,ppl,32,629056,4002,,text_char,73.74610310000207,12.463271931175163
+mean embedding of strictly-past 512-char history,148343.96775989578,False,rational,ppl,32,622336,4002,,text_char,70.40073229999689,21.260624900819046
+mean embedding of strictly-past 512-char history,210876.46207975363,False,silu,ppl,32,605440,4002,,text_char,46.998395400001755,21.67239236607568
+mean embedding of strictly-past 512-char history,195685.6474533335,False,b0h,ppl,32,621952,4003,,text_char,51.42678489999889,12.660322929276838
+mean embedding of strictly-past 512-char history,98267.12883456357,False,cca_hinge,ppl,32,635776,4003,40.88082942110711,text_char,107.26710520000051,11.586178395084433
+mean embedding of strictly-past 512-char history,110688.47197202228,False,cca_lite,ppl,32,634144,4003,37.998595739746136,text_char,90.30317030000151,12.169382466233335
+mean embedding of strictly-past 512-char history,144608.47994623688,False,dyrelu,ppl,32,631408,4003,,text_char,73.68420429999969,11.937050889563624
+mean embedding of strictly-past 512-char history,143446.540490641,False,meta_acon,ppl,32,629056,4003,,text_char,73.46355910000057,12.361709578262715
+mean embedding of strictly-past 512-char history,141576.52165428564,False,rational,ppl,32,622336,4003,,text_char,71.39228430000003,21.306531461737208
+mean embedding of strictly-past 512-char history,212466.05444317145,False,silu,ppl,32,605440,4003,,text_char,46.733107899999595,21.481373434953056
+mean embedding of the complete input window,4483052.259183281,True,cca_hinge,accuracy,8,82276,4001,0.953875,text_cls,16.305130599997938,0.965125
+mean embedding of the complete input window,4454608.588868822,True,cca_lite,accuracy,8,81188,4001,0.958875,text_cls,14.85222480000084,0.96525
+mean embedding of the complete input window,6276647.0358996745,True,dyrelu,accuracy,8,79364,4001,,text_cls,10.841358800000307,0.968375
+mean embedding of the complete input window,6589852.770776734,True,meta_acon,accuracy,8,77796,4001,,text_cls,10.675139800001489,0.9635
+mean embedding of the complete input window,7307779.761067528,True,rational,accuracy,8,76388,4001,,text_cls,11.329748299998755,0.96375
+mean embedding of the complete input window,6894362.625367595,True,silu,accuracy,8,76132,4001,,text_cls,5.4485844999981055,0.935125
+mean embedding of the complete input window,2388814.4211701923,True,cca_hinge,accuracy,8,82276,4002,0.948,text_cls,25.294458100001066,0.96475
+mean embedding of the complete input window,2424361.9444716224,True,cca_lite,accuracy,8,81188,4002,0.84325,text_cls,22.0227868999973,0.954125
+mean embedding of the complete input window,3424249.207513474,True,dyrelu,accuracy,8,79364,4002,,text_cls,16.1586916999986,0.9625
+mean embedding of the complete input window,3254196.995963098,True,meta_acon,accuracy,8,77796,4002,,text_cls,15.217990400000417,0.962375
+mean embedding of the complete input window,1985616.2142170279,True,rational,accuracy,8,76388,4002,,text_cls,28.1993235000009,0.95725
+mean embedding of the complete input window,1677716.357136384,True,silu,accuracy,8,76132,4002,,text_cls,13.235526799999207,0.937125
+mean embedding of the complete input window,2287857.428375401,True,cca_hinge,accuracy,8,82276,4003,0.97775,text_cls,26.133242800002336,0.981375
+mean embedding of the complete input window,2338505.2269665007,True,cca_lite,accuracy,8,81188,4003,0.972625,text_cls,22.874251900000672,0.981
+mean embedding of the complete input window,3293127.620465238,True,dyrelu,accuracy,8,79364,4003,,text_cls,16.162737900001957,0.983125
+mean embedding of the complete input window,3369729.4488090132,True,meta_acon,accuracy,8,77796,4003,,text_cls,16.068627799999376,0.981875
+mean embedding of the complete input window,3257402.180617943,True,rational,accuracy,8,76388,4003,,text_cls,18.075101200000063,0.983375
+mean embedding of the complete input window,3787075.0825315313,True,silu,accuracy,8,76132,4003,,text_cls,8.486884899997676,0.958375
+mean embedding of the complete input window,2268823.3456216394,True,cca_hinge,accuracy,8,82276,4004,0.963625,text_cls,26.649106400000164,0.968375
+mean embedding of the complete input window,2302069.1244173762,True,cca_lite,accuracy,8,81188,4004,0.961125,text_cls,23.950361799998063,0.968375
+mean embedding of the complete input window,3245573.766395499,True,dyrelu,accuracy,8,79364,4004,,text_cls,16.180833299997175,0.970375
+mean embedding of the complete input window,3300178.953278228,True,meta_acon,accuracy,8,77796,4004,,text_cls,16.010105200002727,0.9635
+mean embedding of the complete input window,3281399.7811874147,True,rational,accuracy,8,76388,4004,,text_cls,17.93525900000168,0.964375
+mean embedding of the complete input window,3735863.017892847,True,silu,accuracy,8,76132,4004,,text_cls,8.503913299999112,0.94
+mean embedding of the complete input window,4714011.49078776,True,cca_hinge,accuracy,8,82276,4005,0.959125,text_cls,16.532853500000783,0.9635
+mean embedding of the complete input window,3980280.97506969,True,cca_lite,accuracy,8,81188,4005,0.961375,text_cls,14.766326600001776,0.9645
+mean embedding of the complete input window,6881931.061593352,True,dyrelu,accuracy,8,79364,4005,,text_cls,11.606083599999693,0.96975
+mean embedding of the complete input window,6519432.40180046,True,meta_acon,accuracy,8,77796,4005,,text_cls,10.325320299998566,0.963625
+mean embedding of the complete input window,3499293.31606803,True,rational,accuracy,8,76388,4005,,text_cls,15.876788300000044,0.963375
+mean embedding of the complete input window,3873648.6133525097,True,silu,accuracy,8,76132,4005,,text_cls,8.216491300001508,0.928375
+mean embedding of the complete input window,4163048.6115957536,True,cca_hinge,accuracy,8,82276,4006,0.9735,text_cls,16.122040499998548,0.976
+mean embedding of the complete input window,4939923.739418476,True,cca_lite,accuracy,8,81188,4006,0.971875,text_cls,14.5335711000007,0.973375
+mean embedding of the complete input window,6870423.355671489,True,dyrelu,accuracy,8,79364,4006,,text_cls,10.526842299997952,0.97375
+mean embedding of the complete input window,6031602.320347228,True,meta_acon,accuracy,8,77796,4006,,text_cls,10.436205700003484,0.972
+mean embedding of the complete input window,6675035.894715466,True,rational,accuracy,8,76388,4006,,text_cls,10.843362499999785,0.97175
+mean embedding of the complete input window,6076981.289263682,True,silu,accuracy,8,76132,4006,,text_cls,5.25016770000002,0.94425
+mean embedding of the complete input window,4211930.490359395,True,cca_hinge,accuracy,8,82276,4007,0.93825,text_cls,16.239454299997305,0.945875
+mean embedding of the complete input window,4600370.56311678,True,cca_lite,accuracy,8,81188,4007,0.9425,text_cls,14.765528199997789,0.95025
+mean embedding of the complete input window,6264806.1021669535,True,dyrelu,accuracy,8,79364,4007,,text_cls,10.570203300001594,0.947125
+mean embedding of the complete input window,6596384.16487144,True,meta_acon,accuracy,8,77796,4007,,text_cls,10.339731300002313,0.946625
+mean embedding of the complete input window,6817610.409620603,True,rational,accuracy,8,76388,4007,,text_cls,10.942408399998385,0.943625
+mean embedding of the complete input window,7159933.566868788,True,silu,accuracy,8,76132,4007,,text_cls,5.3075830999987375,0.900125
+mean embedding of the complete input window,4343100.4303696435,True,cca_hinge,accuracy,8,82276,4008,0.966875,text_cls,16.03414260000136,0.969
+mean embedding of the complete input window,4487523.957326231,True,cca_lite,accuracy,8,81188,4008,0.965,text_cls,14.612951099999918,0.968625
+mean embedding of the complete input window,7587637.967098197,True,dyrelu,accuracy,8,79364,4008,,text_cls,10.470486199999868,0.969
+mean embedding of the complete input window,6185861.4126051385,True,meta_acon,accuracy,8,77796,4008,,text_cls,10.086605699998472,0.964
+mean embedding of the complete input window,6702536.15703769,True,rational,accuracy,8,76388,4008,,text_cls,10.848411700000725,0.968
+mean embedding of the complete input window,7309504.349996597,True,silu,accuracy,8,76132,4008,,text_cls,5.460904700001265,0.946375
+mean embedding of the complete input window,4238097.67598518,True,cca_hinge,accuracy,8,82276,4009,0.949125,text_cls,16.2293322000005,0.9565
+mean embedding of the complete input window,4064494.2159772273,True,cca_lite,accuracy,8,81188,4009,0.95,text_cls,14.86595319999833,0.9575
+mean embedding of the complete input window,7118824.718117809,True,dyrelu,accuracy,8,79364,4009,,text_cls,10.394314100001793,0.958625
+mean embedding of the complete input window,6696516.791052533,True,meta_acon,accuracy,8,77796,4009,,text_cls,10.228357399999368,0.956
+mean embedding of the complete input window,6529158.164423545,True,rational,accuracy,8,76388,4009,,text_cls,10.841798099998414,0.955
+mean embedding of the complete input window,6749329.455691376,True,silu,accuracy,8,76132,4009,,text_cls,5.310432400001446,0.91675
+mean embedding of the complete input window,4143236.452783787,True,cca_hinge,accuracy,8,82276,4010,0.94575,text_cls,16.393257300002006,0.954625
+mean embedding of the complete input window,4805919.8820759645,True,cca_lite,accuracy,8,81188,4010,0.946375,text_cls,14.456316499999957,0.952875
+mean embedding of the complete input window,7282041.161789706,True,dyrelu,accuracy,8,79364,4010,,text_cls,10.581156799999007,0.953
+mean embedding of the complete input window,6465909.262805458,True,meta_acon,accuracy,8,77796,4010,,text_cls,10.29311830000006,0.949
+mean embedding of the complete input window,6878404.202344601,True,rational,accuracy,8,76388,4010,,text_cls,10.765718099999503,0.951
+mean embedding of the complete input window,7539015.882080351,True,silu,accuracy,8,76132,4010,,text_cls,5.203764500001853,0.92
+mean embedding; one cipher only,4034934.5912863538,True,cca_hinge,accuracy,1,82276,4001,0.985375,text_cls_single,16.516284400000586,0.993
+mean embedding; one cipher only,3825474.4657655284,True,cca_lite,accuracy,1,81188,4001,0.9935,text_cls_single,14.852526700000453,0.994875
+mean embedding; one cipher only,6558216.583125329,True,dyrelu,accuracy,1,79364,4001,,text_cls_single,10.66935459999877,0.995125
+mean embedding; one cipher only,6623402.294690957,True,meta_acon,accuracy,1,77796,4001,,text_cls_single,10.366964099997858,0.994625
+mean embedding; one cipher only,7026401.085405915,True,rational,accuracy,1,76388,4001,,text_cls_single,11.034387799998512,0.99475
+mean embedding; one cipher only,7553937.274581995,True,silu,accuracy,1,76132,4001,,text_cls_single,5.424064400001953,0.993625
+mean embedding; one cipher only,4197408.333246464,True,cca_hinge,accuracy,1,82276,4002,0.99375,text_cls_single,16.683617599999707,0.9945
+mean embedding; one cipher only,3859076.847878435,True,cca_lite,accuracy,1,81188,4002,0.993875,text_cls_single,15.049328900000546,0.99725
+mean embedding; one cipher only,7393490.401300025,True,dyrelu,accuracy,1,79364,4002,,text_cls_single,10.747183899999072,0.997125
+mean embedding; one cipher only,5520164.020166638,True,meta_acon,accuracy,1,77796,4002,,text_cls_single,10.465829000000667,0.99575
+mean embedding; one cipher only,6713599.813257858,True,rational,accuracy,1,76388,4002,,text_cls_single,11.063156500000332,0.99625
+mean embedding; one cipher only,6933479.997417077,True,silu,accuracy,1,76132,4002,,text_cls_single,5.290569000000687,0.9945
+mean embedding; one cipher only,4596589.361088835,True,cca_hinge,accuracy,1,82276,4003,0.99725,text_cls_single,14.793519300001208,0.998375
+mean embedding; one cipher only,5477585.256277272,True,cca_lite,accuracy,1,81188,4003,0.996875,text_cls_single,14.250046600001951,0.997
+mean embedding; one cipher only,5907968.820726514,True,dyrelu,accuracy,1,79364,4003,,text_cls_single,11.158180299997184,0.99775
+mean embedding; one cipher only,7485929.649736,True,meta_acon,accuracy,1,77796,4003,,text_cls_single,10.6166097000023,0.9965
+mean embedding; one cipher only,7243755.137286649,True,rational,accuracy,1,76388,4003,,text_cls_single,10.925212699999975,0.996875
+mean embedding; one cipher only,6659607.422844101,True,silu,accuracy,1,76132,4003,,text_cls_single,5.456206499999098,0.997375
+mean embedding; one cipher only,4100150.033857919,True,cca_hinge,accuracy,1,82276,4004,0.994625,text_cls_single,16.181725099999312,0.9965
+mean embedding; one cipher only,4627585.824862231,True,cca_lite,accuracy,1,81188,4004,0.992375,text_cls_single,14.733939900001133,0.99575
+mean embedding; one cipher only,6657432.762775548,True,dyrelu,accuracy,1,79364,4004,,text_cls_single,10.943543100001989,0.99625
+mean embedding; one cipher only,5649964.34509903,True,meta_acon,accuracy,1,77796,4004,,text_cls_single,10.601328900000226,0.99625
+mean embedding; one cipher only,7098306.02773897,True,rational,accuracy,1,76388,4004,,text_cls_single,11.67305910000141,0.9955
+mean embedding; one cipher only,6324585.960048536,True,silu,accuracy,1,76132,4004,,text_cls_single,5.617912699999579,0.996625
+mean embedding; one cipher only,4159812.223645605,True,cca_hinge,accuracy,1,82276,4005,0.997625,text_cls_single,17.41790100000071,0.9985
+mean embedding; one cipher only,3262806.6803341787,True,cca_lite,accuracy,1,81188,4005,0.99775,text_cls_single,15.671589600002335,0.99825
+mean embedding; one cipher only,6666802.1706465995,True,dyrelu,accuracy,1,79364,4005,,text_cls_single,11.364619400002994,0.998375
+mean embedding; one cipher only,6607804.647499016,True,meta_acon,accuracy,1,77796,4005,,text_cls_single,11.135312700000213,0.9975
+mean embedding; one cipher only,6134265.447897623,True,rational,accuracy,1,76388,4005,,text_cls_single,11.414585200000147,0.997625
+mean embedding; one cipher only,7156465.855316653,True,silu,accuracy,1,76132,4005,,text_cls_single,5.4402762000027,0.99625
+mean embedding; one cipher only,5332324.889835026,True,cca_hinge,accuracy,1,82276,4006,0.996625,text_cls_single,13.957679899998766,0.997375
+mean embedding; one cipher only,5043393.432304894,True,cca_lite,accuracy,1,81188,4006,0.9965,text_cls_single,14.028827999998612,0.9975
+mean embedding; one cipher only,8055158.021085482,True,dyrelu,accuracy,1,79364,4006,,text_cls_single,9.37764160000006,0.99825
+mean embedding; one cipher only,7034011.293809368,True,meta_acon,accuracy,1,77796,4006,,text_cls_single,11.319488000001002,0.99775
+mean embedding; one cipher only,7501689.501630181,True,rational,accuracy,1,76388,4006,,text_cls_single,11.603952299999946,0.99775
+mean embedding; one cipher only,6572400.445610613,True,silu,accuracy,1,76132,4006,,text_cls_single,5.879302000001189,0.99775
+mean embedding; one cipher only,3909690.73246042,True,cca_hinge,accuracy,1,82276,4007,0.99125,text_cls_single,15.477895099997113,0.993125
+mean embedding; one cipher only,5157492.606136682,True,cca_lite,accuracy,1,81188,4007,0.9945,text_cls_single,13.615721199999825,0.9955
+mean embedding; one cipher only,5928737.681383484,True,dyrelu,accuracy,1,79364,4007,,text_cls_single,9.559446300001582,0.99625
+mean embedding; one cipher only,8440216.406569336,True,meta_acon,accuracy,1,77796,4007,,text_cls_single,9.46901920000164,0.993375
+mean embedding; one cipher only,7080176.611775877,True,rational,accuracy,1,76388,4007,,text_cls_single,10.333707899997535,0.99525
+mean embedding; one cipher only,7111500.953726598,True,silu,accuracy,1,76132,4007,,text_cls_single,4.2438563000032445,0.99325
+mean embedding; one cipher only,4532762.036096328,True,cca_hinge,accuracy,1,82276,4008,0.994375,text_cls_single,16.26771920000101,0.9955
+mean embedding; one cipher only,4441072.665256726,True,cca_lite,accuracy,1,81188,4008,0.9945,text_cls_single,15.039942800001882,0.99525
+mean embedding; one cipher only,6563267.573492857,True,dyrelu,accuracy,1,79364,4008,,text_cls_single,10.434438399999635,0.996
+mean embedding; one cipher only,5988454.250370882,True,meta_acon,accuracy,1,77796,4008,,text_cls_single,10.493593700000929,0.995375
+mean embedding; one cipher only,7284445.421364703,True,rational,accuracy,1,76388,4008,,text_cls_single,10.937717100001464,0.99475
+mean embedding; one cipher only,6802062.377788946,True,silu,accuracy,1,76132,4008,,text_cls_single,5.336393499997939,0.9945
+mean embedding; one cipher only,3990161.5177655667,True,cca_hinge,accuracy,1,82276,4009,0.994375,text_cls_single,16.419290000001638,0.9955
+mean embedding; one cipher only,4558806.71503013,True,cca_lite,accuracy,1,81188,4009,0.99425,text_cls_single,15.213875299999927,0.9955
+mean embedding; one cipher only,6694373.611757664,True,dyrelu,accuracy,1,79364,4009,,text_cls_single,10.947721999997157,0.99575
+mean embedding; one cipher only,6040673.657680363,True,meta_acon,accuracy,1,77796,4009,,text_cls_single,10.743085999998584,0.993875
+mean embedding; one cipher only,6358217.28145528,True,rational,accuracy,1,76388,4009,,text_cls_single,11.155600699999923,0.994625
+mean embedding; one cipher only,6539523.632805362,True,silu,accuracy,1,76132,4009,,text_cls_single,5.771216700002697,0.991875
+mean embedding; one cipher only,3867639.538653277,True,cca_hinge,accuracy,1,82276,4010,0.9915,text_cls_single,17.507559099998616,0.99225
+mean embedding; one cipher only,4005443.18164862,True,cca_lite,accuracy,1,81188,4010,0.991375,text_cls_single,15.462903899999219,0.9925
+mean embedding; one cipher only,6982445.3365472155,True,dyrelu,accuracy,1,79364,4010,,text_cls_single,10.807433099998889,0.993
+mean embedding; one cipher only,6858399.13472266,True,meta_acon,accuracy,1,77796,4010,,text_cls_single,10.498485700001766,0.991625
+mean embedding; one cipher only,7602429.661796983,True,rational,accuracy,1,76388,4010,,text_cls_single,11.0014857999995,0.99175
+mean embedding; one cipher only,6094941.745441886,True,silu,accuracy,1,76132,4010,,text_cls_single,5.415596400001959,0.986125
+normalized bag-of-words embedding; no domain identity,39550.0167962235,True,cca_hinge,accuracy,4,208898,4001,0.8,text_sentiment,16.90420500000255,0.829375
+normalized bag-of-words embedding; no domain identity,62871.924975875736,True,cca_lite,accuracy,4,207810,4001,0.806875,text_sentiment,15.581652699998813,0.824375
+normalized bag-of-words embedding; no domain identity,97859.14227802324,True,dyrelu,accuracy,4,205986,4001,,text_sentiment,11.428478099998756,0.82875
+normalized bag-of-words embedding; no domain identity,93424.74663102796,True,meta_acon,accuracy,4,204418,4001,,text_sentiment,11.131147799998871,0.83375
+normalized bag-of-words embedding; no domain identity,89328.41359848787,True,rational,accuracy,4,203010,4001,,text_sentiment,11.826872800000274,0.825
+normalized bag-of-words embedding; no domain identity,34556.21672279379,True,silu,accuracy,4,202754,4001,,text_sentiment,6.42984609999985,0.835625
+normalized bag-of-words embedding; no domain identity,69307.291279382,True,cca_hinge,accuracy,4,208898,4002,0.819375,text_sentiment,16.93165349999981,0.8225
+normalized bag-of-words embedding; no domain identity,50896.728932978396,True,cca_lite,accuracy,4,207810,4002,0.8125,text_sentiment,15.471894400001474,0.81125
+normalized bag-of-words embedding; no domain identity,91043.21471693505,True,dyrelu,accuracy,4,205986,4002,,text_sentiment,11.285588700000517,0.814375
+normalized bag-of-words embedding; no domain identity,68513.38846350179,True,meta_acon,accuracy,4,204418,4002,,text_sentiment,11.168428099997982,0.81875
+normalized bag-of-words embedding; no domain identity,80725.67001876533,True,rational,accuracy,4,203010,4002,,text_sentiment,11.637648199997784,0.820625
+normalized bag-of-words embedding; no domain identity,36260.7533243639,True,silu,accuracy,4,202754,4002,,text_sentiment,6.435658200000034,0.82125
+normalized bag-of-words embedding; no domain identity,34341.89157378693,True,cca_hinge,accuracy,4,208898,4003,0.81125,text_sentiment,17.406809299998713,0.820625
+normalized bag-of-words embedding; no domain identity,62431.49629739887,True,cca_lite,accuracy,4,207810,4003,0.799375,text_sentiment,15.89965050000319,0.81375
+normalized bag-of-words embedding; no domain identity,86671.48484417982,True,dyrelu,accuracy,4,205986,4003,,text_sentiment,11.655375799997273,0.813125
+normalized bag-of-words embedding; no domain identity,90992.60223451567,True,meta_acon,accuracy,4,204418,4003,,text_sentiment,11.40599310000107,0.821875
+normalized bag-of-words embedding; no domain identity,87921.68535792895,True,rational,accuracy,4,203010,4003,,text_sentiment,12.041242699997383,0.82125
+normalized bag-of-words embedding; no domain identity,34389.40679703194,True,silu,accuracy,4,202754,4003,,text_sentiment,6.4203705999971135,0.81875
+normalized bag-of-words embedding; no domain identity,57119.76031594716,True,cca_hinge,accuracy,4,208898,4004,0.75875,text_sentiment,16.871902200000477,0.831875
+normalized bag-of-words embedding; no domain identity,60887.9428763258,True,cca_lite,accuracy,4,207810,4004,0.760625,text_sentiment,15.525245200002246,0.831875
+normalized bag-of-words embedding; no domain identity,53470.642041017956,True,dyrelu,accuracy,4,205986,4004,,text_sentiment,11.414471800002502,0.829375
+normalized bag-of-words embedding; no domain identity,108330.96145154,True,meta_acon,accuracy,4,204418,4004,,text_sentiment,11.053516699998,0.819375
+normalized bag-of-words embedding; no domain identity,78310.38088125466,True,rational,accuracy,4,203010,4004,,text_sentiment,11.812102600000799,0.82875
+normalized bag-of-words embedding; no domain identity,38347.0457818107,True,silu,accuracy,4,202754,4004,,text_sentiment,6.436440199999197,0.833125
+normalized bag-of-words embedding; no domain identity,71992.08728021712,True,cca_hinge,accuracy,4,208898,4005,0.816875,text_sentiment,17.21925629999896,0.8175
+normalized bag-of-words embedding; no domain identity,64637.13977500385,True,cca_lite,accuracy,4,207810,4005,0.824375,text_sentiment,15.931468399998266,0.825
+normalized bag-of-words embedding; no domain identity,90072.96691497214,True,dyrelu,accuracy,4,205986,4005,,text_sentiment,11.657817699997395,0.821875
+normalized bag-of-words embedding; no domain identity,69969.20510467929,True,meta_acon,accuracy,4,204418,4005,,text_sentiment,11.331673100001353,0.821875
+normalized bag-of-words embedding; no domain identity,79852.52912269012,True,rational,accuracy,4,203010,4005,,text_sentiment,12.029288699999597,0.8175
+normalized bag-of-words embedding; no domain identity,33159.99387288207,True,silu,accuracy,4,202754,4005,,text_sentiment,6.518614000000525,0.82625
+normalized bag-of-words embedding; no domain identity,63301.888429830025,True,cca_hinge,accuracy,4,208898,4006,0.82,text_sentiment,17.05535570000211,0.81875
+normalized bag-of-words embedding; no domain identity,61776.331099491865,True,cca_lite,accuracy,4,207810,4006,0.814375,text_sentiment,15.492854699998134,0.816875
+normalized bag-of-words embedding; no domain identity,61113.061532997606,True,dyrelu,accuracy,4,205986,4006,,text_sentiment,11.37748129999818,0.808125
+normalized bag-of-words embedding; no domain identity,88539.96173890098,True,meta_acon,accuracy,4,204418,4006,,text_sentiment,11.167742500001623,0.81875
+normalized bag-of-words embedding; no domain identity,87094.42072339819,True,rational,accuracy,4,203010,4006,,text_sentiment,11.807776699999522,0.8225
+normalized bag-of-words embedding; no domain identity,33324.16204030152,True,silu,accuracy,4,202754,4006,,text_sentiment,6.487037700000656,0.821875
+normalized bag-of-words embedding; no domain identity,56762.7225591447,True,cca_hinge,accuracy,4,208898,4007,0.678125,text_sentiment,17.466037099999085,0.824375
+normalized bag-of-words embedding; no domain identity,63353.879558563916,True,cca_lite,accuracy,4,207810,4007,0.69375,text_sentiment,15.60166549999849,0.815
+normalized bag-of-words embedding; no domain identity,97041.23201503868,True,dyrelu,accuracy,4,205986,4007,,text_sentiment,11.533208299999387,0.825
+normalized bag-of-words embedding; no domain identity,81270.19557977596,True,meta_acon,accuracy,4,204418,4007,,text_sentiment,11.224637699997402,0.8225
+normalized bag-of-words embedding; no domain identity,97280.37109516561,True,rational,accuracy,4,203010,4007,,text_sentiment,11.94852869999886,0.81875
+normalized bag-of-words embedding; no domain identity,32488.01297412437,True,silu,accuracy,4,202754,4007,,text_sentiment,6.434143399997993,0.8275
+normalized bag-of-words embedding; no domain identity,51896.4558861058,True,cca_hinge,accuracy,4,208898,4008,0.82375,text_sentiment,18.243727600001876,0.829375
+normalized bag-of-words embedding; no domain identity,51381.50050915327,True,cca_lite,accuracy,4,207810,4008,0.811875,text_sentiment,15.869712899999286,0.82
+normalized bag-of-words embedding; no domain identity,92341.05813553491,True,dyrelu,accuracy,4,205986,4008,,text_sentiment,11.561813799999072,0.830625
+normalized bag-of-words embedding; no domain identity,51888.0294431472,True,meta_acon,accuracy,4,204418,4008,,text_sentiment,11.109476300000097,0.82
+normalized bag-of-words embedding; no domain identity,79136.87810285256,True,rational,accuracy,4,203010,4008,,text_sentiment,11.652451199999632,0.8275
+normalized bag-of-words embedding; no domain identity,37420.95184988987,True,silu,accuracy,4,202754,4008,,text_sentiment,6.383181899996998,0.829375
+normalized bag-of-words embedding; no domain identity,69513.33008773475,True,cca_hinge,accuracy,4,208898,4009,0.766875,text_sentiment,17.25702110000202,0.826875
+normalized bag-of-words embedding; no domain identity,65731.13931985582,True,cca_lite,accuracy,4,207810,4009,0.7225,text_sentiment,15.585114099998464,0.81625
+normalized bag-of-words embedding; no domain identity,81187.60691515745,True,dyrelu,accuracy,4,205986,4009,,text_sentiment,11.425617000000784,0.829375
+normalized bag-of-words embedding; no domain identity,98359.71155537316,True,meta_acon,accuracy,4,204418,4009,,text_sentiment,11.398246600001585,0.825
+normalized bag-of-words embedding; no domain identity,91392.86113116071,True,rational,accuracy,4,203010,4009,,text_sentiment,11.836956300001475,0.830625
+normalized bag-of-words embedding; no domain identity,35506.020411942416,True,silu,accuracy,4,202754,4009,,text_sentiment,6.649590500001068,0.833125
+normalized bag-of-words embedding; no domain identity,68450.4936760506,True,cca_hinge,accuracy,4,208898,4010,0.82625,text_sentiment,17.167764900001202,0.82625
+normalized bag-of-words embedding; no domain identity,66182.96432903678,True,cca_lite,accuracy,4,207810,4010,0.8275,text_sentiment,15.794108699999924,0.829375
+normalized bag-of-words embedding; no domain identity,99840.60937871935,True,dyrelu,accuracy,4,205986,4010,,text_sentiment,11.425351499998214,0.830625
+normalized bag-of-words embedding; no domain identity,79403.73893700601,True,meta_acon,accuracy,4,204418,4010,,text_sentiment,11.220548900000722,0.828125
+normalized bag-of-words embedding; no domain identity,88373.2307935421,True,rational,accuracy,4,203010,4010,,text_sentiment,11.848268699999608,0.830625
+normalized bag-of-words embedding; no domain identity,35230.709140925224,True,silu,accuracy,4,202754,4010,,text_sentiment,6.438972399999329,0.8325

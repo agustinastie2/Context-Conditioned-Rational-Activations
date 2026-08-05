@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "task": "text_bpe_2000",
+      "method": "silu",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1687.6947315465184,
+      "shuffle_value": null,
+      "params": 853120,
+      "train_seconds": 0.6971807000008994,
+      "eval_throughput": 242396.33293037105,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "rational",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1408.4915279768686,
+      "shuffle_value": null,
+      "params": 870016,
+      "train_seconds": 0.7772478999977466,
+      "eval_throughput": 159416.61226541083,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "dyrelu",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1488.6470109352317,
+      "shuffle_value": null,
+      "params": 879088,
+      "train_seconds": 0.6994288999994751,
+      "eval_throughput": 176892.19650298558,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "meta_acon",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1487.057004902437,
+      "shuffle_value": null,
+      "params": 876736,
+      "train_seconds": 0.6529536999987613,
+      "eval_throughput": 166367.2664197414,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "cca_lite",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1560.2792735747355,
+      "shuffle_value": 1560.279422374569,
+      "params": 881824,
+      "train_seconds": 0.7643036000008578,
+      "eval_throughput": 141950.2927602486,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "cca_hinge",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1663.2918895891128,
+      "shuffle_value": 1663.2921433873332,
+      "params": 883456,
+      "train_seconds": 0.9666529999994964,
+      "eval_throughput": 129622.91955893466,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_bpe_2000",
+      "method": "b0h",
+      "seed": 995,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 128-token history",
+      "value": 1409.286951873545,
+      "shuffle_value": null,
+      "params": 869632,
+      "train_seconds": 0.24540020000131335,
+      "eval_throughput": 239201.71714167643,
+      "n_regimes": 32
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "expected_seeds": [
+    1337,
+    1338,
+    1339,
+    1340,
+    1341,
+    1342,
+    1343,
+    1344,
+    1345,
+    1346
+  ],
+  "tasks": {
+    "text": {
+      "methods": {
+        "silu": {
+          "n": 10,
+          "mean_accuracy": 0.9227375090122223,
+          "std_accuracy": 0.025001279117582327,
+          "ci95_accuracy": [
+            0.9082371926307679,
+            0.9377756288647652
+          ],
+          "mean_train_seconds": 6.911858269999721
+        },
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.9239750027656555,
+          "std_accuracy": 0.02434080853177581,
+          "ci95_accuracy": [
+            0.9099615615606308,
+            0.9386878155171872
+          ],
+          "mean_train_seconds": 6.839914849999696
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.9555499911308288,
+          "std_accuracy": 0.016459251700991023,
+          "ci95_accuracy": [
+            0.9458121693134308,
+            0.9651878082752228
+          ],
+          "mean_train_seconds": 13.318160780000108
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.9600500047206879,
+          "std_accuracy": 0.015256508675619323,
+          "ci95_accuracy": [
+            0.9512000082433224,
+            0.9691256274282932
+          ],
+          "mean_train_seconds": 12.911269509999693
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.9567875027656555,
+          "std_accuracy": 0.01612182906193892,
+          "ci95_accuracy": [
+            0.9473375082015991,
+            0.9663503134250641
+          ],
+          "mean_train_seconds": 12.760604220000278
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.9579625070095062,
+          "std_accuracy": 0.014893383666028746,
+          "ci95_accuracy": [
+            0.9492996962368488,
+            0.9668878281116485
+          ],
+          "mean_train_seconds": 17.243954609999854
+        }
+      },
+      "cca_comparisons": {
+        "silu": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 3.5224997997283936,
+          "ci95_gain_accuracy_points": [
+            2.883750796318054,
+            4.142530232667922
+          ],
+          "cohens_dz": 3.318498341040665,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "silu_budget": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 3.3987504243850704,
+          "ci95_gain_accuracy_points": [
+            2.7887511253356934,
+            3.9612501859664917
+          ],
+          "cohens_dz": 3.434083708710344,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "rational": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 0.24125158786773684,
+          "ci95_gain_accuracy_points": [
+            0.05750119686126709,
+            0.485001802444458
+          ],
+          "cohens_dz": 0.6493734491755154,
+          "p_exact_two_sided": 0.025390625,
+          "p_holm": 0.076171875,
+          "significant_0_05": false
+        },
+        "dyrelu": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": -0.20874977111816406,
+          "ci95_gain_accuracy_points": [
+            -0.3650003969669342,
+            -0.05499897897243499
+          ],
+          "cohens_dz": -0.7866523096562734,
+          "p_exact_two_sided": 0.0390625,
+          "p_holm": 0.078125,
+          "significant_0_05": false
+        },
+        "meta_acon": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 0.1175004243850708,
+          "ci95_gain_accuracy_points": [
+            -0.04374980926513672,
+            0.2787494659423828
+          ],
+          "cohens_dz": 0.42511439975565557,
+          "p_exact_two_sided": 0.212890625,
+          "p_holm": 0.212890625,
+          "significant_0_05": false
+        }
+      }
+    },
+    "digits": {
+      "methods": {
+        "silu": {
+          "n": 10,
+          "mean_accuracy": 0.8076166629791259,
+          "std_accuracy": 0.012969817945351493,
+          "ci95_accuracy": [
+            0.7998499988019466,
+            0.8149837428331376
+          ],
+          "mean_train_seconds": 1.9191244900001039,
+          "per_domain_mean": {
+            "mnist": 0.956550008058548,
+            "svhn": 0.5312500029802323,
+            "usps": 0.9350499987602234
+          }
+        },
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.8127833306789398,
+          "std_accuracy": 0.011063512868370904,
+          "ci95_accuracy": [
+            0.8061166702210903,
+            0.8190666557848453
+          ],
+          "mean_train_seconds": 1.3806158499999583,
+          "per_domain_mean": {
+            "mnist": 0.9575499892234802,
+            "svhn": 0.5441500037908554,
+            "usps": 0.9366499960422516
+          }
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.838233333826065,
+          "std_accuracy": 0.010001293088711179,
+          "ci95_accuracy": [
+            0.831983333826065,
+            0.8437837474048138
+          ],
+          "mean_train_seconds": 5.061001540000143,
+          "per_domain_mean": {
+            "mnist": 0.9605999946594238,
+            "svhn": 0.6141499996185302,
+            "usps": 0.9399499893188477
+          }
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.8780666649341583,
+          "std_accuracy": 0.0053881518245811975,
+          "ci95_accuracy": [
+            0.8748833298683166,
+            0.8812333405017853
+          ],
+          "mean_train_seconds": 3.9474849500000344,
+          "per_domain_mean": {
+            "mnist": 0.9654000043869019,
+            "svhn": 0.7264999985694885,
+            "usps": 0.9423000037670135
+          }
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.8343833327293396,
+          "std_accuracy": 0.006900112292975624,
+          "ci95_accuracy": [
+            0.8305166660249234,
+            0.8387000025808811
+          ],
+          "mean_train_seconds": 3.3928163599997787,
+          "per_domain_mean": {
+            "mnist": 0.9585499942302704,
+            "svhn": 0.6051999926567078,
+            "usps": 0.9394000053405762
+          }
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.8785666644573211,
+          "std_accuracy": 0.005068782561625703,
+          "ci95_accuracy": [
+            0.8754166661202908,
+            0.881416666507721
+          ],
+          "mean_train_seconds": 5.7982460799999895,
+          "per_domain_mean": {
+            "mnist": 0.9662000000476837,
+            "svhn": 0.7273999989032746,
+            "usps": 0.9420999944210052
+          }
+        }
+      },
+      "cca_comparisons": {
+        "silu": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 7.095000147819519,
+          "ci95_gain_accuracy_points": [
+            6.461666822433472,
+            7.729998826980592
+          ],
+          "cohens_dz": 6.529939398427044,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "silu_budget": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 6.578333377838135,
+          "ci95_gain_accuracy_points": [
+            5.9916675090789795,
+            7.186708360910416
+          ],
+          "cohens_dz": 6.349082848762479,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "rational": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 4.03333306312561,
+          "ci95_gain_accuracy_points": [
+            3.5849994271993637,
+            4.474998727440833
+          ],
+          "cohens_dz": 5.330740965890492,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "dyrelu": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 0.04999995231628418,
+          "ci95_gain_accuracy_points": [
+            -0.11499881744384764,
+            0.2016657739877701
+          ],
+          "cohens_dz": 0.18774486976387847,
+          "p_exact_two_sided": 0.5859375,
+          "p_holm": 0.5859375,
+          "significant_0_05": false
+        },
+        "meta_acon": {
+          "n_pairs": 10,
+          "mean_gain_accuracy_points": 4.418333172798157,
+          "ci95_gain_accuracy_points": [
+            3.968334197998047,
+            4.893332749605179
+          ],
+          "cohens_dz": 5.673351901052708,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        }
+      }
+    }
+  }
+}

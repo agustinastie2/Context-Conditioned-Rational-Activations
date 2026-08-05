@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "task": "image_cls_single",
+      "method": "silu",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9819,
+      "shuffle_value": null,
+      "params": 20490,
+      "train_seconds": 2.5349180000011984,
+      "eval_throughput": 127297.23905805657,
+      "n_regimes": 1
+    },
+    {
+      "task": "image_cls_single",
+      "method": "rational",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9816,
+      "shuffle_value": null,
+      "params": 20746,
+      "train_seconds": 6.372690699998202,
+      "eval_throughput": 95103.75852561311,
+      "n_regimes": 1
+    },
+    {
+      "task": "image_cls_single",
+      "method": "dyrelu",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9821,
+      "shuffle_value": null,
+      "params": 23466,
+      "train_seconds": 5.315827399997943,
+      "eval_throughput": 106157.22988689026,
+      "n_regimes": 1
+    },
+    {
+      "task": "image_cls_single",
+      "method": "meta_acon",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9817,
+      "shuffle_value": null,
+      "params": 21898,
+      "train_seconds": 4.755878200001462,
+      "eval_throughput": 119354.7230482478,
+      "n_regimes": 1
+    },
+    {
+      "task": "image_cls_single",
+      "method": "cca_lite",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9848,
+      "shuffle_value": 0.9847,
+      "params": 25290,
+      "train_seconds": 7.716310100000555,
+      "eval_throughput": 83478.3716329447,
+      "n_regimes": 1
+    },
+    {
+      "task": "image_cls_single",
+      "method": "cca_hinge",
+      "seed": 4004,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling; identity regime only",
+      "value": 0.9849,
+      "shuffle_value": 0.9851,
+      "params": 26378,
+      "train_seconds": 8.876333099997282,
+      "eval_throughput": 67185.93971003535,
+      "n_regimes": 1
+    }
+  ]
+}

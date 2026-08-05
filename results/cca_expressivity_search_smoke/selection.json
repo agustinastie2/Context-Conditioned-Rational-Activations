@@ -1,0 +1,29 @@
+{
+  "selected": "g8_h32",
+  "selection_rule": "maximize mean validation accuracy gain across tasks; reject any candidate more than 0.2 percentage points below CCA-Lite on either task",
+  "score": 0.016276041666666657,
+  "paired_task_gains": {
+    "text": 0.01171875,
+    "digits": 0.020833333333333315
+  },
+  "means": {
+    "text": {
+      "lite_g16_h16": 0.6572265625,
+      "g32_lr8": 0.6513671875,
+      "g32_lr4": 0.6494140625,
+      "g64_lr4": 0.658203125,
+      "g8_h32": 0.6689453125,
+      "g16_h24_lr8": 0.646484375,
+      "g32_h24_lr4": 0.6474609375
+    },
+    "digits": {
+      "lite_g16_h16": 0.2526041666666667,
+      "g32_lr8": 0.25,
+      "g32_lr4": 0.2526041666666667,
+      "g64_lr4": 0.2526041666666667,
+      "g8_h32": 0.2734375,
+      "g16_h24_lr8": 0.2552083333333333,
+      "g32_h24_lr4": 0.2552083333333333
+    }
+  }
+}

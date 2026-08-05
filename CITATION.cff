@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "Context-Conditioned Rational Activations"
+type: software
+version: 0.1.0
+date-released: 2026-08-05
+license: MIT
+authors:
+  - family-names: Astie Forconesi
+    given-names: Agustín Hugo
+    email: agustinastie3@gmail.com
+  - family-names: Gerino
+    given-names: Juan Pablo
+    email: juanpigerino@gmail.com
+  - family-names: Ortega
+    given-names: Joaquin Imanol
+    email: joaquinimanolortega@gmail.com
+  - family-names: Méndez Garabetti
+    given-names: Miguel
+    email: mmendez@uda.edu.ar

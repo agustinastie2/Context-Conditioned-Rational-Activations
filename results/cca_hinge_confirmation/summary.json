@@ -1,0 +1,276 @@
+{
+  "seeds": [
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010
+  ],
+  "tasks": {
+    "text": {
+      "methods": {
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.9058499991893768,
+          "std_accuracy": 0.033306862131335775,
+          "ci95_accuracy": [
+            0.8859374998509885,
+            0.9249499978125095
+          ]
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.9450874984264374,
+          "std_accuracy": 0.02361717310779593,
+          "ci95_accuracy": [
+            0.9307996901869774,
+            0.9584628129005432
+          ]
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.948737508058548,
+          "std_accuracy": 0.01972664603026529,
+          "ci95_accuracy": [
+            0.9367875039577485,
+            0.9598250091075897
+          ]
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.9452749967575074,
+          "std_accuracy": 0.02295442104606543,
+          "ci95_accuracy": [
+            0.9312246835231781,
+            0.9579624836146832
+          ]
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.9475250005722046,
+          "std_accuracy": 0.020110611095777785,
+          "ci95_accuracy": [
+            0.935487190335989,
+            0.9588878118991851
+          ]
+        },
+        "cca_hinge": {
+          "n": 10,
+          "mean_accuracy": 0.9475000023841857,
+          "std_accuracy": 0.02133877629425236,
+          "ci95_accuracy": [
+            0.9349500060081481,
+            0.9598003055155278
+          ]
+        }
+      },
+      "cca_hinge_comparisons": {
+        "silu_budget": {
+          "mean_gain_accuracy_points": 4.165000319480896,
+          "ci95_gain_accuracy_points": [
+            3.3824691772460938,
+            4.97878274321556
+          ],
+          "cohens_dz": 3.0832207233118236,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "rational": {
+          "mean_gain_accuracy_points": 0.2412503957748413,
+          "ci95_gain_accuracy_points": [
+            -0.0037485361099243164,
+            0.5649989992380142
+          ],
+          "cohens_dz": 0.4938091188996579,
+          "p_exact_two_sided": 0.125,
+          "p_holm": 0.4921875,
+          "significant_0_05": false
+        },
+        "dyrelu": {
+          "mean_gain_accuracy_points": -0.12375056743621828,
+          "ci95_gain_accuracy_points": [
+            -0.36375047266483307,
+            0.10249972343444823
+          ],
+          "cohens_dz": -0.31284287231582425,
+          "p_exact_two_sided": 0.38671875,
+          "p_holm": 0.7734375,
+          "significant_0_05": false
+        },
+        "meta_acon": {
+          "mean_gain_accuracy_points": 0.22250056266784668,
+          "ci95_gain_accuracy_points": [
+            -0.012499108910560608,
+            0.48500061035156256
+          ],
+          "cohens_dz": 0.5288022773215475,
+          "p_exact_two_sided": 0.123046875,
+          "p_holm": 0.4921875,
+          "significant_0_05": false
+        },
+        "cca_lite": {
+          "mean_gain_accuracy_points": -0.002499818801879883,
+          "ci95_gain_accuracy_points": [
+            -0.1425004005432129,
+            0.1437491476535797
+          ],
+          "cohens_dz": -0.010304914646776367,
+          "p_exact_two_sided": 0.974609375,
+          "p_holm": 0.974609375,
+          "significant_0_05": false
+        }
+      }
+    },
+    "digits": {
+      "methods": {
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.8113666713237763,
+          "std_accuracy": 0.011729669377144236,
+          "ci95_accuracy": [
+            0.8041333377361297,
+            0.8181166650354862
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9543499886989594,
+            "svhn": 0.5424500048160553,
+            "usps": 0.9372999906539917
+          }
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.8313999950885773,
+          "std_accuracy": 0.007912027594392681,
+          "ci95_accuracy": [
+            0.8267666518688201,
+            0.8360333383083344
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9602499961853027,
+            "svhn": 0.5974000096321106,
+            "usps": 0.9365499913692474
+          }
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.8805999994277954,
+          "std_accuracy": 0.00977217030842069,
+          "ci95_accuracy": [
+            0.8747495776414871,
+            0.8862504237890244
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9634499907493591,
+            "svhn": 0.7351500034332276,
+            "usps": 0.9432000041007995
+          }
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.835833340883255,
+          "std_accuracy": 0.010272214190167911,
+          "ci95_accuracy": [
+            0.8300666749477387,
+            0.8419666650891304
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9569000124931335,
+            "svhn": 0.6108999907970428,
+            "usps": 0.9397000074386597
+          }
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.8811333298683166,
+          "std_accuracy": 0.006827597416278771,
+          "ci95_accuracy": [
+            0.8774166582524777,
+            0.8854337504506111
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9635500013828278,
+            "svhn": 0.7376500129699707,
+            "usps": 0.9421999990940094
+          }
+        },
+        "cca_hinge": {
+          "n": 10,
+          "mean_accuracy": 0.8868166685104371,
+          "std_accuracy": 0.005016310508806341,
+          "ci95_accuracy": [
+            0.8837999999523163,
+            0.8898000063002109
+          ],
+          "per_domain_mean": {
+            "mnist": 0.9670500040054322,
+            "svhn": 0.7500500023365021,
+            "usps": 0.9433500111103058
+          }
+        }
+      },
+      "cca_hinge_comparisons": {
+        "silu_budget": {
+          "mean_gain_accuracy_points": 7.544999718666076,
+          "ci95_gain_accuracy_points": [
+            6.654999852180481,
+            8.483333602547646
+          ],
+          "cohens_dz": 4.9029151531881405,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "rational": {
+          "mean_gain_accuracy_points": 5.541667342185974,
+          "ci95_gain_accuracy_points": [
+            5.03000020980835,
+            6.005001068115234
+          ],
+          "cohens_dz": 6.7137794618685485,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "dyrelu": {
+          "mean_gain_accuracy_points": 0.6216669082641602,
+          "ci95_gain_accuracy_points": [
+            0.20999908447265625,
+            1.1050009727478027
+          ],
+          "cohens_dz": 0.8132612327122912,
+          "p_exact_two_sided": 0.0234375,
+          "p_holm": 0.0234375,
+          "significant_0_05": true
+        },
+        "meta_acon": {
+          "mean_gain_accuracy_points": 5.098332762718201,
+          "ci95_gain_accuracy_points": [
+            4.40000057220459,
+            5.768332481384277
+          ],
+          "cohens_dz": 4.426321366854484,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "cca_lite": {
+          "mean_gain_accuracy_points": 0.5683338642120361,
+          "ci95_gain_accuracy_points": [
+            0.30166685581207275,
+            0.8600008636713029
+          ],
+          "cohens_dz": 1.193990968314562,
+          "p_exact_two_sided": 0.005859375,
+          "p_holm": 0.01171875,
+          "significant_0_05": true
+        }
+      }
+    }
+  }
+}

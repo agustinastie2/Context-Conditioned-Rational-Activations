@@ -37,6 +37,8 @@ import torch.nn as nn
 
 import os as _os
 
+from cca_kernels import cca_1d_kernel, cca_2d_kernel
+
 DEFAULT_GROUPS = int(_os.environ.get("CCA_GROUPS", 64))
 DEFAULT_ALPHA = 1.0
 DEFAULT_GAMMA = 2.0
@@ -51,6 +53,8 @@ G_HIDDEN = int(_os.environ.get("CCA_GHID", 64))
 # A smaller generator keeps the exact-SiLU start (its last layer is still
 # zero-initialised) and the same maths; only its capacity/throughput change.
 DEFAULT_LOWRANK = int(_os.environ.get("CCA_LOWRANK", 0))
+LITE_GROUPS = 16
+LITE_G_HIDDEN = 16
 
 # v2 adds a context-dependent input affine (scale w, shift d) so the curve can
 # RE-CENTRE per regime, not just scale a correction. With theta_0 = 0 and G's
@@ -118,11 +122,12 @@ class _CCABase(nn.Module):
         raw = self.G(context).view(*lead, self.n_out, self.groups)
         if self.collect:
             self._buf.append(raw.reshape(-1, self.n_out, self.groups).detach())
+        bounded = torch.tanh(raw)
         theta0 = self.theta_0.view(*([1] * len(lead)), 5, self.groups)
-        rat = theta0 + self.gamma * torch.tanh(raw[..., :5, :])
+        rat = theta0 + self.gamma * bounded[..., :5, :]
         if self.affine:
-            w = 1.0 + self.gamma_aff * torch.tanh(raw[..., 5:6, :])   # init 1
-            d = self.gamma_aff * torch.tanh(raw[..., 6:7, :])         # init 0
+            w = 1.0 + self.gamma_aff * bounded[..., 5:6, :]   # init 1
+            d = self.gamma_aff * bounded[..., 6:7, :]         # init 0
         else:
             w = torch.ones_like(rat[..., :1, :])
             d = torch.zeros_like(rat[..., :1, :])
@@ -146,19 +151,7 @@ class CCA1D(_CCABase):
 
     def forward(self, x, context):
         rat, w, d = self._gen(context)             # leading dims = ctx.shape[:-1]
-        rep = self.feat_dim // self.groups
-
-        def exp(t):                                # [*L, G] -> [*L, F]
-            return t.repeat_interleave(rep, dim=-1)
-        rat5 = [exp(rat[..., i, :]) for i in range(5)]
-        w_, d_ = exp(w[..., 0, :]), exp(d[..., 0, :])
-        # if context is per-example ([B,ctx]) but x is a sequence ([B,S,F]),
-        # insert a singleton sequence axis so the coefficients broadcast over S.
-        if x.dim() == 3 and rat5[0].dim() == 2:
-            rat5 = [t.unsqueeze(1) for t in rat5]
-            w_, d_ = w_.unsqueeze(1), d_.unsqueeze(1)
-        alpha_b = self.alpha.repeat_interleave(rep)        # [F], broadcasts
-        return self._curve(x, rat5, w_, d_, alpha_b)
+        return cca_1d_kernel(x, rat, w, d, self.alpha, self.groups)
 
 
 class CCA2D(_CCABase):
@@ -175,22 +168,33 @@ class CCA2D(_CCABase):
         if context is None:
             context = x.mean(dim=(2, 3))                       # GAP -> [B, C]
         rat, w, d = self._gen(context)
-        rep = self.feat_dim // self.groups
-        B = x.size(0)
+        return cca_2d_kernel(x, rat, w, d, self.alpha, self.groups)
 
-        def exp(t):                                # [B,1,G] -> [B,C,1,1]
-            return t[:, 0].repeat_interleave(rep, -1).view(B, -1, 1, 1)
-        rat5 = [exp(rat[:, i:i + 1]) for i in range(5)]
-        w_, d_ = exp(w), exp(d)
-        alpha_b = self.alpha.repeat_interleave(rep).view(1, -1, 1, 1)
-        return self._curve(x, rat5, w_, d_, alpha_b)
+
+class CCALite1D(CCA1D):
+    """Ready-to-use CCA-lite with the paper's ``groups=16, g_hidden=16``."""
+
+    def __init__(self, ctx_dim, feat_dim, **kwargs):
+        kwargs.setdefault("groups", LITE_GROUPS)
+        kwargs.setdefault("g_hidden", LITE_G_HIDDEN)
+        super().__init__(ctx_dim, feat_dim, **kwargs)
+
+
+class CCALite2D(CCA2D):
+    """Ready-to-use 2D CCA-lite, reducing groups if channels require it."""
+
+    def __init__(self, channels, ctx_dim=None, **kwargs):
+        kwargs.setdefault("groups", LITE_GROUPS)
+        kwargs.setdefault("g_hidden", LITE_G_HIDDEN)
+        super().__init__(channels, ctx_dim=ctx_dim, **kwargs)
 
 
 # --------------------------------------------------------------------------- #
 #  helpers shared by host models
 # --------------------------------------------------------------------------- #
 def cca_modules(model):
-    return [m for m in model.modules() if isinstance(m, _CCABase)]
+    return [m for m in model.modules()
+            if isinstance(m, _CCABase) or getattr(m, "_is_cca_module", False)]
 
 
 def set_cca(model, *, collect=False, shuffle_ctx=False):
@@ -222,6 +226,9 @@ def curve_at(model, x_grid, contexts):
     mod.collect = mod.shuffle_ctx = False
     with torch.no_grad():
         for c in contexts:
+            if hasattr(mod, "curve_for_context"):
+                ys.append(mod.curve_for_context(x.squeeze(0), c.view(1, -1).to(x.device)).cpu())
+                continue
             rat, w, d = mod._gen(c.view(1, -1).to(x.device))
             a0, a1, a2, b0, b1 = rat[0, :, 0].tolist()   # group 0
             wv, dv = w[0, 0, 0].item(), d[0, 0, 0].item()

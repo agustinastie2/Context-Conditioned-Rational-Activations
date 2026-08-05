@@ -1,0 +1,200 @@
+{
+  "text": {
+    "target_method": "cca_lite",
+    "target_params": 81188,
+    "target_flops_per_sample": 172032,
+    "parameter_cap_ratio": 1.05,
+    "flop_cap_ratio": 1.1,
+    "methods": {
+      "silu": {
+        "config": {
+          "method": "silu",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 76132,
+        "flops_per_sample": 153088,
+        "params_vs_target_pct": -6.227521308567773,
+        "flops_vs_target_pct": -11.011904761904766,
+        "within_budget": true
+      },
+      "silu_budget": {
+        "config": {
+          "method": "silu_budget",
+          "hidden": 266,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 81732,
+        "flops_per_sample": 164328,
+        "params_vs_target_pct": 0.6700497610484302,
+        "flops_vs_target_pct": -4.47823660714286,
+        "within_budget": true
+      },
+      "rational": {
+        "config": {
+          "method": "rational",
+          "hidden": 264,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 80788,
+        "flops_per_sample": 170496,
+        "params_vs_target_pct": -0.49268364782972807,
+        "flops_vs_target_pct": -0.8928571428571397,
+        "within_budget": true
+      },
+      "dyrelu": {
+        "config": {
+          "method": "dyrelu",
+          "hidden": 262,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 24
+        },
+        "params": 81452,
+        "flops_per_sample": 166244,
+        "params_vs_target_pct": 0.3251712075676316,
+        "flops_vs_target_pct": -3.3644903273809534,
+        "within_budget": true
+      },
+      "meta_acon": {
+        "config": {
+          "method": "meta_acon",
+          "hidden": 264,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 8
+        },
+        "params": 81300,
+        "flops_per_sample": 166496,
+        "params_vs_target_pct": 0.13795142139232386,
+        "flops_vs_target_pct": -3.2180059523809534,
+        "within_budget": true
+      },
+      "cca_lite": {
+        "config": {
+          "method": "cca_lite",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 81188,
+        "flops_per_sample": 172032,
+        "params_vs_target_pct": 0.0,
+        "flops_vs_target_pct": 0.0,
+        "within_budget": true
+      }
+    }
+  },
+  "digits": {
+    "target_method": "cca_lite",
+    "target_params": 25290,
+    "target_flops_per_sample": 2504960,
+    "parameter_cap_ratio": 1.05,
+    "flop_cap_ratio": 1.1,
+    "methods": {
+      "silu": {
+        "config": {
+          "method": "silu",
+          "hidden": null,
+          "channels1": 16,
+          "channels2": 32,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 20490,
+        "flops_per_sample": 2138752,
+        "params_vs_target_pct": -18.97983392645315,
+        "flops_vs_target_pct": -14.619315278487477,
+        "within_budget": true
+      },
+      "silu_budget": {
+        "config": {
+          "method": "silu_budget",
+          "hidden": null,
+          "channels1": 15,
+          "channels2": 41,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 25826,
+        "flops_per_sample": 2500764,
+        "params_vs_target_pct": 2.119414788453944,
+        "flops_vs_target_pct": -0.167507664793054,
+        "within_budget": true
+      },
+      "rational": {
+        "config": {
+          "method": "rational",
+          "hidden": null,
+          "channels1": 13,
+          "channels2": 41,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 25180,
+        "flops_per_sample": 2468620,
+        "params_vs_target_pct": -0.43495452748121277,
+        "flops_vs_target_pct": -1.4507217680122642,
+        "within_budget": true
+      },
+      "dyrelu": {
+        "config": {
+          "method": "dyrelu",
+          "hidden": null,
+          "channels1": 18,
+          "channels2": 32,
+          "groups": 32,
+          "g_hidden": 16
+        },
+        "params": 25318,
+        "flops_per_sample": 2508960,
+        "params_vs_target_pct": 0.11071569790430669,
+        "flops_vs_target_pct": 0.15968318855390518,
+        "within_budget": true
+      },
+      "meta_acon": {
+        "config": {
+          "method": "meta_acon",
+          "hidden": null,
+          "channels1": 15,
+          "channels2": 39,
+          "groups": 16,
+          "g_hidden": 8
+        },
+        "params": 25330,
+        "flops_per_sample": 2509132,
+        "params_vs_target_pct": 0.15816528272043495,
+        "flops_vs_target_pct": 0.1665495656617333,
+        "within_budget": true
+      },
+      "cca_lite": {
+        "config": {
+          "method": "cca_lite",
+          "hidden": null,
+          "channels1": 16,
+          "channels2": 32,
+          "groups": 16,
+          "g_hidden": 16
+        },
+        "params": 25290,
+        "flops_per_sample": 2504960,
+        "params_vs_target_pct": 0.0,
+        "flops_vs_target_pct": 0.0,
+        "within_budget": true
+      }
+    }
+  }
+}

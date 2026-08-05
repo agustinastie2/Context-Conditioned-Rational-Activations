@@ -28,7 +28,8 @@ import torch.nn.functional as F
 from torchvision import datasets, transforms
 
 import metrics
-from cca_core import CCA2D, set_cca, mean_coeff_variance
+from cca_core import set_cca, mean_coeff_variance
+from cca_factory import make_cca2d
 
 SEED = 1337
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -112,7 +113,7 @@ class SmallCNN(nn.Module):
         self.c2 = nn.Conv2d(16, 32, 3, padding=1)
         self.fc = nn.Linear(32 * 7 * 7, 10)
         if mode == "cca":
-            self.a1, self.a2 = CCA2D(16), CCA2D(32)
+            self.a1, self.a2 = make_cca2d(16), make_cca2d(32)
         else:
             self.a1 = self.a2 = nn.SiLU()
 

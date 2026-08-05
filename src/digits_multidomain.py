@@ -21,17 +21,13 @@ Writes results/digits_multidomain.json (+_single).   Run: python digits_multidom
 """
 
 import json
+import hashlib
+import io
 import os
-import ssl
 import statistics
 import time
-
-# USPS is hosted on a server whose TLS chain fails verification on some setups;
-# fall back to an unverified context so torchvision can fetch it (datasets only).
-try:
-    ssl._create_default_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
+import urllib.request
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -39,7 +35,8 @@ import torch.nn.functional as F
 from torchvision import datasets
 
 import metrics
-from cca_core import CCA2D, set_cca, mean_coeff_variance
+from cca_core import set_cca, mean_coeff_variance
+from cca_factory import make_cca2d
 
 SEED = 1337
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -75,10 +72,18 @@ def _domain(name, train):
         ds = datasets.MNIST("./data", train=train, download=True)
         return ds.data.float() / 255.0, ds.targets
     if name == "usps":
-        ds = datasets.USPS("./data", train=train, download=True)
-        X = torch.stack([torch.as_tensor(_to_arr(img), dtype=torch.float32)
-                         for img in ds.data]) / 255.0
-        return X, torch.as_tensor(ds.targets)
+        # Prefer torchvision's canonical LIBSVM source. Some current OpenSSL
+        # builds reject that host's legacy certificate; in that case use the
+        # HTTPS Hugging Face mirror and verify its pinned SHA-256 digest.
+        mirror = Path("./data/usps_hf") / ("train.parquet" if train else "test.parquet")
+        if mirror.exists():
+            return _usps_hf(train)
+        try:
+            ds = datasets.USPS("./data", train=train, download=True)
+            X = torch.as_tensor(ds.data, dtype=torch.float32) / 255.0
+            return X, torch.as_tensor(ds.targets)
+        except Exception:
+            return _usps_hf(train)
     # svhn
     ds = datasets.SVHN("./data", split="train" if train else "test", download=True)
     X = torch.tensor(ds.data, dtype=torch.float32) / 255.0       # [N,3,32,32]
@@ -88,6 +93,45 @@ def _domain(name, train):
 def _to_arr(img):
     import numpy as np
     return np.asarray(img)
+
+
+_USPS_HF = {
+    True: (
+        "https://huggingface.co/datasets/flwrlabs/usps/resolve/main/data/train-00000-of-00001.parquet",
+        "train.parquet", "24b412f300901d0aff5f086efe8e8d775e70c0ff170fac49c0277240284e8b4f",
+    ),
+    False: (
+        "https://huggingface.co/datasets/flwrlabs/usps/resolve/main/data/test-00000-of-00001.parquet",
+        "test.parquet", "ab49e18b0d27395d5b9dc13b001c30177504749db9f175c3aa12fe16bf39b935",
+    ),
+}
+
+
+def _usps_hf(train):
+    """Load a checksum-pinned HTTPS mirror of the torchvision USPS data."""
+    import numpy as np
+    import pyarrow.parquet as pq
+    from PIL import Image
+
+    url, filename, expected = _USPS_HF[bool(train)]
+    directory = Path("./data/usps_hf")
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / filename
+    if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        temporary = path.with_suffix(".tmp")
+        urllib.request.urlretrieve(url, temporary)
+        digest = hashlib.sha256(temporary.read_bytes()).hexdigest()
+        if digest != expected:
+            temporary.unlink(missing_ok=True)
+            raise RuntimeError(f"USPS mirror checksum mismatch: {digest}")
+        temporary.replace(path)
+    table = pq.read_table(path, columns=["image", "label"]).to_pylist()
+    images = np.stack([
+        np.asarray(Image.open(io.BytesIO(row["image"]["bytes"])), dtype=np.float32)
+        for row in table
+    ])
+    labels = torch.tensor([row["label"] for row in table], dtype=torch.long)
+    return torch.from_numpy(images) / 255.0, labels
 
 
 DOMAINS = ["mnist", "svhn", "usps"]
@@ -124,7 +168,7 @@ class SmallCNN(nn.Module):
         self.c2 = nn.Conv2d(16, 32, 3, padding=1)
         self.fc = nn.Linear(32 * 7 * 7, 10)
         if mode == "cca":
-            self.a1, self.a2 = CCA2D(16), CCA2D(32)
+            self.a1, self.a2 = make_cca2d(16), make_cca2d(32)
         else:
             self.a1 = self.a2 = nn.SiLU()
 

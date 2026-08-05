@@ -28,7 +28,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import metrics
-from cca_core import CCA1D, set_cca, mean_coeff_variance
+from cca_core import set_cca, mean_coeff_variance
+from cca_factory import make_cca1d
 
 SEED = 1337
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -104,7 +105,7 @@ class BoEClassifier(nn.Module):
         self.fc2 = nn.Linear(HID, HID)
         self.head = nn.Linear(HID, N_CLASSES)
         if mode == "cca":
-            self.a1, self.a2 = CCA1D(EMB, HID), CCA1D(EMB, HID)
+            self.a1, self.a2 = make_cca1d(EMB, HID), make_cca1d(EMB, HID)
         else:
             self.a1 = self.a2 = nn.SiLU()
 

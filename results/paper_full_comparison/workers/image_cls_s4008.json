@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "task": "image_cls",
+      "method": "silu",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.8543,
+      "shuffle_value": null,
+      "params": 20490,
+      "train_seconds": 2.528697800000373,
+      "eval_throughput": 121372.09396540248,
+      "n_regimes": 8
+    },
+    {
+      "task": "image_cls",
+      "method": "rational",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.8592,
+      "shuffle_value": null,
+      "params": 20746,
+      "train_seconds": 6.41999659999783,
+      "eval_throughput": 97557.38116725435,
+      "n_regimes": 8
+    },
+    {
+      "task": "image_cls",
+      "method": "dyrelu",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.8789,
+      "shuffle_value": null,
+      "params": 23466,
+      "train_seconds": 5.345462700002827,
+      "eval_throughput": 117941.43285361587,
+      "n_regimes": 8
+    },
+    {
+      "task": "image_cls",
+      "method": "meta_acon",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.8619,
+      "shuffle_value": null,
+      "params": 21898,
+      "train_seconds": 4.713835400001699,
+      "eval_throughput": 117823.81643964144,
+      "n_regimes": 8
+    },
+    {
+      "task": "image_cls",
+      "method": "cca_lite",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.878,
+      "shuffle_value": 0.5519,
+      "params": 25290,
+      "train_seconds": 7.745186099997227,
+      "eval_throughput": 76347.38637459931,
+      "n_regimes": 8
+    },
+    {
+      "task": "image_cls",
+      "method": "cca_hinge",
+      "seed": 4008,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of each convolution preactivation",
+      "value": 0.8816,
+      "shuffle_value": 0.55,
+      "params": 26378,
+      "train_seconds": 8.966204000000289,
+      "eval_throughput": 66794.76828163245,
+      "n_regimes": 8
+    }
+  ]
+}

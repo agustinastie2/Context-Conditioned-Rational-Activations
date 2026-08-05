@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "task": "audio_digits",
+      "method": "silu",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.7083333333333334,
+      "shuffle_value": null,
+      "params": 25290,
+      "train_seconds": 1.5126649999983783,
+      "eval_throughput": 18104.51860751207,
+      "n_regimes": 6
+    },
+    {
+      "task": "audio_digits",
+      "method": "rational",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.7533333333333333,
+      "shuffle_value": null,
+      "params": 25546,
+      "train_seconds": 2.0137576000015542,
+      "eval_throughput": 44642.418221812244,
+      "n_regimes": 6
+    },
+    {
+      "task": "audio_digits",
+      "method": "dyrelu",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.7233333333333334,
+      "shuffle_value": null,
+      "params": 28266,
+      "train_seconds": 1.9889599999987695,
+      "eval_throughput": 36665.63319540766,
+      "n_regimes": 6
+    },
+    {
+      "task": "audio_digits",
+      "method": "meta_acon",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.7266666666666667,
+      "shuffle_value": null,
+      "params": 26698,
+      "train_seconds": 1.8507962000003317,
+      "eval_throughput": 34197.806737419996,
+      "n_regimes": 6
+    },
+    {
+      "task": "audio_digits",
+      "method": "cca_lite",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.745,
+      "shuffle_value": 0.6816666666666666,
+      "params": 30090,
+      "train_seconds": 2.6210709999977553,
+      "eval_throughput": 30949.324216299978,
+      "n_regimes": 6
+    },
+    {
+      "task": "audio_digits",
+      "method": "cca_hinge",
+      "seed": 4001,
+      "metric": "accuracy",
+      "higher_is_better": true,
+      "context_origin": "global-average pooling of log-STFT preactivation",
+      "value": 0.765,
+      "shuffle_value": 0.6933333333333334,
+      "params": 31178,
+      "train_seconds": 2.885576399999991,
+      "eval_throughput": 29860.135976933754,
+      "n_regimes": 6
+    }
+  ]
+}

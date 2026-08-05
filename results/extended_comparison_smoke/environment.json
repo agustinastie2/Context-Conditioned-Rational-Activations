@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-08-05T15:25:15Z",
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.11.0+cu130",
+  "cuda_runtime": "13.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "git_commit": null,
+  "command": [
+    "src\\extended_comparison.py",
+    "--smoke",
+    "--skip-cost",
+    "--tasks",
+    "text,digits",
+    "--deadline-minutes",
+    "2"
+  ],
+  "arguments": {
+    "smoke": true,
+    "skip_cost": true,
+    "deadline_minutes": 2.0,
+    "seeds": "1337,1338,1339,1340,1341,1342,1343,1344,1345,1346",
+    "tasks": "text,digits",
+    "output": null
+  }
+}

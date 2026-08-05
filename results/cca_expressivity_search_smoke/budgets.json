@@ -1,0 +1,230 @@
+{
+  "text": {
+    "lite_g16_h16": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 16,
+        "g_hidden": 16,
+        "lowrank": 0
+      },
+      "params": 81188,
+      "flops_per_sample": 172032,
+      "params_vs_lite_pct": 0.0,
+      "flops_vs_lite_pct": 0.0,
+      "feasible": true
+    },
+    "g32_lr8": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 32,
+        "g_hidden": 16,
+        "lowrank": 8
+      },
+      "params": 81860,
+      "flops_per_sample": 172544,
+      "params_vs_lite_pct": 0.8277085283539432,
+      "flops_vs_lite_pct": 0.29761904761904656,
+      "feasible": true
+    },
+    "g32_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 32,
+        "g_hidden": 16,
+        "lowrank": 4
+      },
+      "params": 79940,
+      "flops_per_sample": 168704,
+      "params_vs_lite_pct": -1.5371729812287516,
+      "flops_vs_lite_pct": -1.9345238095238138,
+      "feasible": true
+    },
+    "g64_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 64,
+        "g_hidden": 16,
+        "lowrank": 4
+      },
+      "params": 82564,
+      "flops_per_sample": 172288,
+      "params_vs_lite_pct": 1.6948317485342645,
+      "flops_vs_lite_pct": 0.14880952380953438,
+      "feasible": true
+    },
+    "g8_h32": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 8,
+        "g_hidden": 32,
+        "lowrank": 0
+      },
+      "params": 82036,
+      "flops_per_sample": 174080,
+      "params_vs_lite_pct": 1.0444893333990235,
+      "flops_vs_lite_pct": 1.1904761904761862,
+      "feasible": true
+    },
+    "g16_h24_lr8": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 16,
+        "g_hidden": 24,
+        "lowrank": 8
+      },
+      "params": 80308,
+      "flops_per_sample": 170240,
+      "params_vs_lite_pct": -1.0839040252254017,
+      "flops_vs_lite_pct": -1.041666666666663,
+      "feasible": true
+    },
+    "g32_h24_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": 256,
+        "channels1": null,
+        "channels2": null,
+        "groups": 32,
+        "g_hidden": 24,
+        "lowrank": 4
+      },
+      "params": 80532,
+      "flops_per_sample": 169856,
+      "params_vs_lite_pct": -0.808001182440754,
+      "flops_vs_lite_pct": -1.2648809523809534,
+      "feasible": true
+    }
+  },
+  "digits": {
+    "lite_g16_h16": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 16,
+        "g_hidden": 16,
+        "lowrank": 0
+      },
+      "params": 25290,
+      "flops_per_sample": 2504960,
+      "params_vs_lite_pct": 0.0,
+      "flops_vs_lite_pct": 0.0,
+      "feasible": true
+    },
+    "g32_lr8": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 32,
+        "g_hidden": 16,
+        "lowrank": 8
+      },
+      "params": 24858,
+      "flops_per_sample": 2503680,
+      "params_vs_lite_pct": -1.708185053380784,
+      "flops_vs_lite_pct": -0.05109862033725321,
+      "feasible": true
+    },
+    "g32_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 32,
+        "g_hidden": 16,
+        "lowrank": 4
+      },
+      "params": 23386,
+      "flops_per_sample": 2500736,
+      "params_vs_lite_pct": -7.528667457493077,
+      "flops_vs_lite_pct": -0.1686254471129245,
+      "feasible": true
+    },
+    "g64_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 64,
+        "g_hidden": 16,
+        "lowrank": 4
+      },
+      "params": 23386,
+      "flops_per_sample": 2500736,
+      "params_vs_lite_pct": -7.528667457493077,
+      "flops_vs_lite_pct": -0.1686254471129245,
+      "feasible": true
+    },
+    "g8_h32": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 8,
+        "g_hidden": 32,
+        "lowrank": 0
+      },
+      "params": 25882,
+      "flops_per_sample": 2506496,
+      "params_vs_lite_pct": 2.340846184262557,
+      "flops_vs_lite_pct": 0.06131834440470385,
+      "feasible": true
+    },
+    "g16_h24_lr8": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 16,
+        "g_hidden": 24,
+        "lowrank": 8
+      },
+      "params": 24282,
+      "flops_per_sample": 2502912,
+      "params_vs_lite_pct": -3.985765124555163,
+      "flops_vs_lite_pct": -0.08175779253960513,
+      "feasible": true
+    },
+    "g32_h24_lr4": {
+      "config": {
+        "method": "cca_lite",
+        "hidden": null,
+        "channels1": 16,
+        "channels2": 32,
+        "groups": 32,
+        "g_hidden": 24,
+        "lowrank": 4
+      },
+      "params": 23850,
+      "flops_per_sample": 2501632,
+      "params_vs_lite_pct": -5.693950177935947,
+      "flops_vs_lite_pct": -0.13285641287684724,
+      "feasible": true
+    }
+  }
+}

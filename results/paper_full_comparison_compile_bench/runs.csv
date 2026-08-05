@@ -1,0 +1,8 @@
+context_origin,eval_throughput,higher_is_better,method,metric,n_regimes,params,seed,shuffle_value,task,train_seconds,value
+strictly-causal running grey-level histogram,2843763.5003651567,False,b0h,bits_per_dim,16,85064,4999,,image_gen_mnist,41.55378660000133,0.9171310773772936
+strictly-causal running grey-level histogram,601519.5235536952,False,cca_hinge,bits_per_dim,16,89864,4999,3.4321377606546055,image_gen_mnist,138.00511820000247,0.8938031662488605
+strictly-causal running grey-level histogram,1849056.1544763644,False,cca_lite,bits_per_dim,16,88776,4999,3.209212172807283,image_gen_mnist,96.71909230000165,0.895406812973386
+strictly-causal running grey-level histogram,4066722.4959166767,False,dyrelu,bits_per_dim,16,86952,4999,,image_gen_mnist,39.75889029999962,0.9141816547149464
+strictly-causal running grey-level histogram,3611981.3537926935,False,meta_acon,bits_per_dim,16,85384,4999,,image_gen_mnist,36.824608299997635,0.9103370912479437
+strictly-causal running grey-level histogram,2018377.1447476444,False,rational,bits_per_dim,16,84744,4999,,image_gen_mnist,68.76050860000032,1.0320828585735071
+strictly-causal running grey-level histogram,7494481.255801942,False,silu,bits_per_dim,16,84488,4999,,image_gen_mnist,15.861658999998326,1.0325030108137037

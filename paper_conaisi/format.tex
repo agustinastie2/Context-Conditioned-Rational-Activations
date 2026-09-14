@@ -25,6 +25,7 @@
 \usepackage{amssymb}
 \usepackage{titlesec}
 \usepackage{multicol}
+\raggedcolumns
 \usepackage{cite}        % Citas compactas [1-3], [2, 5]
 \usepackage{booktabs}    % Tablas profesionales
 \usepackage{multirow}    % Celdas multifila
@@ -174,10 +175,8 @@
 % Texto con Times 10 pts cursiva, interlínea simple, justificado.
 % Dejar dos líneas en blanco después del resumen (~20 pt).
 \newcommand{\resumen}[1]{%
-  \begin{center}%
-    {\fontsize{12pt}{14.4pt}\selectfont\bfseries Resumen\par}%
-  \end{center}%
-  \vspace{4pt}%
+  {\centering\fontsize{12pt}{14.4pt}\selectfont\bfseries Resumen\par}%
+  \vspace{6pt}%
   {\fontsize{10pt}{12pt}\selectfont\itshape #1\par}%
   \vspace{12pt}%
 }

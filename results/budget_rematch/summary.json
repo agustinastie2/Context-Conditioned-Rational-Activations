@@ -1,0 +1,346 @@
+{
+  "seeds": [
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009,
+    4010
+  ],
+  "tasks": {
+    "text_cls": {
+      "family_size": 5,
+      "methods": {
+        "silu": {
+          "n": 10,
+          "mean_accuracy": 0.93265,
+          "std_accuracy": 0.01684527216890379,
+          "ci95_accuracy": [
+            0.9222624999999999,
+            0.9423499999999999
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 76132,
+          "params_vs_hinge_pct": -7.467548252224221,
+          "flops_vs_hinge_pct": -13.583815028901736,
+          "mean_train_seconds": 4.312385499999072
+        },
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.934225,
+          "std_accuracy": 0.015404364460906676,
+          "ci95_accuracy": [
+            0.9248375,
+            0.9432253125
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82876,
+          "params_vs_hinge_pct": 0.7292527590062825,
+          "flops_vs_hinge_pct": -5.942919075144504,
+          "mean_train_seconds": 4.145335289999639
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.96285,
+          "std_accuracy": 0.011647722714953518,
+          "ci95_accuracy": [
+            0.9559999999999998,
+            0.9697628125000001
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82940,
+          "params_vs_hinge_pct": 0.8070397199669399,
+          "flops_vs_hinge_pct": -1.1018786127167668,
+          "mean_train_seconds": 9.741851359999782
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.9666625,
+          "std_accuracy": 0.00982026851013305,
+          "ci95_accuracy": [
+            0.96085,
+            0.97255
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82764,
+          "params_vs_hinge_pct": 0.5931255773250932,
+          "flops_vs_hinge_pct": -4.653630780346818,
+          "mean_train_seconds": 9.353726329999336
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.9633875,
+          "std_accuracy": 0.011386890915531854,
+          "ci95_accuracy": [
+            0.9566743750000001,
+            0.9701378125000001
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82414,
+          "params_vs_hinge_pct": 0.1677281345714432,
+          "flops_vs_hinge_pct": -4.732658959537572,
+          "mean_train_seconds": 8.928639330000077
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.9637125,
+          "std_accuracy": 0.009922626010509725,
+          "ci95_accuracy": [
+            0.9580625000000002,
+            0.9697631249999998
+          ],
+          "mean_shuffled_accuracy": 0.9479625,
+          "mean_params": 81188,
+          "params_vs_hinge_pct": -1.3223783363313757,
+          "flops_vs_hinge_pct": -2.8901734104046284,
+          "mean_train_seconds": 12.781066269999792
+        },
+        "cca_hinge": {
+          "n": 10,
+          "mean_accuracy": 0.9641625,
+          "std_accuracy": 0.010330485158554307,
+          "ci95_accuracy": [
+            0.9580371874999999,
+            0.9702999999999999
+          ],
+          "mean_shuffled_accuracy": 0.9547,
+          "mean_params": 82276,
+          "params_vs_hinge_pct": 0.0,
+          "flops_vs_hinge_pct": 0.0,
+          "mean_train_seconds": 14.182532289999653
+        }
+      },
+      "cca_hinge_comparisons": {
+        "silu_budget": {
+          "n_pairs": 10,
+          "mean_gain_points": 2.9937500000000004,
+          "ci95_gain_points": [
+            2.6325000000000007,
+            3.3774999999999977
+          ],
+          "cohens_dz": 4.722020041785541,
+          "p_exact_two_sided": 0.001953125,
+          "p_holm": 0.009765625,
+          "significant_0_05": true
+        },
+        "rational": {
+          "n_pairs": 10,
+          "mean_gain_points": 0.13125000000000053,
+          "ci95_gain_points": [
+            -0.05124999999999827,
+            0.3437499999999994
+          ],
+          "cohens_dz": 0.3919020077194275,
+          "p_exact_two_sided": 0.28515625,
+          "p_holm": 0.85546875,
+          "significant_0_05": false
+        },
+        "dyrelu": {
+          "n_pairs": 10,
+          "mean_gain_points": -0.249999999999998,
+          "ci95_gain_points": [
+            -0.36628124999999784,
+            -0.12750000000000147
+          ],
+          "cohens_dz": -1.247835496211563,
+          "p_exact_two_sided": 0.0078125,
+          "p_holm": 0.03125,
+          "significant_0_05": true
+        },
+        "meta_acon": {
+          "n_pairs": 10,
+          "mean_gain_points": 0.07750000000000146,
+          "ci95_gain_points": [
+            -0.10624999999999774,
+            0.248750000000002
+          ],
+          "cohens_dz": 0.25651878448264875,
+          "p_exact_two_sided": 0.4296875,
+          "p_holm": 0.859375,
+          "significant_0_05": false
+        },
+        "cca_lite": {
+          "n_pairs": 10,
+          "mean_gain_points": 0.045000000000001705,
+          "ci95_gain_points": [
+            -0.11749999999999927,
+            0.22000000000000022
+          ],
+          "cohens_dz": 0.15732679005613678,
+          "p_exact_two_sided": 0.6484375,
+          "p_holm": 0.859375,
+          "significant_0_05": false
+        }
+      }
+    },
+    "text_cls_single": {
+      "family_size": 5,
+      "methods": {
+        "silu": {
+          "n": 10,
+          "mean_accuracy": 0.9941875,
+          "std_accuracy": 0.0034122176317853263,
+          "ci95_accuracy": [
+            0.9919621875,
+            0.9959875
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 76132,
+          "params_vs_hinge_pct": -7.467548252224221,
+          "flops_vs_hinge_pct": -13.583815028901736,
+          "mean_train_seconds": 5.2829689399997735
+        },
+        "silu_budget": {
+          "n": 10,
+          "mean_accuracy": 0.9942875,
+          "std_accuracy": 0.0033644640071719594,
+          "ci95_accuracy": [
+            0.9920874999999999,
+            0.9960624999999999
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82876,
+          "params_vs_hinge_pct": 0.7292527590062825,
+          "flops_vs_hinge_pct": -5.942919075144504,
+          "mean_train_seconds": 5.061781519999568
+        },
+        "rational": {
+          "n": 10,
+          "mean_accuracy": 0.995625,
+          "std_accuracy": 0.0018773133876781164,
+          "ci95_accuracy": [
+            0.9944625,
+            0.9966753125000001
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82940,
+          "params_vs_hinge_pct": 0.8070397199669399,
+          "flops_vs_hinge_pct": -1.1018786127167668,
+          "mean_train_seconds": 11.469148340000539
+        },
+        "dyrelu": {
+          "n": 10,
+          "mean_accuracy": 0.9965,
+          "std_accuracy": 0.0015701203067847377,
+          "ci95_accuracy": [
+            0.9955496875,
+            0.9973749999999999
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82764,
+          "params_vs_hinge_pct": 0.5931255773250932,
+          "flops_vs_hinge_pct": -4.653630780346818,
+          "mean_train_seconds": 11.29007552999974
+        },
+        "meta_acon": {
+          "n": 10,
+          "mean_accuracy": 0.99535,
+          "std_accuracy": 0.001970088830484542,
+          "ci95_accuracy": [
+            0.9941125000000002,
+            0.996425
+          ],
+          "mean_shuffled_accuracy": null,
+          "mean_params": 82414,
+          "params_vs_hinge_pct": 0.1677281345714432,
+          "flops_vs_hinge_pct": -4.732658959537572,
+          "mean_train_seconds": 11.701197070000854
+        },
+        "cca_lite": {
+          "n": 10,
+          "mean_accuracy": 0.9959375,
+          "std_accuracy": 0.0016491264522635967,
+          "ci95_accuracy": [
+            0.994925,
+            0.996875
+          ],
+          "mean_shuffled_accuracy": 0.99455,
+          "mean_params": 81188,
+          "params_vs_hinge_pct": -1.3223783363313757,
+          "flops_vs_hinge_pct": -2.8901734104046284,
+          "mean_train_seconds": 17.753467309999905
+        },
+        "cca_hinge": {
+          "n": 10,
+          "mean_accuracy": 0.9954625,
+          "std_accuracy": 0.0022415350023291467,
+          "ci95_accuracy": [
+            0.9941375000000001,
+            0.9967750000000001
+          ],
+          "mean_shuffled_accuracy": 0.993675,
+          "mean_params": 82276,
+          "params_vs_hinge_pct": 0.0,
+          "flops_vs_hinge_pct": 0.0,
+          "mean_train_seconds": 18.74948258999975
+        }
+      },
+      "cca_hinge_comparisons": {
+        "silu_budget": {
+          "n_pairs": 10,
+          "mean_gain_points": 0.1175000000000015,
+          "ci95_gain_points": [
+            0.007500000000001394,
+            0.25125000000000064
+          ],
+          "cohens_dz": 0.5657679583611204,
+          "p_exact_two_sided": 0.11328125,
+          "p_holm": 0.453125,
+          "significant_0_05": false
+        },
+        "rational": {
+          "n_pairs": 10,
+          "mean_gain_points": -0.016249999999996545,
+          "ci95_gain_points": [
+            -0.07124999999999715,
+            0.036250000000004334
+          ],
+          "cohens_dz": -0.17474563496797635,
+          "p_exact_two_sided": 0.61328125,
+          "p_holm": 1.0,
+          "significant_0_05": false
+        },
+        "dyrelu": {
+          "n_pairs": 10,
+          "mean_gain_points": -0.1037499999999991,
+          "ci95_gain_points": [
+            -0.19874999999999754,
+            -0.026249999999999885
+          ],
+          "cohens_dz": -0.7053796058944775,
+          "p_exact_two_sided": 0.03125,
+          "p_holm": 0.15625,
+          "significant_0_05": false
+        },
+        "meta_acon": {
+          "n_pairs": 10,
+          "mean_gain_points": 0.011250000000001537,
+          "ci95_gain_points": [
+            -0.05874999999999741,
+            0.0675000000000026
+          ],
+          "cohens_dz": 0.10408508471229744,
+          "p_exact_two_sided": 0.779296875,
+          "p_holm": 1.0,
+          "significant_0_05": false
+        },
+        "cca_lite": {
+          "n_pairs": 10,
+          "mean_gain_points": -0.0474999999999981,
+          "ci95_gain_points": [
+            -0.1299999999999957,
+            0.03000000000000005
+          ],
+          "cohens_dz": -0.3444124479204783,
+          "p_exact_two_sided": 0.3125,
+          "p_holm": 0.9375,
+          "significant_0_05": false
+        }
+      }
+    }
+  }
+}

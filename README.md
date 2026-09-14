@@ -5,8 +5,10 @@ worth the compute? A controlled, multi-modality study.*
 
 This repository accompanies the research report in **[PAPER.md](PAPER.md)**
 (also built to **[paper/PAPER.pdf](paper/PAPER.pdf)** and
-**[paper/PAPER.tex](paper/PAPER.tex)**), with a publication-form paper in
-**[paper_cacic/main.tex](paper_cacic/main.tex)**. It introduces **CCA**, an
+**[paper/PAPER.tex](paper/PAPER.tex)**), with publication-form papers in
+**[paper_cacic/main.tex](paper_cacic/main.tex)** (LLNCS) and
+**[paper_conaisi/main.tex](paper_conaisi/main.tex)** (the rewritten Spanish
+version in the CoNaIISI 2026 format). It introduces **CCA**, an
 activation whose *shape is generated per example from a summary of the layer's
 context*, pins down **when and why** it beats a fixed activation, and measures
 **what it costs** so its use can be justified prudently.
@@ -149,11 +151,15 @@ Per-task cost and rentability are in `results/cost_table.md` (LaTeX in
 │   ├── audio_digits.py              ← audio spoken digits (FSDD, log-STFT)
 │   ├── text_sentiment_multidomain.py← real multi-domain sentiment (Blitzer)
 │   ├── make_figures.py    ← publication figures + LaTeX/markdown tables
+│   ├── make_figures_conaisi.py ← monochrome figures for paper_conaisi/ (current runs)
+│   ├── export_shuffle_summary.py ← aggregates the context-shuffle ablation from runs.csv
 │   ├── run_all.py         ← one-command reproduction driver
 │   └── build_paper.py     ← PAPER.md → paper/PAPER.tex + paper/PAPER.pdf
 ├── results/               ← per-task JSON results (with cost blocks) + tables
 ├── figs/                  ← all figures (PNG), incl. samples_*.png inference grids
-└── paper/, paper_cacic/   ← generated PAPER.pdf and the CACIC publication paper
+└── paper/, paper_cacic/, paper_conaisi/
+                           ← generated PAPER.pdf, the CACIC submission, and the
+                             rewritten CoNaIISI 2026 version (Spanish, 10 pages)
 ```
 
 Data (MNIST, Fashion-MNIST, SVHN, USPS, CIFAR-10, Tiny Shakespeare, FSDD, the

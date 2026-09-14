@@ -1,0 +1,165 @@
+{
+  "jobs": 1,
+  "env": {
+    "STEPS": "500",
+    "PAPER_AMP": "1",
+    "PAPER_STAGE_DATA": "1"
+  },
+  "tasks": [
+    "image_gen_mnist",
+    "image_gen_fashion",
+    "image_gen_cifar"
+  ],
+  "seeds": [
+    4101,
+    4102,
+    4103,
+    4104,
+    4105,
+    4106,
+    4107,
+    4108,
+    4109,
+    4110
+  ],
+  "workers_launched": 30,
+  "cells_requested": 192,
+  "failures": [],
+  "wall_minutes": 43.00431807136667,
+  "cells_per_minute": 4.464667935935445,
+  "host": "Linux-6.8.0-1065-gcp-x86_64-with-glibc2.39",
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA L4",
+  "timings_contended": "partial",
+  "timings_note": "Workers ran serially; per-run timings are uncontended.",
+  "provenance_note": "This block was first started with --jobs 6. A per-task calibration showed image generation does not scale with concurrency on this GPU (4.88/4.77/4.83 cells/min at jobs=1/2/4), so the attempt was stopped after 18 cells and the block was re-run serially; the harness resumed from the completed cells rather than repeating them. Metric values are unaffected -- a cell is an independent seeded training run and concurrency changes only wall-clock -- and the MNIST means reproduce the published three-seed RTX 4070 run to within 0.4%. Only the per-run timing fields of the cells listed in contended_timing_cells are inflated; no table uses them.",
+  "contended_timing_cells": [
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4101,
+      "train_seconds": 63.1,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4101,
+      "train_seconds": 114.7,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4101,
+      "train_seconds": 14.3,
+      "uncontended_reference_s": 3.2
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4102,
+      "train_seconds": 63.1,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4102,
+      "train_seconds": 115.0,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4102,
+      "train_seconds": 15.5,
+      "uncontended_reference_s": 3.2
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4103,
+      "train_seconds": 63.1,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4103,
+      "train_seconds": 115.0,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4103,
+      "train_seconds": 15.5,
+      "uncontended_reference_s": 3.2
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4104,
+      "train_seconds": 63.0,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4104,
+      "train_seconds": 115.0,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4104,
+      "train_seconds": 15.6,
+      "uncontended_reference_s": 3.2
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4105,
+      "train_seconds": 63.1,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4105,
+      "train_seconds": 114.9,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4105,
+      "train_seconds": 15.1,
+      "uncontended_reference_s": 3.2
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "dyrelu",
+      "seed": 4106,
+      "train_seconds": 63.1,
+      "uncontended_reference_s": 9.7
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "rational",
+      "seed": 4106,
+      "train_seconds": 114.9,
+      "uncontended_reference_s": 17.5
+    },
+    {
+      "task": "image_gen_mnist",
+      "method": "silu",
+      "seed": 4106,
+      "train_seconds": 15.1,
+      "uncontended_reference_s": 3.2
+    }
+  ]
+}

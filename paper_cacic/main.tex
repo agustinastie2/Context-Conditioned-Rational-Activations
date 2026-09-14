@@ -163,11 +163,11 @@ En texto, CCA-Hinge y CCA-Lite alcanzan $94.75\%$; Dynamic ReLU-B obtiene $94.87
 En la aplicación real multirrégimen, CCA-Hinge alcanza $88.68\%$ y supera a Dynamic ReLU-B por $0.62$ pp (IC95\% $[0.21,1.11]$, $d_z=0.81$, $p_{\mathrm{Holm}}=0.0234$), a Meta-ACON por $5.10$ pp y a Rational por $5.54$ pp (ambas $p_{\mathrm{Holm}}=0.0098$). Por dominio obtiene $96.71\%$ en MNIST, $75.01\%$ en SVHN y $94.34\%$ en USPS; Dynamic ReLU-B obtiene $96.34\%$, $73.52\%$ y $94.32\%$. La mejora se concentra así en SVHN, el régimen visual más diferente, sin proporcionar al modelo qué dataset produjo cada imagen.
 
 \subsection{Matriz de tareas y controles}
-La Tabla~\ref{tab:matrix} aplica todos los baselines al resto del banco. Las tareas de exactitud usan semillas 4001--4010. Texto generativo e imágenes usan semillas 4001--4003 y 4101--4103, respectivamente. Las métricas de generación son menores-mejor; el resto es exactitud en porcentaje.
+La Tabla~\ref{tab:matrix} aplica todos los baselines al resto del banco. Las tareas de exactitud usan semillas 4001--4010. Texto generativo e imágenes usan semillas 4001--4010 y 4101--4110, respectivamente. Las métricas de generación son menores-mejor; el resto es exactitud en porcentaje.
 
 \begin{table}[t]
 \centering
-\caption{Matriz completa: media $\pm$ desv. Rat.=Rational, DyR=Dynamic ReLU-B, Meta=Meta-ACON. $^\dagger$: tres semillas, resultado exploratorio.}
+\caption{Matriz completa sobre diez semillas emparejadas: media $\pm$ desv. Rat.=Rational, DyR=Dynamic ReLU-B, Meta=Meta-ACON.}
 \label{tab:matrix}
 \scriptsize
 \setlength{\tabcolsep}{2.6pt}
@@ -176,10 +176,10 @@ La Tabla~\ref{tab:matrix} aplica todos los baselines al resto del banco. Las tar
 \toprule
 Tarea (métrica) & SiLU & Rat. & DyR & Meta & CCA-Lite & CCA-Hinge\\
 \midrule
-LM carácter$^\dagger$ (PPL $\downarrow$) & $21.565{\pm}.098$ & $21.070{\pm}.371$ & $11.812{\pm}.141$ & $12.611{\pm}.348$ & $11.892{\pm}.270$ & $\mathbf{11.480{\pm}.099}$\\
-Gen. MNIST$^\dagger$ (bpd $\downarrow$) & $1.078{\pm}.007$ & $1.066{\pm}.006$ & $.949{\pm}.007$ & $.952{\pm}.004$ & $.939{\pm}.003$ & $\mathbf{.939{\pm}.003}$\\
-Gen. Fashion$^\dagger$ (bpd $\downarrow$) & $1.594{\pm}.009$ & $1.565{\pm}.011$ & $1.329{\pm}.001$ & $1.335{\pm}.004$ & $1.290{\pm}.004$ & $\mathbf{1.286{\pm}.002}$\\
-Gen. CIFAR$^\dagger$ (bpd $\downarrow$) & $1.588{\pm}.005$ & $1.581{\pm}.005$ & $1.455{\pm}.006$ & $1.461{\pm}.004$ & $1.430{\pm}.006$ & $\mathbf{1.427{\pm}.002}$\\
+LM carácter (PPL $\downarrow$) & $21.703{\pm}.318$ & $21.644{\pm}.496$ & $11.985{\pm}.211$ & $12.885{\pm}.551$ & $11.763{\pm}.197$ & $\mathbf{11.723{\pm}.360}$\\
+Gen. MNIST (bpd $\downarrow$) & $1.083{\pm}.007$ & $1.069{\pm}.008$ & $.949{\pm}.006$ & $.951{\pm}.006$ & $.938{\pm}.006$ & $\mathbf{.937{\pm}.007}$\\
+Gen. Fashion (bpd $\downarrow$) & $1.597{\pm}.009$ & $1.567{\pm}.008$ & $1.327{\pm}.009$ & $1.335{\pm}.007$ & $1.286{\pm}.010$ & $\mathbf{1.284{\pm}.009}$\\
+Gen. CIFAR (bpd $\downarrow$) & $1.588{\pm}.008$ & $1.581{\pm}.007$ & $1.456{\pm}.005$ & $1.469{\pm}.007$ & $1.430{\pm}.005$ & $\mathbf{1.430{\pm}.007}$\\
 Imagen, 8 reg. (Acc.) & $85.13{\pm}.46$ & $86.61{\pm}.40$ & $87.94{\pm}.37$ & $86.49{\pm}.51$ & $87.87{\pm}.73$ & $\mathbf{88.03{\pm}.70}$\\
 Imagen, 1 reg. (Acc.) & $98.25{\pm}.10$ & $98.29{\pm}.26$ & $98.41{\pm}.20$ & $98.33{\pm}.16$ & $98.45{\pm}.24$ & $\mathbf{98.49{\pm}.23}$\\
 Texto, 8 reg. (Acc.) & $93.27{\pm}1.69$ & $96.22{\pm}1.12$ & $\mathbf{96.56{\pm}1.05}$ & $96.23{\pm}1.03$ & $96.36{\pm}.98$ & $96.45{\pm}1.03$\\
@@ -196,10 +196,10 @@ En clasificación de imágenes, Hinge queda empatada con Dynamic ReLU-B ($+0.09$
 
 Los controles de régimen único reducen las diferencias prácticas: en texto todos los métodos quedan entre $99.42$ y $99.64\%$; en imágenes, Hinge mejora $0.24$ pp sobre SiLU, pero empata con Dynamic ReLU-B. Por tanto, los datos no sostienen una ventaja universal por usar parámetros dinámicos.
 
-En generación corta, Hinge logra el menor bpd en MNIST, Fashion y CIFAR-10 y mejora a Dynamic ReLU-B en 0.010, 0.042 y 0.028 bpd. Con tres pares, la prueba exacta tiene resolución insuficiente y los valores corregidos son uno; tratamos estos resultados como evidencia exploratoria, no como significancia confirmatoria. En caracteres, Hinge reduce la PPL de Dynamic ReLU-B de 11.812 a 11.480, con la misma limitación estadística.
+En generación corta, Hinge logra el menor bpd en MNIST, Fashion y CIFAR-10, y con diez pares la prueba exacta ya tiene resolución suficiente: mejora a Dynamic ReLU-B en $0.011$ bpd (IC95\% $[0.010,0.013]$, $d_z=4.02$), $0.043$ (IC95\% $[0.039,0.047]$, $d_z=6.11$) y $0.026$ (IC95\% $[0.024,0.028]$, $d_z=6.32$), las tres con $p_{\mathrm{Holm}}=0.0117$, el mínimo alcanzable con diez pares tras la corrección familiar. Las tres ventajas son, por tanto, confirmatorias y no exploratorias. En caracteres la conclusión es la contraria: Hinge reduce la PPL de Dynamic ReLU-B de $11.985$ a $11.723$, pero la diferencia de $0.261$ (IC95\% $[0.043,0.483]$, $d_z=0.71$) no resiste la corrección de Holm ($p_{\mathrm{Holm}}=0.113$), de modo que en esa tarea ambas quedan indistinguibles. En las cuatro tareas CCA-Lite iguala a Hinge ($p_{\mathrm{Holm}}\geq0.146$): la bisagra no aporta ventaja medible aquí.
 
 \section{Análisis del mecanismo y costo}
-\textbf{Contexto causal.} B0H utiliza el mismo codificador, pero suma el contexto a la entrada. En caracteres obtiene PPL 13.66 frente a 11.48 de Hinge; en razonamiento alcanza $12.28\%$ frente a $49.88\%$. En generación de imágenes obtiene 0.956, 1.354 y 1.465 bpd, por encima de 0.939, 1.286 y 1.427. Esto apoya que la ganancia no proviene solo del acceso al contexto, sino de dónde se aplica. Al barajar contextos entre muestras, Hinge cae de $88.03\%$ a $57.56\%$ en clasificación visual y de $88.96\%$ a $81.50\%$ en dígitos. La activación depende, por tanto, del resumen correcto; el test no demuestra por sí solo identificación semántica del régimen.
+\textbf{Contexto causal.} B0H utiliza el mismo codificador, pero suma el contexto a la entrada. En caracteres obtiene PPL 13.88 frente a 11.72 de Hinge; en razonamiento alcanza $12.28\%$ frente a $49.88\%$. En generación de imágenes obtiene 0.955, 1.350 y 1.470 bpd, por encima de 0.937, 1.284 y 1.430. Sobre diez semillas, las cuatro diferencias frente a B0H son significativas ($p_{\mathrm{Holm}}=0.0117$). Esto apoya que la ganancia no proviene solo del acceso al contexto, sino de dónde se aplica. Al barajar contextos entre muestras, Hinge cae de $88.03\%$ a $57.56\%$ en clasificación visual y de $88.96\%$ a $81.50\%$ en dígitos. La activación depende, por tanto, del resumen correcto; el test no demuestra por sí solo identificación semántica del régimen.
 
 \begin{figure}[t]
 \centering
@@ -209,15 +209,50 @@ En generación corta, Hinge logra el menor bpd en MNIST, Fashion y CIFAR-10 y me
 \label{fig:curves}
 \end{figure}
 
-\textbf{Costo.} En texto, CCA-Hinge contiene 82\,276 parámetros y usa 177\,152 FLOPs por muestra. Una iteración compilada de propagación y gradiente tarda 3.823 ms (66\,970 muestras/s). Dynamic ReLU-B requiere 3.656 ms y Meta-ACON 3.681 ms; CCA-Lite requiere 3.747 ms. En dígitos, todos los métodos quedan dentro de $\pm3\%$ de FLOPs; la compilación de Hinge no estuvo disponible en Windows por un error del lanzador Triton, por lo que solo reportamos su medición eager. Las activaciones adaptativas siguen penalizadas por lanzamientos de kernels en redes pequeñas; la proximidad compilada en texto indica que esa latencia es parcialmente fusionable, pero no afirmamos costo real idéntico en todo hardware.
+\subsection{Rendimiento y costo}
+La Tabla~\ref{tab:cost} mide el costo de una iteración de propagación y gradiente (lote 256) sobre las configuraciones de presupuesto igualado de la Tabla~\ref{tab:matched}, en modo eager y compilado con \texttt{torch.compile}. Toda la tabla proviene de una única NVIDIA L4 bajo Linux con Triton 3.4, lo que además cierra la celda que la corrida anterior no pudo producir: la compilación de CCA-Hinge en dígitos fallaba por un error del lanzador Triton en Windows.
+
+\begin{table}[t]
+\centering
+\caption{Costo por iteración de propagación y gradiente, lote 256, en una NVIDIA L4. $P$ = parámetros, $F$ = kFLOPs analíticos por muestra, $t$ = ms por iteración, $S$ = aceleración por compilación, $T$ = miles de muestras/s compiladas.}
+\label{tab:cost}
+\scriptsize
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Tarea & Método & $P$ & $F$ & $t$ eager & $t$ comp. & $S$ & $T$\\
+\midrule
+\multirow{6}{*}{Texto}
+& SiLU igualada & 82\,876 & 166.6 & 1.251 & 1.427 & 0.88 & 179.3\\
+& Rational & 82\,940 & 175.2 & 3.576 & 2.048 & 1.75 & 125.0\\
+& Dynamic ReLU-B & 82\,764 & 168.9 & 3.308 & 2.326 & 1.42 & 110.1\\
+& Meta-ACON & 82\,414 & 168.8 & 3.302 & 2.519 & 1.31 & 101.6\\
+& CCA-Lite & 81\,188 & 172.0 & 5.584 & 2.614 & 2.14 & 97.9\\
+& CCA-Hinge & 82\,276 & 177.2 & 5.943 & 2.637 & \textbf{2.25} & 97.1\\
+\midrule
+\multirow{6}{*}{Dígitos}
+& SiLU igualada & 26\,205 & 2662.7 & 1.569 & 1.706 & 0.92 & 150.1\\
+& Rational & 26\,288 & 2697.4 & 6.256 & 2.507 & 2.50 & 102.1\\
+& Dynamic ReLU-B & 26\,624 & 2624.0 & 5.173 & 2.871 & 1.80 & 89.2\\
+& Meta-ACON & 26\,356 & 2620.5 & 4.381 & 2.976 & 1.47 & 86.0\\
+& CCA-Lite & 25\,290 & 2505.0 & 7.164 & 3.017 & 2.37 & 84.9\\
+& CCA-Hinge & 26\,378 & 2619.9 & 9.065 & 3.057 & \textbf{2.97} & 83.8\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{El sobrecosto es de lanzamiento, no aritmético.} En eager, CCA-Hinge cuesta $4.75\times$ la SiLU igualada en texto y $5.78\times$ en dígitos. Esa penalización no proviene del trabajo aritmético: sus FLOPs analíticos por muestra son solo $6.3\%$ mayores en texto y de hecho $1.6\%$ \emph{menores} en dígitos, donde la búsqueda de presupuesto compensa el generador con un backbone algo más angosto. La distancia entre ambos factores mide el costo de ejecutar decenas de operaciones puntuales diminutas como kernels separados en redes de este tamaño.
+
+\textbf{La compilación recupera la mayor parte.} Fusionadas esas operaciones, CCA-Hinge obtiene la mayor aceleración de la tabla ($2.25\times$ en texto y $2.97\times$ en dígitos), precisamente por ser el método con más trabajo puntual fusionable; el efecto es monótono en la complejidad de la activación, y la SiLU igualada, que no tiene nada que fusionar, incluso se degrada ($0.88\times$ y $0.92\times$). El sobrecosto compilado frente a la SiLU igualada baja así a $1.85\times$ y $1.79\times$, y frente a Dynamic ReLU-B queda en $+13.4\%$ y $+6.5\%$.
+
+\textbf{Alcance de la medición.} La compilación reduce el costo en estado estacionario, no el de estas corridas: en entrenamientos cortos su calentamiento de 20--27 s no se amortiza, y en PyTorch 2.8 el compilador falla sobre Dynamic ReLU-B. Los tiempos de entrenamiento registrados junto a cada resultado se tomaron con varios procesos concurrentes y no son evidencia de costo; toda cifra de esta sección proviene de la medición aislada. La exactitud de la Tabla~\ref{tab:matched} se mantiene de la corrida original, porque no depende del hardware; el costo sí, y por eso se remidió. No afirmamos que estas proporciones se conserven en otras GPU o tamaños de modelo.
 
 \section{Conclusiones, limitaciones y reproducibilidad}
-CCA-Hinge mejora de forma significativa a Dynamic ReLU-B bajo presupuesto igualado en el benchmark real MNIST+SVHN+USPS y obtiene la mejor media en razonamiento, audio y generación corta. En texto queda empatada con los baselines adaptativos, y en sentimiento no mejora a SiLU. La conclusión es específica: condicionar la forma de la activación ayuda cuando el contexto modifica la transformación necesaria; añadir complejidad dinámica a un régimen homogéneo no garantiza beneficio.
+CCA-Hinge mejora de forma significativa a Dynamic ReLU-B bajo presupuesto igualado en el benchmark real MNIST+SVHN+USPS y, sobre diez semillas, también en las tres tareas de generación de imágenes; obtiene además la mejor media en razonamiento y audio. En texto —tanto clasificación como generación por caracteres— queda empatada con los baselines adaptativos, y en sentimiento no mejora a SiLU. La conclusión es específica: condicionar la forma de la activación ayuda cuando el contexto modifica la transformación necesaria; añadir complejidad dinámica a un régimen homogéneo no garantiza beneficio.
 
-El estudio usa backbones pequeños, la generación se limita a tres semillas y 500 pasos en imágenes, y la equivalencia estricta de costo se confirma en dos tareas, mientras la matriz amplia usa el mismo backbone y publica sus diferencias. No evaluamos modelos fundacionales ni cambios de dominio no observados durante entrenamiento. Estas limitaciones impiden extrapolar las ganancias a gran escala.
+El estudio usa backbones pequeños, la generación de imágenes se limita a 500 pasos, y la equivalencia estricta de costo se confirma en dos tareas, mientras la matriz amplia usa el mismo backbone y publica sus diferencias. No evaluamos modelos fundacionales ni cambios de dominio no observados durante entrenamiento. Estas limitaciones impiden extrapolar las ganancias a gran escala.
 
 El código, configuraciones, resultados por semilla, manifiestos SHA-256 y comandos de reproducción se publicarán en el \href{https://github.com/agustinastie2/Context-Conditioned-Rational-Activations}{repositorio público de CCA}.
-El entorno registrado usa Python 3.14.4, PyTorch 2.11.0, CUDA 13.0 y una NVIDIA RTX 4070 Laptop. Los datasets no se redistribuyen; las descargas verificables conservan los splits descritos.
+El entorno registrado usa Python 3.14.4, PyTorch 2.11.0, CUDA 13.0 y una NVIDIA RTX 4070 Laptop para las tareas de exactitud, y Python 3.12, PyTorch 2.8.0, CUDA 12.8 y una NVIDIA L4 para las diez semillas de generación y para la Tabla~\ref{tab:cost}. Cada bloque de diez semillas proviene de una sola máquina. Los datasets no se redistribuyen; las descargas verificables conservan los splits descritos.
 
 \bibliographystyle{splncs04}
 \bibliography{referencias}

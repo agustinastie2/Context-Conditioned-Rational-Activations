@@ -1,0 +1,14 @@
+WORKER image_gen_mnist seed=4110 method=silu
+RESULT image_gen_mnist/silu/s4110: 1.083349
+WORKER image_gen_mnist seed=4110 method=rational
+RESULT image_gen_mnist/rational/s4110: 1.069904
+WORKER image_gen_mnist seed=4110 method=dyrelu
+RESULT image_gen_mnist/dyrelu/s4110: 0.947134
+WORKER image_gen_mnist seed=4110 method=meta_acon
+RESULT image_gen_mnist/meta_acon/s4110: 0.951170
+WORKER image_gen_mnist seed=4110 method=cca_lite
+RESULT image_gen_mnist/cca_lite/s4110: 0.935890
+WORKER image_gen_mnist seed=4110 method=cca_hinge
+RESULT image_gen_mnist/cca_hinge/s4110: 0.937676
+WORKER image_gen_mnist seed=4110 method=b0h
+RESULT image_gen_mnist/b0h/s4110: 0.953242

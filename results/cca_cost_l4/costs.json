@@ -1,0 +1,138 @@
+{
+  "text": {
+    "silu_budget": {
+      "params": 82876,
+      "analytical_flops_per_sample": 166624,
+      "eager_forward_backward_ms": 1.250815987586975,
+      "compiled_forward_backward_ms": 1.427456021308899,
+      "compiled_speedup": 0.8762553584243145,
+      "eager_samples_per_second": 204666.39580923898,
+      "compiled_samples_per_second": 179340.0260172373,
+      "peak_memory_mb": 19.890176,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 82940,
+      "analytical_flops_per_sample": 175200,
+      "eager_forward_backward_ms": 3.5763200521469116,
+      "compiled_forward_backward_ms": 2.0480000972747803,
+      "compiled_speedup": 1.7462499425199376,
+      "eager_samples_per_second": 71581.9603019925,
+      "compiled_samples_per_second": 124999.99406281888,
+      "peak_memory_mb": 23.672832,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 82764,
+      "analytical_flops_per_sample": 168908,
+      "eager_forward_backward_ms": 3.308031916618347,
+      "compiled_forward_backward_ms": 2.3255040645599365,
+      "compiled_speedup": 1.42250102549029,
+      "eager_samples_per_second": 77387.40328167612,
+      "compiled_samples_per_second": 110083.66052821491,
+      "peak_memory_mb": 21.564928,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 82414,
+      "analytical_flops_per_sample": 168768,
+      "eager_forward_backward_ms": 3.3018879890441895,
+      "compiled_forward_backward_ms": 2.519040107727051,
+      "compiled_speedup": 1.3107722973190403,
+      "eager_samples_per_second": 77531.40047434054,
+      "compiled_samples_per_second": 101626.01191411389,
+      "peak_memory_mb": 21.489152,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 81188,
+      "analytical_flops_per_sample": 172032,
+      "eager_forward_backward_ms": 5.5844480991363525,
+      "compiled_forward_backward_ms": 2.614272117614746,
+      "compiled_speedup": 2.1361387980649797,
+      "eager_samples_per_second": 45841.593556862135,
+      "compiled_samples_per_second": 97924.00656193879,
+      "peak_memory_mb": 24.175104,
+      "compile_error": null
+    },
+    "cca_hinge": {
+      "params": 82276,
+      "analytical_flops_per_sample": 177152,
+      "eager_forward_backward_ms": 5.943296194076538,
+      "compiled_forward_backward_ms": 2.6368958950042725,
+      "compiled_speedup": 2.253898686457968,
+      "eager_samples_per_second": 43073.74084016638,
+      "compiled_samples_per_second": 97083.84790048195,
+      "peak_memory_mb": 25.031168,
+      "compile_error": null
+    }
+  },
+  "digits": {
+    "silu_budget": {
+      "params": 26205,
+      "analytical_flops_per_sample": 2662660,
+      "eager_forward_backward_ms": 1.5687519907951355,
+      "compiled_forward_backward_ms": 1.7059839963912964,
+      "compiled_speedup": 0.9195584449288794,
+      "eager_samples_per_second": 163187.0439063119,
+      "compiled_samples_per_second": 150060.02432702895,
+      "peak_memory_mb": 85.601792,
+      "compile_error": null
+    },
+    "rational": {
+      "params": 26288,
+      "analytical_flops_per_sample": 2697352,
+      "eager_forward_backward_ms": 6.2561280727386475,
+      "compiled_forward_backward_ms": 2.5067520141601562,
+      "compiled_speedup": 2.4957107992330285,
+      "eager_samples_per_second": 40919.87840139195,
+      "compiled_samples_per_second": 102124.18242965623,
+      "peak_memory_mb": 217.752064,
+      "compile_error": null
+    },
+    "dyrelu": {
+      "params": 26624,
+      "analytical_flops_per_sample": 2623952,
+      "eager_forward_backward_ms": 5.173248052597046,
+      "compiled_forward_backward_ms": 2.871295928955078,
+      "compiled_speedup": 1.8017119031265072,
+      "eager_samples_per_second": 49485.351832585,
+      "compiled_samples_per_second": 89158.34742717151,
+      "peak_memory_mb": 138.988544,
+      "compile_error": null
+    },
+    "meta_acon": {
+      "params": 26356,
+      "analytical_flops_per_sample": 2620532,
+      "eager_forward_backward_ms": 4.380671977996826,
+      "compiled_forward_backward_ms": 2.9757440090179443,
+      "compiled_speedup": 1.4721266226937768,
+      "eager_samples_per_second": 58438.52296767094,
+      "compiled_samples_per_second": 86028.90545161013,
+      "peak_memory_mb": 135.87968,
+      "compile_error": null
+    },
+    "cca_lite": {
+      "params": 25290,
+      "analytical_flops_per_sample": 2504960,
+      "eager_forward_backward_ms": 7.163872003555298,
+      "compiled_forward_backward_ms": 3.0167040824890137,
+      "compiled_speedup": 2.3747347461553305,
+      "eager_samples_per_second": 35734.86515015231,
+      "compiled_samples_per_second": 84860.8259212419,
+      "peak_memory_mb": 215.38816,
+      "compile_error": null
+    },
+    "cca_hinge": {
+      "params": 26378,
+      "analytical_flops_per_sample": 2619904,
+      "eager_forward_backward_ms": 9.06496000289917,
+      "compiled_forward_backward_ms": 3.0565760135650635,
+      "compiled_speedup": 2.965723725720852,
+      "eager_samples_per_second": 28240.609988143984,
+      "compiled_samples_per_second": 83753.84707066788,
+      "peak_memory_mb": 247.573504,
+      "compile_error": null
+    }
+  }
+}

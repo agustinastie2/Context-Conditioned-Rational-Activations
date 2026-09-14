@@ -1,0 +1,14 @@
+WORKER image_gen_fashion seed=4109 method=silu
+RESULT image_gen_fashion/silu/s4109: 1.607260
+WORKER image_gen_fashion seed=4109 method=rational
+RESULT image_gen_fashion/rational/s4109: 1.574221
+WORKER image_gen_fashion seed=4109 method=dyrelu
+RESULT image_gen_fashion/dyrelu/s4109: 1.330962
+WORKER image_gen_fashion seed=4109 method=meta_acon
+RESULT image_gen_fashion/meta_acon/s4109: 1.344964
+WORKER image_gen_fashion seed=4109 method=cca_lite
+RESULT image_gen_fashion/cca_lite/s4109: 1.297163
+WORKER image_gen_fashion seed=4109 method=cca_hinge
+RESULT image_gen_fashion/cca_hinge/s4109: 1.296461
+WORKER image_gen_fashion seed=4109 method=b0h
+RESULT image_gen_fashion/b0h/s4109: 1.356033

@@ -1,0 +1,107 @@
+{
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "platform": "Linux-6.8.0-1065-gcp-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA L4",
+  "tasks": {
+    "text_char": {
+      "metric": "ppl",
+      "higher": false,
+      "b0h": true,
+      "context": "mean embedding of strictly-past 512-char history"
+    },
+    "text_bpe_2000": {
+      "metric": "ppl",
+      "higher": false,
+      "b0h": true,
+      "context": "mean embedding of strictly-past 128-token history"
+    },
+    "text_bpe_4000": {
+      "metric": "ppl",
+      "higher": false,
+      "b0h": true,
+      "context": "mean embedding of strictly-past 128-token history"
+    },
+    "text_bpe_8000": {
+      "metric": "ppl",
+      "higher": false,
+      "b0h": true,
+      "context": "mean embedding of strictly-past 128-token history"
+    },
+    "image_gen_mnist": {
+      "metric": "bits_per_dim",
+      "higher": false,
+      "b0h": true,
+      "context": "strictly-causal running grey-level histogram"
+    },
+    "image_gen_fashion": {
+      "metric": "bits_per_dim",
+      "higher": false,
+      "b0h": true,
+      "context": "strictly-causal running grey-level histogram"
+    },
+    "image_gen_cifar": {
+      "metric": "bits_per_dim",
+      "higher": false,
+      "b0h": true,
+      "context": "strictly-causal running grey-level histogram"
+    },
+    "image_cls": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "global-average pooling of each convolution preactivation"
+    },
+    "image_cls_single": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "global-average pooling; identity regime only"
+    },
+    "text_cls": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "mean embedding of the complete input window"
+    },
+    "text_cls_single": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "mean embedding; one cipher only"
+    },
+    "digits_multidomain": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "global-average pooling; no domain identity"
+    },
+    "algo_modular": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": true,
+      "context": "encoded substitution key"
+    },
+    "audio_digits": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "global-average pooling of log-STFT preactivation"
+    },
+    "text_sentiment": {
+      "metric": "accuracy",
+      "higher": true,
+      "b0h": false,
+      "context": "normalized bag-of-words embedding; no domain identity"
+    }
+  },
+  "methods": [
+    "silu",
+    "rational",
+    "dyrelu",
+    "meta_acon",
+    "cca_lite",
+    "cca_hinge"
+  ]
+}

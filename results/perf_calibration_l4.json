@@ -1,0 +1,153 @@
+{
+  "purpose": "Measured (not assumed) throughput of the paper_full_comparison worker mix on the rented L4, to choose the fastest safe execution configuration.",
+  "hardware": {
+    "gpu": "NVIDIA L4 (23 GB)",
+    "vcpu": 8,
+    "ram_gb": 31,
+    "torch": "2.8.0+cu128",
+    "triton": "3.4.0",
+    "platform": "Linux"
+  },
+  "workload": {
+    "tasks": [
+      "text_char",
+      "image_gen_mnist"
+    ],
+    "seeds": [
+      9101,
+      9102,
+      9103
+    ],
+    "cells": 42,
+    "env": {
+      "ITERS": "300",
+      "STEPS": "200",
+      "PAPER_AMP": "1",
+      "PAPER_STAGE_DATA": "1"
+    },
+    "note": "Short proxy for the real blocks; identical workload across all configurations.",
+    "caveat": "This mixed workload conflated two tasks with opposite scaling behaviour. text_char dominates its gain; image generation contributes none. Per-task calibration below is the one that should be used."
+  },
+  "configurations": [
+    {
+      "name": "serial",
+      "jobs": 1,
+      "mps": false,
+      "compile": false,
+      "wall_s": 249.8,
+      "cells_per_min": 10.24,
+      "speedup": 1.0,
+      "failures": 0
+    },
+    {
+      "name": "concurrent-3",
+      "jobs": 3,
+      "mps": false,
+      "compile": false,
+      "wall_s": 167.7,
+      "cells_per_min": 15.36,
+      "speedup": 1.5,
+      "failures": 0
+    },
+    {
+      "name": "concurrent-6",
+      "jobs": 6,
+      "mps": false,
+      "compile": false,
+      "wall_s": 139.8,
+      "cells_per_min": 18.52,
+      "speedup": 1.81,
+      "failures": 0,
+      "selected": true
+    },
+    {
+      "name": "concurrent-6-mps",
+      "jobs": 6,
+      "mps": true,
+      "compile": false,
+      "wall_s": 146.0,
+      "cells_per_min": 17.74,
+      "speedup": 1.73,
+      "failures": 0,
+      "verdict": "rejected: CUDA MPS is 4% SLOWER than plain concurrency here"
+    },
+    {
+      "name": "compiled-serial",
+      "jobs": 1,
+      "mps": false,
+      "compile": true,
+      "wall_s": null,
+      "cells_per_min": 4.67,
+      "speedup": 0.46,
+      "failures": 1,
+      "verdict": "rejected: crashes on dyrelu, and a net loss where it does compile"
+    }
+  ],
+  "findings": {
+    "concurrency_requires_single_threaded_workers": "PyTorch defaults to one OpenMP thread per core per process. Six workers x eight threads oversubscribes an 8-vCPU host and makes concurrent runs slower than serial. With OMP_NUM_THREADS=MKL_NUM_THREADS=1 the same six workers reach 1.81x aggregate throughput. This is the single change that makes multi-process training pay off on this box.",
+    "mps_does_not_help": "The Multi-Process Service was expected to help by letting kernels from different processes share SMs instead of time-slicing. Measured at 17.74 vs 18.52 cells/min, i.e. 4% slower: at this model size the bottleneck is host-side kernel launch, not GPU context switching, so MPS only adds indirection.",
+    "compile_does_not_pay_off_in_training": "torch.compile raised BackendCompilerFailed on Dynamic ReLU-B (Inductor pattern matcher: 'Not all inputs to pattern found in match.kwargs', torch 2.8). For the methods that did compile, warm-up cost 20-27 s against 3-4 s of actual training, and even extrapolated to ITERS=3000 the ~24 s warm-up cancels the ~2x steady-state gain. Compilation remains valuable for the steady-state cost microbenchmark (profile_costs), which is what the paper reports; it is not a training-time optimisation at this scale.",
+    "saturation": "Throughput is flat from jobs=6 upward, consistent with the 8-vCPU host and a launch-bound workload.",
+    "concurrency_is_task_dependent": "Process concurrency is not a general speed-up: it pays off exactly when a single process cannot fill the GPU. The character LM gained 3.6x from six workers; image generation, whose per-step work already saturates the same GPU, measured 0.98-0.99x across jobs=1,2,4 - flat within noise. An initial mixed-task calibration hid this, because the character LM's gain dominated the aggregate. The blocks are therefore run with different concurrency: jobs=6 for text_char, jobs=1 for image generation."
+  },
+  "selected_configuration": {
+    "text_char": {
+      "jobs": 6,
+      "mps": false,
+      "compile": false
+    },
+    "image_generation": {
+      "jobs": 1,
+      "mps": false,
+      "compile": false
+    },
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "per_task_calibration": {
+    "text_char": {
+      "note": "Tiny model (batch 64, 16-token window, d=128). Launch-bound: a single process leaves the L4 largely idle, so extra processes fill it.",
+      "adopted": {
+        "jobs": 6
+      },
+      "measured_on_real_block": {
+        "cells": 70,
+        "wall_minutes": 15.7,
+        "serial_estimate_minutes": 56.4,
+        "speedup": 3.6,
+        "failures": 0
+      }
+    },
+    "image_generation": {
+      "note": "Larger per-step work (batch 128, 256-pixel sequence, BF16 autocast). A single process already saturates the L4, so concurrency buys nothing and only adds contention. Measured alone at the real STEPS=500 protocol, on image_gen_mnist.",
+      "adopted": {
+        "jobs": 1
+      },
+      "sweep": [
+        {
+          "jobs": 1,
+          "wall_s": 89.9,
+          "cells": 7,
+          "cells_per_min": 4.88,
+          "speedup": 1.0
+        },
+        {
+          "jobs": 2,
+          "wall_s": 179.9,
+          "cells": 14,
+          "cells_per_min": 4.77,
+          "speedup": 0.98
+        },
+        {
+          "jobs": 4,
+          "wall_s": 351.9,
+          "cells": 28,
+          "cells_per_min": 4.83,
+          "speedup": 0.99
+        }
+      ]
+    }
+  }
+}

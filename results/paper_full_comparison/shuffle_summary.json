@@ -1,0 +1,146 @@
+{
+  "source": "results/paper_full_comparison/runs.csv",
+  "note": "Contexto barajado entre muestras del mismo lote. Las metricas de generacion son menores-mejor, de modo que su 'drop' negativo tambien indica degradacion.",
+  "tasks": {
+    "algo_modular": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.49877,
+        "mean_shuffled_context": 0.08261,
+        "drop": 0.41616
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.47098,
+        "mean_shuffled_context": 0.08103,
+        "drop": 0.38995
+      }
+    },
+    "audio_digits": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.757,
+        "mean_shuffled_context": 0.6848333333333333,
+        "drop": 0.07216666666666671
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.739,
+        "mean_shuffled_context": 0.6731666666666667,
+        "drop": 0.0658333333333333
+      }
+    },
+    "digits_multidomain": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.8895833333333334,
+        "mean_shuffled_context": 0.8150333333333333,
+        "drop": 0.07455000000000012
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.8853666666666666,
+        "mean_shuffled_context": 0.8201333333333334,
+        "drop": 0.06523333333333325
+      }
+    },
+    "image_cls": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.88025,
+        "mean_shuffled_context": 0.57558,
+        "drop": 0.30467
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.87866,
+        "mean_shuffled_context": 0.57773,
+        "drop": 0.30093000000000003
+      }
+    },
+    "image_cls_single": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.98488,
+        "mean_shuffled_context": 0.98465,
+        "drop": 0.00022999999999995246
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.98446,
+        "mean_shuffled_context": 0.98433,
+        "drop": 0.00012999999999996348
+      }
+    },
+    "image_gen_mnist": {
+      "cca_hinge": {
+        "n": 1,
+        "mean_value": 0.9031898080382323,
+        "mean_shuffled_context": 3.46819668888902,
+        "drop": -2.5650068808507873
+      },
+      "cca_lite": {
+        "n": 1,
+        "mean_value": 0.9068112721708829,
+        "mean_shuffled_context": 2.985403683816602,
+        "drop": -2.078592411645719
+      }
+    },
+    "text_char": {
+      "cca_hinge": {
+        "n": 3,
+        "mean_value": 11.480154355802645,
+        "mean_shuffled_context": 39.94089176772872,
+        "drop": -28.460737411926075
+      },
+      "cca_lite": {
+        "n": 3,
+        "mean_value": 11.891844287892004,
+        "mean_shuffled_context": 38.66236620705908,
+        "drop": -26.770521919167074
+      }
+    },
+    "text_cls": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.9645125,
+        "mean_shuffled_context": 0.9575875,
+        "drop": 0.006924999999999959
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.9635875,
+        "mean_shuffled_context": 0.9473,
+        "drop": 0.01628750000000001
+      }
+    },
+    "text_cls_single": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.9954625,
+        "mean_shuffled_context": 0.993675,
+        "drop": 0.001787500000000053
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.9959375,
+        "mean_shuffled_context": 0.99455,
+        "drop": 0.001387499999999986
+      }
+    },
+    "text_sentiment": {
+      "cca_hinge": {
+        "n": 10,
+        "mean_value": 0.82475,
+        "mean_shuffled_context": 0.792125,
+        "drop": 0.032625000000000015
+      },
+      "cca_lite": {
+        "n": 10,
+        "mean_value": 0.820375,
+        "mean_shuffled_context": 0.7873749999999999,
+        "drop": 0.03300000000000003
+      }
+    }
+  }
+}

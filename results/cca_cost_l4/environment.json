@@ -1,0 +1,17 @@
+{
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "platform": "Linux-6.8.0-1065-gcp-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA L4",
+  "budgets_source": "results/cca_hinge_confirmation/budgets.json",
+  "methods": [
+    "silu_budget",
+    "rational",
+    "dyrelu",
+    "meta_acon",
+    "cca_lite",
+    "cca_hinge"
+  ],
+  "note": "Cost only. Accuracy for these configurations comes from results/cca_hinge_confirmation (seeds 3001-3010) and is not re-run here, because accuracy is hardware-independent and cost is not."
+}

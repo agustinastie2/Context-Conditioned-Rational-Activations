@@ -1,0 +1,244 @@
+{
+  "text_cls_single": {
+    "target_method": "cca_hinge",
+    "target_params": 82276,
+    "target_flops_per_sample": 177152,
+    "parameter_cap_ratio": 1.05,
+    "flop_cap_ratio": 1.1,
+    "methods": {
+      "silu": {
+        "config": {
+          "method": "silu",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 76132,
+        "flops_per_sample": 153088,
+        "params_vs_target_pct": -7.467548252224221,
+        "flops_vs_target_pct": -13.583815028901736,
+        "budget_matched": false
+      },
+      "silu_budget": {
+        "config": {
+          "method": "silu_budget",
+          "hidden": 268,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82876,
+        "flops_per_sample": 166624,
+        "params_vs_target_pct": 0.7292527590062825,
+        "flops_vs_target_pct": -5.942919075144504,
+        "budget_matched": true
+      },
+      "rational": {
+        "config": {
+          "method": "rational",
+          "hidden": 268,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82940,
+        "flops_per_sample": 175200,
+        "params_vs_target_pct": 0.8070397199669399,
+        "flops_vs_target_pct": -1.1018786127167668,
+        "budget_matched": true
+      },
+      "dyrelu": {
+        "config": {
+          "method": "dyrelu",
+          "hidden": 266,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 8,
+          "lowrank": 0
+        },
+        "params": 82764,
+        "flops_per_sample": 168908,
+        "params_vs_target_pct": 0.5931255773250932,
+        "flops_vs_target_pct": -4.653630780346818,
+        "budget_matched": true
+      },
+      "meta_acon": {
+        "config": {
+          "method": "meta_acon",
+          "hidden": 266,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 8,
+          "lowrank": 0
+        },
+        "params": 82414,
+        "flops_per_sample": 168768,
+        "params_vs_target_pct": 0.1677281345714432,
+        "flops_vs_target_pct": -4.732658959537572,
+        "budget_matched": true
+      },
+      "cca_lite": {
+        "config": {
+          "method": "cca_lite",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 81188,
+        "flops_per_sample": 172032,
+        "params_vs_target_pct": -1.3223783363313757,
+        "flops_vs_target_pct": -2.8901734104046284,
+        "budget_matched": true
+      },
+      "cca_hinge": {
+        "config": {
+          "method": "cca_hinge",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82276,
+        "flops_per_sample": 177152,
+        "params_vs_target_pct": 0.0,
+        "flops_vs_target_pct": 0.0,
+        "budget_matched": true
+      }
+    }
+  },
+  "text_cls": {
+    "target_method": "cca_hinge",
+    "target_params": 82276,
+    "target_flops_per_sample": 177152,
+    "parameter_cap_ratio": 1.05,
+    "flop_cap_ratio": 1.1,
+    "methods": {
+      "silu": {
+        "config": {
+          "method": "silu",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 76132,
+        "flops_per_sample": 153088,
+        "params_vs_target_pct": -7.467548252224221,
+        "flops_vs_target_pct": -13.583815028901736,
+        "budget_matched": false
+      },
+      "silu_budget": {
+        "config": {
+          "method": "silu_budget",
+          "hidden": 268,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82876,
+        "flops_per_sample": 166624,
+        "params_vs_target_pct": 0.7292527590062825,
+        "flops_vs_target_pct": -5.942919075144504,
+        "budget_matched": true
+      },
+      "rational": {
+        "config": {
+          "method": "rational",
+          "hidden": 268,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82940,
+        "flops_per_sample": 175200,
+        "params_vs_target_pct": 0.8070397199669399,
+        "flops_vs_target_pct": -1.1018786127167668,
+        "budget_matched": true
+      },
+      "dyrelu": {
+        "config": {
+          "method": "dyrelu",
+          "hidden": 266,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 8,
+          "lowrank": 0
+        },
+        "params": 82764,
+        "flops_per_sample": 168908,
+        "params_vs_target_pct": 0.5931255773250932,
+        "flops_vs_target_pct": -4.653630780346818,
+        "budget_matched": true
+      },
+      "meta_acon": {
+        "config": {
+          "method": "meta_acon",
+          "hidden": 266,
+          "channels1": null,
+          "channels2": null,
+          "groups": 8,
+          "g_hidden": 8,
+          "lowrank": 0
+        },
+        "params": 82414,
+        "flops_per_sample": 168768,
+        "params_vs_target_pct": 0.1677281345714432,
+        "flops_vs_target_pct": -4.732658959537572,
+        "budget_matched": true
+      },
+      "cca_lite": {
+        "config": {
+          "method": "cca_lite",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 81188,
+        "flops_per_sample": 172032,
+        "params_vs_target_pct": -1.3223783363313757,
+        "flops_vs_target_pct": -2.8901734104046284,
+        "budget_matched": true
+      },
+      "cca_hinge": {
+        "config": {
+          "method": "cca_hinge",
+          "hidden": 256,
+          "channels1": null,
+          "channels2": null,
+          "groups": 16,
+          "g_hidden": 16,
+          "lowrank": 0
+        },
+        "params": 82276,
+        "flops_per_sample": 177152,
+        "params_vs_target_pct": 0.0,
+        "flops_vs_target_pct": 0.0,
+        "budget_matched": true
+      }
+    }
+  }
+}

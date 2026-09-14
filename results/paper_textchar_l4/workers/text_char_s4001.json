@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "task": "text_char",
+      "method": "silu",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 21.257136243948885,
+      "shuffle_value": null,
+      "params": 605440,
+      "train_seconds": 47.47553474800043,
+      "eval_throughput": 130636.01505717004,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "rational",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 20.732632595256394,
+      "shuffle_value": null,
+      "params": 622336,
+      "train_seconds": 69.32143562100009,
+      "eval_throughput": 105025.0349311769,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "dyrelu",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 12.17289309454846,
+      "shuffle_value": null,
+      "params": 631408,
+      "train_seconds": 68.8171088120007,
+      "eval_throughput": 110038.77124571499,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "meta_acon",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 13.275447682433875,
+      "shuffle_value": null,
+      "params": 629056,
+      "train_seconds": 69.28870172500046,
+      "eval_throughput": 104647.02851342586,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "cca_lite",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 11.47841325910315,
+      "shuffle_value": 41.34335912749307,
+      "params": 634144,
+      "train_seconds": 85.29415891400004,
+      "eval_throughput": 94368.08923707818,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "cca_hinge",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 11.502280812360798,
+      "shuffle_value": 39.246466770286844,
+      "params": 635776,
+      "train_seconds": 111.97776236800019,
+      "eval_throughput": 82710.2695162096,
+      "n_regimes": 32
+    },
+    {
+      "task": "text_char",
+      "method": "b0h",
+      "seed": 4001,
+      "metric": "ppl",
+      "higher_is_better": false,
+      "context_origin": "mean embedding of strictly-past 512-char history",
+      "value": 13.360821367889272,
+      "shuffle_value": null,
+      "params": 621952,
+      "train_seconds": 50.69437240099978,
+      "eval_throughput": 189367.44601112846,
+      "n_regimes": 32
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "seeds": [
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009,
+    4010
+  ],
+  "tasks": [
+    "text_cls_single",
+    "text_cls"
+  ],
+  "methods": [
+    "silu",
+    "silu_budget",
+    "rational",
+    "dyrelu",
+    "meta_acon",
+    "cca_lite",
+    "cca_hinge"
+  ],
+  "smoke": false,
+  "protocol": "CCA-Hinge define el objetivo; competidores <=105% par\u00e1metros y <=110% operaciones; la b\u00fasqueda observa s\u00f3lo el costo."
+}

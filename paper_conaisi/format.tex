@@ -1,0 +1,211 @@
+\documentclass[10pt,a4paper,final,oneside,notitlepage]{article}
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[T1]{fontenc}    % Silabeo correcto de palabras acentuadas
+\usepackage[spanish,es-tabla]{babel} % Idioma español con "Tabla" por defecto
+
+% Márgenes según pautas CoNaIISI:
+% Área de impresión: 17,5 cm de ancho por 22,54 cm de alto.
+% Columnas de 8,25 cm con 8 mm de separación (8,25 * 2 + 0,8 = 17,3 cm).
+% Margen superior e inferior de 3,0 cm en todas las páginas.
+% Márgenes laterales: 1,85 cm en cada lado (21,0 cm - 1,85 * 2 = 17,3 cm).
+\usepackage[a4paper, left=1.85cm, right=1.85cm, top=3.0cm, bottom=3.0cm]{geometry}
+\setlength{\columnsep}{8mm}
+
+% Tipografías según CoNaIISI:
+% Texto principal y matemáticas: Times
+\usepackage{mathptmx}
+% Epígrafes de figuras y tablas: Helvética (Sans-Serif) 9 pts negrita
+\usepackage[scaled=0.92]{helvet}
+% Código fuente: Courier
+\usepackage{courier}
+
+% Paquetes matemáticos y utilidades
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{cite}        % Citas compactas [1-3], [2, 5]
+\usepackage{booktabs}    % Tablas profesionales
+\usepackage{multirow}    % Celdas multifila
+\usepackage{array}       % Columnas de ancho fijo
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage[hidelinks]{hyperref} % Hipervínculos en color negro
+
+% Formato de párrafos según CoNaIISI:
+% Sangría de 5 mm, completamente justificado, sin espacio adicional entre párrafos.
+\setlength{\parindent}{5mm}
+\setlength{\parskip}{0pt}
+
+% Epígrafes (Captions) según CoNaIISI:
+% Helvética 9 pts negrita.
+% Mayúscula solo inicial: "Figura 1. ..." y "Tabla 1. ..."
+% Tabla: título centrado por sobre la misma.
+% Figura: referencias por debajo de la misma.
+\usepackage{caption}
+\DeclareCaptionFont{helv9pt}{\fontsize{9pt}{11pt}\selectfont\sffamily\bfseries}
+\captionsetup{
+  font=helv9pt,
+  labelfont=helv9pt,
+  labelsep=period
+}
+\captionsetup[table]{
+  position=above,
+  skip=6pt,
+  justification=centering
+}
+\captionsetup[figure]{
+  position=below,
+  skip=6pt,
+  justification=centering
+}
+
+% Formato de títulos de secciones según CoNaIISI:
+% Primer Nivel: Times 12 pts negrita, inicial mayúscula, numerado ("1. Introducción"), ant. 24 pts, post. 12 pts.
+\titleformat{\section}
+  {\fontsize{12pt}{14.4pt}\selectfont\bfseries}
+  {\thesection.\ }
+  {0pt}
+  {}
+\titleformat{name=\section,numberless}
+  {\fontsize{12pt}{14.4pt}\selectfont\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\section}{0pt}{24pt}{12pt}
+
+% Segundo Nivel: Times 11 pts negrita, alineado izquierda, sin sangría, ant. 6 pts, post. 6 pts.
+\titleformat{\subsection}
+  {\fontsize{11pt}{13.2pt}\selectfont\bfseries}
+  {\thesubsection.\ }
+  {0pt}
+  {}
+\titleformat{name=\subsection,numberless}
+  {\fontsize{11pt}{13.2pt}\selectfont\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\subsection}{0pt}{6pt}{6pt}
+
+% Tercer Nivel: Times 10 pts negrita, alineado izquierda, ant. 12 pts, post. 6 pts.
+\titleformat{\subsubsection}
+  {\fontsize{10pt}{12pt}\selectfont\bfseries}
+  {\thesubsubsection.\ }
+  {0pt}
+  {}
+\titleformat{name=\subsubsection,numberless}
+  {\fontsize{10pt}{12pt}\selectfont\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+% Parámetros de flotantes
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+
+\pagestyle{empty} % Sin número de página
+
+% Notas al pie: Times 9 pts, espaciado simple
+\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}
+
+\makeatletter
+
+% Control de versión anónima para revisión por pares (doble ciego):
+% \anonimafalse  -> Modo evaluación ciega (oculta autores, filiaciones y repo identificable)
+% \anonimafalse -> Modo versión final aceptada (con autores, filiaciones y contactos)
+\newif\ifanonima
+\anonimafalse
+
+% Metadatos
+\def\email#1{\gdef\@email{#1}}
+\def\@email{}
+
+\def\universidad#1{\gdef\@universidad{#1}}
+\def\@universidad{}
+
+% Título Principal y Autores según CoNaIISI:
+% En la primera página debe empezar en el centímetro 3,49 desde el borde superior de la hoja.
+% Centrado, Times 14 pts negrita. Mayúscula la primera letra de sustantivos, verbos, etc.
+% Dejar dos líneas en blanco (~24 pt) después del título.
+% Autores: Times 12 pts estilo normal (sin negrita). Filiaciones: 12 pts cursiva. Email incluido.
+% Dejar dos líneas en blanco (~24 pt) antes del texto principal.
+\newcommand{\titulo} {
+  \begingroup
+  \centering
+  \vspace*{0.49cm} % 3.0 cm margen superior + 0.49 cm = 3.49 cm al borde superior
+  {\fontsize{14pt}{17pt}\selectfont\bfseries\@title\par}
+  
+  \vspace{24pt}
+  
+  \ifanonima
+    {\fontsize{12pt}{14.4pt}\selectfont\textit{[Artículo remitido para evaluación por pares externos y doble ciego]}\par}
+    \vspace{6pt}
+    {\fontsize{10pt}{12pt}\selectfont\textit{(Información de autores y filiación omitida según las pautas de evaluación CoNaIISI)}\par}
+  \else
+    {\fontsize{12pt}{14.4pt}\selectfont\normalfont\@author\par}
+    \ifx\@universidad\@empty\else
+      \vspace{4pt}
+      {\fontsize{12pt}{14.4pt}\selectfont\itshape\@universidad\par}
+    \fi
+    \ifx\@email\@empty\else
+      \vspace{4pt}
+      {\fontsize{12pt}{14.4pt}\selectfont\normalfont\@email\par}
+    \fi
+  \fi
+  
+  \vspace{24pt}
+  \endgroup
+}
+\makeatother
+
+% Resumen según CoNaIISI:
+% Ubicado en la parte superior de la columna izquierda.
+% Título "Resumen" con Times 12 pts negrita, centrado en la columna.
+% Texto con Times 10 pts cursiva, interlínea simple, justificado.
+% Dejar dos líneas en blanco después del resumen (~20 pt).
+\newcommand{\resumen}[1]{%
+  \begin{center}%
+    {\fontsize{12pt}{14.4pt}\selectfont\bfseries Resumen\par}%
+  \end{center}%
+  \vspace{4pt}%
+  {\fontsize{10pt}{12pt}\selectfont\itshape #1\par}%
+  \vspace{12pt}%
+}
+
+% Palabras clave
+\newcommand{\palabrasclave}[1]{%
+  \noindent{\fontsize{10pt}{12pt}\selectfont\textbf{Palabras clave---}#1\par}%
+  \vspace{16pt}%
+}
+
+\newcommand{\miniseccion}[1]{%
+  \vspace{6pt}%
+  {\fontsize{10pt}{12pt}\selectfont\textbf{#1}\par}%
+  \vspace{3pt}%
+}
+
+% Entorno de figuras en multicols si se requiere
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+% Bibliografía según CoNaIISI: Times 9 pts, espaciado simple, citas entre corchetes
+\newcommand{\bibliofont}{\fontsize{9pt}{11pt}\selectfont}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \bibliofont
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{1pt plus 0.5pt}
+}

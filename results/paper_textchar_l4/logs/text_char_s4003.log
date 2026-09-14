@@ -1,0 +1,21 @@
+WORKER text_char seed=4003 method=silu
+text_char-silu-s4003         | loss 3.0748 | ppl 21.646 | params 0.61M |  47.4s
+RESULT text_char/silu/s4003: 21.645511
+WORKER text_char seed=4003 method=rational
+text_char-rational-s4003     | loss 3.0611 | ppl 21.352 | params 0.62M |  68.8s | shuf 3.0611
+RESULT text_char/rational/s4003: 21.351610
+WORKER text_char seed=4003 method=dyrelu
+text_char-dyrelu-s4003       | loss 2.4945 | ppl 12.116 | params 0.63M |  68.8s | shuf 3.6266
+RESULT text_char/dyrelu/s4003: 12.116132
+WORKER text_char seed=4003 method=meta_acon
+text_char-meta_acon-s4003    | loss 2.5523 | ppl 12.837 | params 0.63M |  68.8s | shuf 3.6063
+RESULT text_char/meta_acon/s4003: 12.836801
+WORKER text_char seed=4003 method=cca_lite
+text_char-cca_lite-s4003     | loss 2.4729 | ppl 11.856 | params 0.63M |  84.8s | shuf 3.6886
+RESULT text_char/cca_lite/s4003: 11.856271
+WORKER text_char seed=4003 method=cca_hinge
+text_char-cca_hinge-s4003    | loss 2.4368 | ppl 11.436 | params 0.64M | 111.6s | shuf 3.6745
+RESULT text_char/cca_hinge/s4003: 11.436120
+WORKER text_char seed=4003 method=b0h
+text_char-b0h-s4003          | loss 2.5555 | ppl 12.877 | params 0.62M |  50.0s
+RESULT text_char/b0h/s4003: 12.877189

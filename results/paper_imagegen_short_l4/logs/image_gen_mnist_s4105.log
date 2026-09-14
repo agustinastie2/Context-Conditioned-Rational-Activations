@@ -1,0 +1,8 @@
+WORKER image_gen_mnist seed=4105 method=meta_acon
+RESULT image_gen_mnist/meta_acon/s4105: 0.945543
+WORKER image_gen_mnist seed=4105 method=cca_lite
+RESULT image_gen_mnist/cca_lite/s4105: 0.929834
+WORKER image_gen_mnist seed=4105 method=cca_hinge
+RESULT image_gen_mnist/cca_hinge/s4105: 0.927720
+WORKER image_gen_mnist seed=4105 method=b0h
+RESULT image_gen_mnist/b0h/s4105: 0.946439

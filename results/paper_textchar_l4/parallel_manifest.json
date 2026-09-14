@@ -1,0 +1,32 @@
+{
+  "jobs": 6,
+  "env": {
+    "ITERS": "3000"
+  },
+  "tasks": [
+    "text_char"
+  ],
+  "seeds": [
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009,
+    4010
+  ],
+  "workers_launched": 10,
+  "cells_requested": 70,
+  "failures": [],
+  "wall_minutes": 15.6702262253,
+  "cells_per_minute": 4.467070161819561,
+  "host": "Linux-6.8.0-1065-gcp-x86_64-with-glibc2.39",
+  "python": "3.12.11 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:09:17) [GCC 11.2.0]",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA L4",
+  "timings_contended": true,
+  "timings_note": "train_seconds and eval_throughput in the run records were measured with 6 concurrent workers and are inflated by contention; they are NOT cost evidence. Use profile_costs() output instead."
+}

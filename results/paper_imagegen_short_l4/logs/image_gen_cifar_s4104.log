@@ -1,0 +1,14 @@
+WORKER image_gen_cifar seed=4104 method=silu
+RESULT image_gen_cifar/silu/s4104: 1.584017
+WORKER image_gen_cifar seed=4104 method=rational
+RESULT image_gen_cifar/rational/s4104: 1.576849
+WORKER image_gen_cifar seed=4104 method=dyrelu
+RESULT image_gen_cifar/dyrelu/s4104: 1.451177
+WORKER image_gen_cifar seed=4104 method=meta_acon
+RESULT image_gen_cifar/meta_acon/s4104: 1.464393
+WORKER image_gen_cifar seed=4104 method=cca_lite
+RESULT image_gen_cifar/cca_lite/s4104: 1.424364
+WORKER image_gen_cifar seed=4104 method=cca_hinge
+RESULT image_gen_cifar/cca_hinge/s4104: 1.419658
+WORKER image_gen_cifar seed=4104 method=b0h
+RESULT image_gen_cifar/b0h/s4104: 1.469807
